@@ -33,7 +33,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           <div className="max-w-4xl mx-auto">
             <div className="mb-8">
               <Button asChild variant="outline">
-                <Link href="/" className="flex items-center gap-2">
+                <Link href="/blog" className="flex items-center gap-2">
                   <ArrowLeft className="w-4 h-4" />
                   Back to Blog
                 </Link>
@@ -49,7 +49,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                 className="object-cover"
               />
             </div>
-            <div className="prose prose-lg prose-invert max-w-none mx-auto">
+            <div className="prose prose-lg dark:prose-invert max-w-none mx-auto">
                 {/* @ts-ignore */}
                <Markdown>{post.content}</Markdown>
             </div>
