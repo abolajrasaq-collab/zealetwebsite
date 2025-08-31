@@ -66,6 +66,22 @@ const projects: Project[] = [
     imageUrl: 'https://picsum.photos/600/400?random=6',
     aiHint: 'street fashion'
   },
+  {
+    title: 'Corporate Anthem',
+    category: 'Videography',
+    description: 'A short film for a major tech company\'s brand relaunch.',
+    longDescription: 'This corporate video was created to inspire and energize the employees of a major tech company after a significant rebranding. The film combines cinematic shots of the new office space with employee interviews to create a powerful and uplifting narrative about the company\'s future.',
+    imageUrl: 'https://picsum.photos/600/400?random=7',
+    aiHint: 'cinematic film'
+  },
+  {
+    title: 'The Unseen',
+    category: 'Fine Art',
+    description: 'Abstract photography that explores texture and form.',
+    longDescription: 'A fine art series that challenges the viewer to see the world differently. By focusing on abstract details, textures, and forms found in everyday objects, this collection transforms the mundane into something extraordinary and thought-provoking.',
+    imageUrl: 'https://picsum.photos/600/400?random=8',
+    aiHint: 'abstract art'
+  },
 ];
 
 export default function PortfolioSection() {
@@ -81,7 +97,7 @@ export default function PortfolioSection() {
           </p>
         </div>
         <Dialog>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {projects.map((project) => (
               <Card key={project.title} className="overflow-hidden group bg-card flex flex-col">
                 <CardContent className="p-0">
