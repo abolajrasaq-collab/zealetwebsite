@@ -14,7 +14,6 @@ export default function HeroSection() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-black/60"></div>
       </div>
       <div className="relative z-10 flex flex-col items-center gap-6 px-4">
         <div className="animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
