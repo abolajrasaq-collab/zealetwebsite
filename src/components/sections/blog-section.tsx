@@ -9,7 +9,7 @@ export default function BlogSection() {
   const recentPosts = blogPosts.slice(0, 3);
 
   return (
-    <section id="journal" className="py-20 md:py-32 bg-card">
+    <section id="blog" className="py-20 md:py-32 bg-card">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">The Journal</h2>

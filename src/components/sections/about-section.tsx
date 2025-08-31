@@ -6,7 +6,7 @@ export default function AboutSection() {
     <section id="about" className="py-20 md:py-32 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
-          <div className="relative aspect-square md:aspect-[4/5] rounded-lg overflow-hidden shadow-2xl">
+          <div className="relative aspect-square md:aspect-[4/5] rounded-lg overflow-hidden shadow-2xl animate-fade-in-up">
             <Image
               src="/images/about-portrait.jpg"
               alt="Abolaji Rasaq in action"
@@ -15,7 +15,7 @@ export default function AboutSection() {
               className="object-cover"
             />
           </div>
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
               Who I Am
             </h2>
