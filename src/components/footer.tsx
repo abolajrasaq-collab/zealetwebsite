@@ -8,6 +8,7 @@ const navLinks = [
   { href: '/#about', label: 'Manifesto' },
   { href: '/#capabilities', label: 'Capabilities' },
   { href: '/#portfolio', label: 'Showcase' },
+  { href: '/#filmography', label: 'Filmography' },
   { href: '/#testimonials', label: 'Collaborators' },
   { href: '/blog', label: 'Journal' },
   { href: '/#contact', label: 'Contact' },

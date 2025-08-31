@@ -12,6 +12,7 @@ const navLinks = [
   { href: '/#about', label: 'Manifesto' },
   { href: '/#capabilities', label: 'Capabilities' },
   { href: '/#portfolio', label: 'Showcase' },
+  { href: '/#filmography', label: 'Filmography' },
   { href: '/#testimonials', label: 'Collaborators' },
   { href: '/blog', label: 'Journal' },
   { href: '/#contact', label: 'Contact' },
@@ -39,6 +40,7 @@ export default function Header() {
     const isHomePage = pathname === '/';
 
     const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+      handleLinkClick();
       if (isInternalHashLink && isHomePage) {
         e.preventDefault();
         const targetId = href.substring(2);
@@ -47,7 +49,6 @@ export default function Header() {
           targetElement.scrollIntoView({ behavior: 'smooth' });
         }
       }
-      handleLinkClick();
     };
 
     return (
@@ -66,6 +67,7 @@ export default function Header() {
     const isHomePage = pathname === '/';
 
     const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+      handleLinkClick();
       if (isInternalHashLink && isHomePage) {
         e.preventDefault();
         const targetId = href.substring(2);
@@ -74,7 +76,6 @@ export default function Header() {
           targetElement.scrollIntoView({ behavior: 'smooth' });
         }
       }
-      handleLinkClick();
     };
     
     return (
