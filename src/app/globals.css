@@ -26,15 +26,15 @@
     --muted: 0 0% 15%;
     --muted-foreground: 0 0% 60%;
 
-    --accent: 45 86% 51%; /* Gold */
-    --accent-foreground: 0 0% 8%;
+    --accent: 0 84% 60%; /* Red */
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 63% 31%;
     --destructive-foreground: 0 0% 98%;
 
     --border: 0 0% 20%;
     --input: 0 0% 20%;
-    --ring: 45 86% 51%; /* Gold */
+    --ring: 0 84% 60%; /* Red */
 
     --radius: 0.5rem;
     --chart-1: 12 76% 61%;
