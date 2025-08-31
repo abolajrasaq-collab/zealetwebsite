@@ -11,7 +11,7 @@ export default function BlogSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight font-headline">The Journal</h2>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-foreground/80">
+          <p className="mt-4 max-w-2xl mx-auto text-lg text-foreground/80 font-serif">
             Bold takes on creativity, tech, African cinema, design, and storytelling.
           </p>
         </div>

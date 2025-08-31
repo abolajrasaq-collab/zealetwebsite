@@ -59,7 +59,7 @@ export default function TestimonialsSection() {
                   </Avatar>
                   <div>
                     <h3 className="text-lg font-semibold text-foreground font-headline">{testimonial.name}</h3>
-                    <p className="text-sm text-foreground/70">{testimonial.title}</p>
+                    <p className="text-sm text-foreground/70 font-serif">{testimonial.title}</p>
                   </div>
               </div>
             </Card>

@@ -73,7 +73,7 @@ export default function HeroSection() {
             <br />
             Storyteller. Designer. Director. Dream Builder.
           </h1>
-          <p className="mt-4 max-w-3xl mx-auto text-lg md:text-xl text-foreground/80">
+          <p className="mt-4 max-w-3xl mx-auto text-lg md:text-xl text-foreground/80 font-serif">
             From films to pixels, stories to screens—I’m Abolaji Rasaq, a creative director and studio head blending art, design, and technology to shape culture.
           </p>
         </div>
