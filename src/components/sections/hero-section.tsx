@@ -64,7 +64,7 @@ export default function HeroSection() {
             </CarouselContent>
         </Carousel>
 
-        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/80 to-transparent"></div>
       </div>
       <div className="relative z-10 flex flex-col items-center gap-6 px-4">
         <div className="animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
