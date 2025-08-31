@@ -159,17 +159,11 @@ export default function PortfolioSection() {
           </div>
 
           {selectedProject && (
-            <DialogContent className="sm:max-w-4xl lg:max-w-6xl">
-                <div className="grid md:grid-cols-2 gap-x-8 gap-y-4">
-                     <div className="col-span-full">
-                        <DialogHeader>
-                            <DialogTitle className="text-3xl">{selectedProject.title}</DialogTitle>
-                        </DialogHeader>
-                     </div>
-
-                    <div className="flex flex-col gap-4">
+            <DialogContent className="w-screen h-screen max-w-full max-h-full p-0">
+                <div className="grid md:grid-cols-3 h-full">
+                    <div className="md:col-span-2 bg-black flex items-center justify-center">
                       {selectedProject.type === 'video' && (selectedProject.vimeoUrl || selectedProject.youtubeUrl) ? (
-                        <div className="relative aspect-video rounded-lg overflow-hidden border">
+                        <div className="relative aspect-video w-full max-w-4xl mx-auto rounded-lg overflow-hidden border">
                            <iframe
                                 src={`https://player.vimeo.com/video/${selectedProject.vimeoUrl?.split('/').pop()}`}
                                 width="100%"
@@ -181,18 +175,17 @@ export default function PortfolioSection() {
                             ></iframe>
                         </div>
                       ) : (
-                        <Carousel className="w-full">
+                        <Carousel className="w-full max-w-4xl mx-auto">
                           <CarouselContent>
                             {selectedProject.media.map((media, index) => (
                               <CarouselItem key={index}>
-                                  <div className="relative aspect-video rounded-lg overflow-hidden">
+                                  <div className="relative aspect-video">
                                     <Image
                                       src={media.url}
                                       alt={`${selectedProject.title} - Image ${index + 1}`}
-                                      width={1200}
-                                      height={800}
+                                      fill
                                       data-ai-hint={media.aiHint}
-                                      className="object-cover w-full h-auto"
+                                      className="object-contain"
                                     />
                                   </div>
                               </CarouselItem>
@@ -200,15 +193,19 @@ export default function PortfolioSection() {
                           </CarouselContent>
                           {selectedProject.media.length > 1 && (
                               <>
-                                  <CarouselPrevious className="left-2" />
-                                  <CarouselNext className="right-2" />
+                                  <CarouselPrevious className="-left-12" />
+                                  <CarouselNext className="-right-12" />
                               </>
                           )}
                         </Carousel>
                       )}
                     </div>
-                    <div className="space-y-6 max-h-[70vh] overflow-y-auto pr-4">
-                        <div className="grid grid-cols-2 gap-4 text-sm">
+                    <div className="col-span-1 h-full overflow-y-auto p-8 md:p-12 space-y-8">
+                        <DialogHeader>
+                            <DialogTitle className="text-3xl md:text-4xl font-bold">{selectedProject.title}</DialogTitle>
+                        </DialogHeader>
+
+                        <div className="grid grid-cols-2 gap-x-4 gap-y-6 text-sm">
                             <div>
                                 <h4 className="font-semibold text-foreground/70 mb-1">Client</h4>
                                 <p className="font-medium text-foreground">{selectedProject.client}</p>
@@ -223,17 +220,17 @@ export default function PortfolioSection() {
                             </div>
                         </div>
 
-                        <div className="prose prose-sm sm:prose-base dark:prose-invert">
+                        <div className="prose prose-base dark:prose-invert">
                             <h4 className="font-semibold text-foreground mb-2">About The Project</h4>
                             <p className="text-foreground/80">{selectedProject.story}</p>
                         </div>
                         
                         {(selectedProject.vimeoUrl || selectedProject.youtubeUrl) && (
                           <div className="pt-4">
-                              <h4 className="font-semibold text-foreground mb-2">Watch Now</h4>
-                              <div className="flex flex-col gap-2">
+                              <h4 className="font-semibold text-foreground mb-4">Watch Now</h4>
+                              <div className="flex flex-col gap-3">
                                   {selectedProject.vimeoUrl && (
-                                    <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground">
+                                    <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
                                         <a href={selectedProject.vimeoUrl} target="_blank" rel="noopener noreferrer">
                                             <Clapperboard className="mr-2 h-4 w-4" />
                                             Watch on Vimeo
@@ -241,7 +238,7 @@ export default function PortfolioSection() {
                                     </Button>
                                   )}
                                   {selectedProject.youtubeUrl && (
-                                    <Button asChild variant="outline">
+                                    <Button asChild size="lg" variant="outline">
                                       <a href={selectedProject.youtubeUrl} target="_blank" rel="noopener noreferrer">
                                           <Clapperboard className="mr-2 h-4 w-4" />
                                           Watch on YouTube
