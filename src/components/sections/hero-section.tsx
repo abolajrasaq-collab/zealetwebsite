@@ -7,9 +7,9 @@ export default function HeroSection() {
     <section id="home" className="relative h-screen flex items-center justify-center text-center text-white">
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://picsum.photos/1920/1080"
-          alt="Photographer's lens"
-          data-ai-hint="camera lens"
+          src="https://i.imgur.com/orThoms.jpg"
+          alt="Photographer holding a camera"
+          data-ai-hint="photographer camera"
           fill
           className="object-cover"
           priority
