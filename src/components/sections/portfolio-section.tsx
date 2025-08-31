@@ -16,7 +16,8 @@ type Project = {
   description: string;
   longDescription: string;
   media: { url: string, aiHint: string }[];
-  videoUrl?: string;
+  vimeoUrl?: string;
+  youtubeUrl?: string;
 };
 
 const projects: Project[] = [
@@ -55,12 +56,14 @@ const projects: Project[] = [
   {
     title: 'Echoes of Yesterday',
     category: 'Music Video',
-    type: 'image',
+    type: 'video',
     description: 'A historical drama about love and loss during wartime.',
     longDescription: 'This screenplay tells the poignant story of two star-crossed lovers separated by war. It\'s a tale of resilience, hope, and the enduring power of memory against the backdrop of historical turmoil.',
     media: [
         { url: 'https://picsum.photos/1200/800?random=4', aiHint: 'wartime letter' },
     ],
+    vimeoUrl: 'https://vimeo.com/902839943',
+    youtubeUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
   },
     {
     title: 'Urban Canvas',
@@ -71,7 +74,7 @@ const projects: Project[] = [
     media: [
         { url: 'https://picsum.photos/1200/800?random=5', aiHint: 'street art graffiti' },
     ],
-    videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4',
+    vimeoUrl: 'https://vimeo.com/902839943',
   },
   {
     title: 'Portraits of Resilience',
@@ -145,62 +148,62 @@ export default function PortfolioSection() {
             <DialogContent className="sm:max-w-4xl lg:max-w-6xl">
               <DialogHeader>
                 <DialogTitle className="text-3xl">{selectedProject.title}</DialogTitle>
-                 <div className="mt-2 mb-4">
+                <div className="mt-2 mb-4">
                   <Badge variant="default" className="bg-accent text-accent-foreground">{selectedProject.category}</Badge>
                 </div>
               </DialogHeader>
               <div className="grid md:grid-cols-2 gap-8 items-start">
                 <div>
-                 {selectedProject.type === 'video' ? (
-                    <div className="relative aspect-video rounded-lg overflow-hidden">
-                      <video src={selectedProject.videoUrl} controls className="w-full h-full" />
-                    </div>
-                  ) : (
-                    <Carousel className="w-full">
-                      <CarouselContent>
-                        {selectedProject.media.map((media, index) => (
-                          <CarouselItem key={index}>
-                              <div className="relative aspect-video rounded-lg overflow-hidden">
-                                <Image
-                                  src={media.url}
-                                  alt={`${selectedProject.title} - Image ${index + 1}`}
-                                  width={1200}
-                                  height={800}
-                                  data-ai-hint={media.aiHint}
-                                  className="object-cover w-full h-auto"
-                                />
-                              </div>
-                          </CarouselItem>
-                        ))}
-                      </CarouselContent>
-                      {selectedProject.media.length > 1 && (
-                          <>
-                              <CarouselPrevious className="left-2" />
-                              <CarouselNext className="right-2" />
-                          </>
-                      )}
-                    </Carousel>
-                  )}
+                  <Carousel className="w-full">
+                    <CarouselContent>
+                      {selectedProject.media.map((media, index) => (
+                        <CarouselItem key={index}>
+                            <div className="relative aspect-video rounded-lg overflow-hidden">
+                              <Image
+                                src={media.url}
+                                alt={`${selectedProject.title} - Image ${index + 1}`}
+                                width={1200}
+                                height={800}
+                                data-ai-hint={media.aiHint}
+                                className="object-cover w-full h-auto"
+                              />
+                            </div>
+                        </CarouselItem>
+                      ))}
+                    </CarouselContent>
+                    {selectedProject.media.length > 1 && (
+                        <>
+                            <CarouselPrevious className="left-2" />
+                            <CarouselNext className="right-2" />
+                        </>
+                    )}
+                  </Carousel>
                 </div>
                 <div className="prose prose-sm sm:prose-base dark:prose-invert max-h-[60vh] overflow-y-auto">
                     <p className="text-lg text-foreground/80">{selectedProject.longDescription}</p>
-                    <div className="mt-6">
-                        <h4 className="font-semibold text-foreground mb-2">Watch Now:</h4>
-                         <div className="flex flex-col gap-2">
-                            <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground">
-                                <a href="#" target="_blank">
-                                    <Clapperboard className="mr-2 h-4 w-4" />
-                                    Watch on Vimeo
-                                </a>
-                            </Button>
-                             <Button asChild variant="outline">
-                                <a href="#" target="_blank">
-                                    <Clapperboard className="mr-2 h-4 w-4" />
-                                    Watch on YouTube
-                                </a>
-                            </Button>
-                        </div>
-                    </div>
+                    {(selectedProject.vimeoUrl || selectedProject.youtubeUrl) && (
+                      <div className="mt-6">
+                          <h4 className="font-semibold text-foreground mb-2">Watch Now:</h4>
+                          <div className="flex flex-col gap-2">
+                              {selectedProject.vimeoUrl && (
+                                <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground">
+                                    <a href={selectedProject.vimeoUrl} target="_blank" rel="noopener noreferrer">
+                                        <Clapperboard className="mr-2 h-4 w-4" />
+                                        Watch on Vimeo
+                                    </a>
+                                </Button>
+                              )}
+                              {selectedProject.youtubeUrl && (
+                                <Button asChild variant="outline">
+                                  <a href={selectedProject.youtubeUrl} target="_blank" rel="noopener noreferrer">
+                                      <Clapperboard className="mr-2 h-4 w-4" />
+                                      Watch on YouTube
+                                  </a>
+                                </Button>
+                              )}
+                          </div>
+                      </div>
+                    )}
                 </div>
               </div>
             </DialogContent>
