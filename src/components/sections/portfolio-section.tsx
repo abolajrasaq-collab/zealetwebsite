@@ -104,9 +104,9 @@ export default function PortfolioSection() {
     <section id="portfolio" className="py-20 md:py-32 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight font-headline">Showcase</h2>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-foreground/80">
-            A selection of my work across film, design, 3D, and photography.
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight font-headline">Selected Works</h2>
+          <p className="mt-4 max-w-2xl mx-auto text-lg text-foreground/80 font-serif">
+            I’ve worked across formats, industries, and continents. Each project is a chance to tell a story in a way only I can.
           </p>
         </div>
         <Dialog>
@@ -215,7 +215,7 @@ export default function PortfolioSection() {
                               )}
                               {selectedProject.youtubeUrl && (
                                 <Button asChild variant="outline">
-                                  <a href={selected.youtubeUrl} target="_blank" rel="noopener noreferrer">
+                                  <a href={selectedProject.youtubeUrl} target="_blank" rel="noopener noreferrer">
                                       <Clapperboard className="mr-2 h-4 w-4" />
                                       Watch on YouTube
                                   </a>

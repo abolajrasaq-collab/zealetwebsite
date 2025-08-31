@@ -73,10 +73,16 @@ export default function HeroSection() {
             <br />
             Storyteller. Designer. Director. Dream Builder.
           </h1>
+          <p className="mt-4 max-w-3xl mx-auto text-lg md:text-xl text-foreground/80">
+            I don’t just create visuals, I build worlds. From film to design, 3D to motion, pixels to stories—I make imagination tangible.
+          </p>
         </div>
-        <div className="animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+        <div className="animate-fade-in-up flex flex-col sm:flex-row gap-4" style={{ animationDelay: '0.6s' }}>
           <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-            <Link href="#portfolio">Explore My Work</Link>
+            <Link href="#portfolio">See My Work</Link>
+          </Button>
+           <Button asChild size="lg" variant="outline" className="bg-transparent hover:bg-accent hover:text-accent-foreground border-white text-white">
+            <Link href="#contact">Let’s Collaborate</Link>
           </Button>
         </div>
       </div>

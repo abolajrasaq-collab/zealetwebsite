@@ -40,8 +40,8 @@ export default function TestimonialsSection() {
     <section id="testimonials" className="py-20 md:py-32 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight font-headline">Clients & Collaborators</h2>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-foreground/80">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight font-headline">What People Say</h2>
+          <p className="mt-4 max-w-2xl mx-auto text-lg text-foreground/80 font-serif">
             I've had the pleasure of working with amazing brands, studios, and individuals.
           </p>
         </div>

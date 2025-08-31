@@ -16,7 +16,7 @@ function SubmitButton() {
 
   return (
     <Button type="submit" disabled={pending} className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
-      {pending ? 'Sending...' : 'Let\'s build something unforgettable'}
+      {pending ? 'Sending...' : 'Work With Me'}
     </Button>
   );
 }
@@ -31,9 +31,9 @@ export default function ContactSection() {
     <section id="contact" className="py-20 md:py-32 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight font-headline">Get In Touch</h2>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-foreground/80">
-            Have a project in mind or just want to say hello? I'd love to hear from you.
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight font-headline">Let’s Build Something That Lasts.</h2>
+          <p className="mt-4 max-w-2xl mx-auto text-lg text-foreground/80 font-serif">
+            Whether it’s film, design, or the next big idea—you bring the vision, I’ll bring the firepower.
           </p>
         </div>
         <div className="grid lg:grid-cols-2 gap-12">
@@ -60,7 +60,7 @@ export default function ContactSection() {
           <div className="flex flex-col justify-center items-center lg:items-start space-y-6 text-lg">
               <a href="mailto:abolaji@example.com" className="flex items-center gap-4 group">
                 <Mail className="w-6 h-6 text-accent" />
-                <span className="group-hover:text-accent transition-colors">abolaji@example.com</span>
+                <span className="group-hover:text-accent transition-colors">Email Me Directly</span>
               </a>
               <a href="tel:+1234567890" className="flex items-center gap-4 group">
                 <Phone className="w-6 h-6 text-accent" />

@@ -16,11 +16,7 @@ export default function Footer() {
     <footer className="py-12 bg-card border-t border-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-foreground/70">
         <div className="flex flex-col items-center gap-4">
-           <Camera className="w-8 h-8 text-accent" />
-           <p className="text-2xl font-semibold text-foreground">Abolaji Rasaq</p>
-           <p className="max-w-md font-headline">
-            Let’s build something unforgettable.
-           </p>
+           <p className="text-lg font-semibold text-foreground">Abolaji Rasaq — Creative Generalist, Director, Designer.</p>
         </div>
 
         <nav className="my-8 flex flex-wrap justify-center gap-x-6 gap-y-2">
