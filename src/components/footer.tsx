@@ -11,6 +11,7 @@ const navLinks = [
   { href: '/#filmography', label: 'Filmography' },
   { href: '/design', label: 'Design' },
   { href: '/drone', label: 'Drone' },
+  { href: '/shop', label: 'Shop' },
   { href: '/#testimonials', label: 'Collaborators' },
   { href: '/blog', label: 'Journal' },
   { href: '/#contact', label: 'Contact' },
