@@ -12,6 +12,7 @@ import { Eye, Clapperboard, Video, Image as ImageIcon } from 'lucide-react';
 
 type Project = {
   title: string;
+  client: string;
   category: string;
   type: 'image' | 'video';
   description: string;
@@ -25,6 +26,7 @@ type Project = {
 const projects: Project[] = [
   {
     title: 'The Crimson Cipher',
+    client: 'Fictional Studio',
     category: 'Narrative Film',
     type: 'image',
     description: 'A thrilling mystery set in the heart of a futuristic city.',
@@ -35,23 +37,25 @@ const projects: Project[] = [
         { url: 'https://picsum.photos/1200/800?random=9', aiHint: 'futuristic detective' },
     ],
   },
-  {
-    title: 'Whispers of the Wild',
-    category: 'Documentary',
-     type: 'image',
-    description: 'A collection of fantasy tales about nature and magic.',
-    role: 'VFX Artist, Motion Designer',
-    story: '"Whispers of the Wild" was a passion project combining practical effects with digital magic. I designed and animated the subtle VFX that brought the enchanted forest to life, focusing on making the magical elements feel organic and seamlessly integrated with the natural scenery.',
+    {
+    title: 'Oshodi Transport Interchange',
+    client: 'Lagos State Government',
+    category: 'Architecture Photography',
+    type: 'image',
+    description: 'Area photograph of Oshodi Transport Interchange shot at night.',
+    role: 'Photographer',
+    story: 'Commissioned by the Lagos State Government, this project aimed to capture the monumental scale and vibrant energy of the newly built Oshodi Transport Interchange. My focus was on night photography to highlight the architectural lighting and the constant flow of a city that never sleeps. The challenge was finding unique perspectives amidst the controlled chaos.',
     media: [
-        { url: 'https://picsum.photos/1200/800?random=2', aiHint: 'enchanted forest' },
-        { url: 'https://picsum.photos/1200/800?random=11', aiHint: 'magical creature' },
+        { url: 'https://i.imgur.com/K732E2T.jpeg', aiHint: 'modern architecture night' },
+        { url: 'https://i.imgur.com/cV06T4g.jpeg', aiHint: 'bus terminal night' },
     ],
   },
   {
     title: 'Innovate & Inspire',
+    client: 'Global Tech Inc.',
     category: 'Commercial',
     type: 'image',
-    description: 'Crafting compelling copy for a leading tech brand.',
+    description: 'Crafting compelling visuals for a leading tech brand.',
     role: 'Brand Strategist, Motion Graphics Designer',
     story: 'This campaign for a major tech brand required a complete visual overhaul for their new product launch. I developed the brand strategy and created a suite of motion graphics for the commercials, focusing on clean, inspiring visuals to make complex tech features feel accessible and exciting.',
     media: [
@@ -60,6 +64,7 @@ const projects: Project[] = [
   },
   {
     title: 'Echoes of Yesterday',
+    client: 'Indie Artist',
     category: 'Music Video',
     type: 'video',
     description: 'A historical drama about love and loss during wartime.',
@@ -69,10 +74,10 @@ const projects: Project[] = [
         { url: 'https://i.imgur.com/9g3C8Y1.jpeg', aiHint: 'wartime letter' },
     ],
     vimeoUrl: 'https://vimeo.com/902839943',
-    youtubeUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
   },
     {
     title: 'Urban Canvas',
+    client: 'Arts Collective',
     category: 'Videography',
     type: 'video',
     description: 'A dynamic look at street art and the artists behind it.',
@@ -85,6 +90,7 @@ const projects: Project[] = [
   },
   {
     title: 'Portraits of Resilience',
+    client: 'Personal Project',
     category: 'Fine Art',
     type: 'image',
     description: 'A black and white photography series on the human spirit.',
@@ -154,79 +160,99 @@ export default function PortfolioSection() {
 
           {selectedProject && (
             <DialogContent className="sm:max-w-4xl lg:max-w-6xl">
-              <DialogHeader>
-                <DialogTitle className="text-3xl">{selectedProject.title}</DialogTitle>
-                <div className="mt-2">
-                  <Badge>{selectedProject.category}</Badge>
-                </div>
-              </DialogHeader>
-              <div className="grid md:grid-cols-2 gap-8 items-start mt-4">
-                <div>
-                  {selectedProject.type === 'video' && (selectedProject.vimeoUrl || selectedProject.youtubeUrl) ? (
-                    <div className="relative aspect-video rounded-lg overflow-hidden border">
-                       <Image
-                          src={selectedProject.media[0].url}
-                          alt={selectedProject.title}
-                          fill
-                          data-ai-hint={selectedProject.media[0].aiHint}
-                          className="object-cover"
-                        />
-                    </div>
-                  ) : (
-                    <Carousel className="w-full">
-                      <CarouselContent>
-                        {selectedProject.media.map((media, index) => (
-                          <CarouselItem key={index}>
-                              <div className="relative aspect-video rounded-lg overflow-hidden">
-                                <Image
-                                  src={media.url}
-                                  alt={`${selectedProject.title} - Image ${index + 1}`}
-                                  width={1200}
-                                  height={800}
-                                  data-ai-hint={media.aiHint}
-                                  className="object-cover w-full h-auto"
-                                />
-                              </div>
-                          </CarouselItem>
-                        ))}
-                      </CarouselContent>
-                      {selectedProject.media.length > 1 && (
-                          <>
-                              <CarouselPrevious className="left-2" />
-                              <CarouselNext className="right-2" />
-                          </>
+                <div className="grid md:grid-cols-2 gap-x-8 gap-y-4">
+                     <div className="col-span-full">
+                        <DialogHeader>
+                            <DialogTitle className="text-3xl">{selectedProject.title}</DialogTitle>
+                        </DialogHeader>
+                     </div>
+
+                    <div className="flex flex-col gap-4">
+                      {selectedProject.type === 'video' && (selectedProject.vimeoUrl || selectedProject.youtubeUrl) ? (
+                        <div className="relative aspect-video rounded-lg overflow-hidden border">
+                           <iframe
+                                src={`https://player.vimeo.com/video/${selectedProject.vimeoUrl?.split('/').pop()}`}
+                                width="100%"
+                                height="100%"
+                                frameBorder="0"
+                                allow="autoplay; fullscreen; picture-in-picture"
+                                allowFullScreen
+                                className="absolute top-0 left-0 w-full h-full"
+                            ></iframe>
+                        </div>
+                      ) : (
+                        <Carousel className="w-full">
+                          <CarouselContent>
+                            {selectedProject.media.map((media, index) => (
+                              <CarouselItem key={index}>
+                                  <div className="relative aspect-video rounded-lg overflow-hidden">
+                                    <Image
+                                      src={media.url}
+                                      alt={`${selectedProject.title} - Image ${index + 1}`}
+                                      width={1200}
+                                      height={800}
+                                      data-ai-hint={media.aiHint}
+                                      className="object-cover w-full h-auto"
+                                    />
+                                  </div>
+                              </CarouselItem>
+                            ))}
+                          </CarouselContent>
+                          {selectedProject.media.length > 1 && (
+                              <>
+                                  <CarouselPrevious className="left-2" />
+                                  <CarouselNext className="right-2" />
+                              </>
+                          )}
+                        </Carousel>
                       )}
-                    </Carousel>
-                  )}
-                </div>
-                <div className="prose prose-sm sm:prose-base dark:prose-invert max-h-[60vh] overflow-y-auto">
-                    <h4 className="font-semibold text-foreground mb-2">My Role: {selectedProject.role}</h4>
-                    <p className="text-lg text-foreground/80">{selectedProject.story}</p>
-                    {(selectedProject.vimeoUrl || selectedProject.youtubeUrl) && (
-                      <div className="mt-6">
-                          <h4 className="font-semibold text-foreground mb-2">Watch Now:</h4>
-                          <div className="flex flex-col gap-2">
-                              {selectedProject.vimeoUrl && (
-                                <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground">
-                                    <a href={selectedProject.vimeoUrl} target="_blank" rel="noopener noreferrer">
-                                        <Clapperboard className="mr-2 h-4 w-4" />
-                                        Watch on Vimeo
-                                    </a>
-                                </Button>
-                              )}
-                              {selectedProject.youtubeUrl && (
-                                <Button asChild variant="outline">
-                                  <a href={selectedProject.youtubeUrl} target="_blank" rel="noopener noreferrer">
-                                      <Clapperboard className="mr-2 h-4 w-4" />
-                                      Watch on YouTube
-                                  </a>
-                                </Button>
-                              )}
+                    </div>
+                    <div className="space-y-6 max-h-[70vh] overflow-y-auto pr-4">
+                        <div className="grid grid-cols-2 gap-4 text-sm">
+                            <div>
+                                <h4 className="font-semibold text-foreground/70 mb-1">Client</h4>
+                                <p className="font-medium text-foreground">{selectedProject.client}</p>
+                            </div>
+                            <div>
+                                <h4 className="font-semibold text-foreground/70 mb-1">Type</h4>
+                                <p className="font-medium text-foreground">{selectedProject.category}</p>
+                            </div>
+                            <div className="col-span-2">
+                                <h4 className="font-semibold text-foreground/70 mb-1">My Role</h4>
+                                <p className="font-medium text-foreground">{selectedProject.role}</p>
+                            </div>
+                        </div>
+
+                        <div className="prose prose-sm sm:prose-base dark:prose-invert">
+                            <h4 className="font-semibold text-foreground mb-2">About The Project</h4>
+                            <p className="text-foreground/80">{selectedProject.story}</p>
+                        </div>
+                        
+                        {(selectedProject.vimeoUrl || selectedProject.youtubeUrl) && (
+                          <div className="pt-4">
+                              <h4 className="font-semibold text-foreground mb-2">Watch Now</h4>
+                              <div className="flex flex-col gap-2">
+                                  {selectedProject.vimeoUrl && (
+                                    <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground">
+                                        <a href={selectedProject.vimeoUrl} target="_blank" rel="noopener noreferrer">
+                                            <Clapperboard className="mr-2 h-4 w-4" />
+                                            Watch on Vimeo
+                                        </a>
+                                    </Button>
+                                  )}
+                                  {selectedProject.youtubeUrl && (
+                                    <Button asChild variant="outline">
+                                      <a href={selectedProject.youtubeUrl} target="_blank" rel="noopener noreferrer">
+                                          <Clapperboard className="mr-2 h-4 w-4" />
+                                          Watch on YouTube
+                                      </a>
+                                    </Button>
+                                  )}
+                              </div>
                           </div>
-                      </div>
-                    )}
+                        )}
+                    </div>
                 </div>
-              </div>
             </DialogContent>
           )}
         </Dialog>
@@ -234,5 +260,3 @@ export default function PortfolioSection() {
     </section>
   );
 }
-
-    
