@@ -1,5 +1,7 @@
+"use client";
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Camera, Instagram, Twitter, Linkedin } from 'lucide-react';
 
 const navLinks = [
@@ -13,6 +15,20 @@ const navLinks = [
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const pathname = usePathname();
+  const isHomePage = pathname === '/';
+
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith('/#') && isHomePage) {
+      e.preventDefault();
+      const targetId = href.substring(2);
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
     <footer className="py-12 bg-card border-t border-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-foreground/70">
@@ -25,6 +41,7 @@ export default function Footer() {
               <Link
                 key={link.href}
                 href={link.href}
+                onClick={(e) => handleLinkClick(e, link.href)}
                 className="text-sm font-medium text-foreground/80 hover:text-accent transition-colors"
               >
                 {link.label}

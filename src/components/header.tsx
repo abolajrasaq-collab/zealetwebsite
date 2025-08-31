@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -19,6 +20,7 @@ const navLinks = [
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,12 +33,13 @@ export default function Header() {
   const handleLinkClick = () => {
     setMenuOpen(false);
   };
-
+  
   const NavLink = ({ href, label }: { href: string, label: string }) => {
     const isInternalHashLink = href.startsWith('/#');
-    
+    const isHomePage = pathname === '/';
+
     const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-      if (isInternalHashLink) {
+      if (isInternalHashLink && isHomePage) {
         e.preventDefault();
         const targetId = href.substring(2);
         const targetElement = document.getElementById(targetId);
@@ -47,34 +50,23 @@ export default function Header() {
       handleLinkClick();
     };
 
-    if (isInternalHashLink) {
-      return (
-        <a
+    return (
+        <Link
           href={href}
           onClick={handleClick}
           className="text-sm font-medium text-foreground/80 hover:text-accent transition-colors"
         >
           {label}
-        </a>
-      );
-    }
-
-    return (
-      <Link
-        href={href}
-        onClick={handleLinkClick}
-        className="text-sm font-medium text-foreground/80 hover:text-accent transition-colors"
-      >
-        {label}
-      </Link>
+        </Link>
     );
   };
   
-    const MobileNavLink = ({ href, label }: { href: string, label: string }) => {
+  const MobileNavLink = ({ href, label }: { href: string, label: string }) => {
     const isInternalHashLink = href.startsWith('/#');
-    
+    const isHomePage = pathname === '/';
+
     const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-      if (isInternalHashLink) {
+      if (isInternalHashLink && isHomePage) {
         e.preventDefault();
         const targetId = href.substring(2);
         const targetElement = document.getElementById(targetId);
@@ -84,29 +76,18 @@ export default function Header() {
       }
       handleLinkClick();
     };
-
-    if (isInternalHashLink) {
-      return (
-        <a
+    
+    return (
+        <Link
           href={href}
           onClick={handleClick}
           className="text-lg font-medium text-foreground/80 hover:text-accent transition-colors"
         >
           {label}
-        </a>
-      );
-    }
-
-    return (
-      <Link
-        href={href}
-        onClick={handleLinkClick}
-        className="text-lg font-medium text-foreground/80 hover:text-accent transition-colors"
-      >
-        {label}
-      </Link>
+        </Link>
     );
   };
+
 
   return (
     <header
