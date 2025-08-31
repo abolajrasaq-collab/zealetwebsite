@@ -1,9 +1,31 @@
+
+'use client';
+
+import { useFormState, useFormStatus } from 'react-dom';
+import { Mail, Phone, Instagram, Twitter, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Mail, Phone, Instagram, Twitter, Linkedin } from 'lucide-react';
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import { CircleCheck, AlertTriangle } from 'lucide-react';
+import { sendMessage } from '@/app/actions';
+
+function SubmitButton() {
+  const { pending } = useFormStatus();
+
+  return (
+    <Button type="submit" disabled={pending} className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
+      {pending ? 'Sending...' : 'Send Message'}
+    </Button>
+  );
+}
 
 export default function ContactSection() {
+    const [state, formAction] = useFormState(sendMessage, {
+        status: 'idle',
+        message: '',
+      });
+
   return (
     <section id="contact" className="py-20 md:py-32 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -14,13 +36,25 @@ export default function ContactSection() {
           </p>
         </div>
         <div className="grid lg:grid-cols-2 gap-12">
-          <form action="#" method="POST" className="space-y-6">
+          <form action={formAction} className="space-y-6">
             <Input type="text" name="name" placeholder="Your Name" required className="bg-card" />
             <Input type="email" name="email" placeholder="Your Email" required className="bg-card" />
             <Textarea name="message" placeholder="Your Message" rows={5} required className="bg-card" />
-            <Button type="submit" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
-              Send Message
-            </Button>
+            <SubmitButton />
+            {state.status === 'success' && (
+              <Alert variant="default" className="bg-green-500/10 border-green-500/50 text-green-700 dark:text-green-400">
+                <CircleCheck className="h-4 w-4" />
+                <AlertTitle>Success!</AlertTitle>
+                <AlertDescription>{state.message}</AlertDescription>
+              </Alert>
+            )}
+            {state.status === 'error' && (
+              <Alert variant="destructive">
+                <AlertTriangle className="h-4 w-4" />
+                <AlertTitle>Error!</AlertTitle>
+                <AlertDescription>{state.message}</AlertDescription>
+              </Alert>
+            )}
           </form>
           <div className="flex flex-col justify-center items-center lg:items-start">
             <div className="space-y-6 text-lg">
