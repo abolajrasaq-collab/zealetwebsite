@@ -9,7 +9,7 @@ export default function ShutterstockCta() {
     <section id="shutterstock-cta" className="relative py-20 md:py-32 bg-card text-foreground">
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://i.imgur.com/rtuZRaS.jpeg"
+          src="https://imgur.com/dv8kEIv.jpeg"
           alt="Lagos, Nigeria cityscape"
           data-ai-hint="cityscape lagos"
           fill
