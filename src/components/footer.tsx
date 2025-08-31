@@ -9,6 +9,7 @@ const navLinks = [
   { href: '/#capabilities', label: 'Capabilities' },
   { href: '/#portfolio', label: 'Showcase' },
   { href: '/#filmography', label: 'Filmography' },
+  { href: '/design', label: 'Design' },
   { href: '/drone', label: 'Drone' },
   { href: '/#testimonials', label: 'Collaborators' },
   { href: '/blog', label: 'Journal' },
