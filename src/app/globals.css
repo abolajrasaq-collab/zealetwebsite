@@ -26,7 +26,7 @@
     --muted: 0 0% 15%;
     --muted-foreground: 0 0% 60%;
 
-    --accent: 0 84% 60%; /* Red */
+    --accent: 0 100% 50%; /* Brilliant Red */
     --accent-foreground: 0 0% 98%;
 
     --destructive: 0 63% 31%;
@@ -34,7 +34,7 @@
 
     --border: 0 0% 20%;
     --input: 0 0% 20%;
-    --ring: 0 84% 60%; /* Red */
+    --ring: 0 100% 50%; /* Brilliant Red */
 
     --radius: 0.5rem;
     --chart-1: 12 76% 61%;
