@@ -9,7 +9,7 @@ import Autoplay from "embla-carousel-autoplay";
 
 const heroImages = [
     {
-        src: "https://picsum.photos/seed/hero1/1920/1080",
+        src: "https://i.imgur.com/orThoms.jpeg",
         alt: "Filmmaker with a camera",
         aiHint: "filmmaker camera"
     },
