@@ -7,7 +7,7 @@ export default function AboutSection() {
         <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="relative aspect-square md:aspect-[4/5] rounded-lg overflow-hidden shadow-2xl">
             <Image
-              src="https://picsum.photos/600/750"
+              src="https://i.imgur.com/tjyIr6J.jpg"
               alt="Abolaji"
               data-ai-hint="filmmaker portrait"
               fill
