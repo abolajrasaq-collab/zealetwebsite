@@ -65,6 +65,7 @@ export default function TestimonialsSection() {
           ))}
         </div>
         <div className="mt-20">
+            <h3 className="text-center text-lg font-semibold text-foreground/80 mb-8 font-headline">Trusted by Industry-Leading Brands & Visionary Partners</h3>
             <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8">
                 {clientLogos.map((client, index) => (
                      <Image
