@@ -10,22 +10,22 @@ import Autoplay from "embla-carousel-autoplay";
 
 const heroImages = [
     {
-        src: "https://i.imgur.com/orThoms.jpeg",
+        src: "/images/hero-1.jpeg",
         alt: "Filmmaker with a camera",
         aiHint: "filmmaker camera"
     },
     {
-        src: "https://picsum.photos/1920/1080?random=10",
+        src: "/images/hero-2.jpeg",
         alt: "Abstract design elements",
         aiHint: "abstract design"
     },
     {
-        src: "https://picsum.photos/1920/1080?random=11",
+        src: "/images/hero-3.jpeg",
         alt: "Futuristic 3D world",
         aiHint: "futuristic world"
     },
      {
-        src: "https://picsum.photos/1920/1080?random=12",
+        src: "/images/hero-4.jpeg",
         alt: "Person writing in a journal",
         aiHint: "storytelling journal"
     }

@@ -33,8 +33,8 @@ const projects: Project[] = [
     role: 'Director, DOP',
     story: 'For "The Crimson Cipher," my goal was to create a visually distinct cyberpunk world on a tight budget. I handled both the direction and cinematography, focusing on high-contrast lighting and a neon-noir aesthetic to build a tense, atmospheric mystery. The challenge was making our limited sets feel like a sprawling metropolis.',
     media: [
-        { url: 'https://picsum.photos/1200/800?random=1', aiHint: 'cyberpunk city' },
-        { url: 'https://picsum.photos/1200/800?random=9', aiHint: 'futuristic detective' },
+        { url: '/images/portfolio-crimson-1.jpeg', aiHint: 'cyberpunk city' },
+        { url: '/images/portfolio-crimson-2.jpeg', aiHint: 'futuristic detective' },
     ],
   },
     {
@@ -46,8 +46,8 @@ const projects: Project[] = [
     role: 'Photographer',
     story: 'Commissioned by the Lagos State Government, this project aimed to capture the monumental scale and vibrant energy of the newly built Oshodi Transport Interchange. My focus was on night photography to highlight the architectural lighting and the constant flow of a city that never sleeps. The challenge was finding unique perspectives amidst the controlled chaos.',
     media: [
-        { url: 'https://i.imgur.com/K732E2T.jpeg', aiHint: 'modern architecture night' },
-        { url: 'https://i.imgur.com/cV06T4g.jpeg', aiHint: 'bus terminal night' },
+        { url: '/images/portfolio-oshodi-1.jpeg', aiHint: 'modern architecture night' },
+        { url: '/images/portfolio-oshodi-2.jpeg', aiHint: 'bus terminal night' },
     ],
   },
   {
@@ -59,7 +59,7 @@ const projects: Project[] = [
     role: 'Brand Strategist, Motion Graphics Designer',
     story: 'This campaign for a major tech brand required a complete visual overhaul for their new product launch. I developed the brand strategy and created a suite of motion graphics for the commercials, focusing on clean, inspiring visuals to make complex tech features feel accessible and exciting.',
     media: [
-        { url: 'https://picsum.photos/1200/800?random=3', aiHint: 'tech product' },
+        { url: '/images/portfolio-innovate-1.jpeg', aiHint: 'tech product' },
     ],
   },
   {
@@ -71,7 +71,7 @@ const projects: Project[] = [
     role: 'Director, Editor',
     story: 'For this music video, the artist wanted a cinematic, narrative-driven experience. I directed the video, focusing on telling a poignant story of two lovers separated by war. As the editor, I cut the piece to synchronize emotionally with the music\'s rhythm and crescendo, weaving the past and present together.',
     media: [
-        { url: 'https://i.imgur.com/9g3C8Y1.jpeg', aiHint: 'wartime letter' },
+        { url: '/images/portfolio-echoes-1.jpeg', aiHint: 'wartime letter' },
     ],
     vimeoUrl: 'https://vimeo.com/902839943',
   },
@@ -84,7 +84,7 @@ const projects: Project[] = [
     role: 'Director, Camera Operator',
     story: 'This short documentary was about capturing the kinetic energy of street art. I acted as a one-man-band, directing and operating the camera to get up close with the artists. The style is raw and energetic, using time-lapses and handheld shots to reflect the creativity happening on the city walls.',
     media: [
-        { url: 'https://i.imgur.com/cV06T4g.jpeg', aiHint: 'street art graffiti' },
+        { url: '/images/portfolio-urban-1.jpeg', aiHint: 'street art graffiti' },
     ],
     vimeoUrl: 'https://vimeo.com/902839943',
   },
@@ -97,9 +97,9 @@ const projects: Project[] = [
     role: 'Photographer',
     story: '"Portraits of Resilience" is a personal series. I wanted to capture the quiet dignity and strength of the human spirit through stark, intimate black and white portraits. Each photo session was a deep conversation, allowing me to capture an authentic and vulnerable moment with each subject.',
     media: [
-        { url: 'https://picsum.photos/1200/800?random=6', aiHint: 'portrait black and white' },
-        { url: 'https://picsum.photos/1200/800?random=7', aiHint: 'dramatic portrait' },
-        { url: 'https://picsum.photos/1200/800?random=8', aiHint: 'elderly person portrait' },
+        { url: '/images/portfolio-resilience-1.jpeg', aiHint: 'portrait black and white' },
+        { url: '/images/portfolio-resilience-2.jpeg', aiHint: 'dramatic portrait' },
+        { url: '/images/portfolio-resilience-3.jpeg', aiHint: 'elderly person portrait' },
     ],
   },
 ];

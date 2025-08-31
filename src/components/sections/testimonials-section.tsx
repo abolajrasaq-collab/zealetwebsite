@@ -8,32 +8,32 @@ const testimonials = [
     name: 'Jane D.',
     title: 'Film Director',
     quote: "Abolaji is a rare kind of creative—he sees the big picture while mastering the smallest details.",
-    logo: 'https://i.imgur.com/i1wQZxv.jpg',
+    logo: '/images/testimonial-1.jpg',
     aiHint: 'woman portrait',
   },
   {
     name: 'Mark T.',
     title: 'Creative Director, Innovate Co.',
     quote: "Working with Abolaji was a seamless experience. His professionalism and creative input elevated our project beyond what we imagined. The final photos are stunning.",
-    logo: 'https://i.imgur.com/p5A2S5v.jpg',
+    logo: '/images/testimonial-2.jpg',
     aiHint: 'man portrait',
   },
   {
     name: 'TechFront',
     title: 'Startup Client',
     quote: "The commercial Abolaji produced for us was a game-changer. His visual storytelling captured our brand perfectly and has had a huge impact on our marketing.",
-    logo: 'https://i.imgur.com/XWa4B3z.jpg',
+    logo: '/images/testimonial-3.jpg',
     aiHint: 'office team',
   },
 ];
 
 const clientLogos = [
-    { name: 'Client 1', logo: 'https://i.imgur.com/3Y2d2V1.png', aiHint: 'minimalist logo' },
-    { name: 'Client 2', logo: 'https://i.imgur.com/B9I0B7A.png', aiHint: 'abstract logo' },
-    { name: 'Client 3', logo: 'https://i.imgur.com/tHl6I0c.png', aiHint: 'geometric logo' },
-    { name: 'Client 4', logo: 'https://i.imgur.com/b52m1Az.png', aiHint: 'tech logo' },
-    { name: 'Client 5', logo: 'https://i.imgur.com/U83P1Zz.png', aiHint: 'creative logo' },
-    { name: 'Client 6', logo: 'https://i.imgur.com/fVzXw6s.png', aiHint: 'bold logo' },
+    { name: 'Client 1', logo: '/images/logo-client-1.png', aiHint: 'minimalist logo' },
+    { name: 'Client 2', logo: '/images/logo-client-2.png', aiHint: 'abstract logo' },
+    { name: 'Client 3', logo: '/images/logo-client-3.png', aiHint: 'geometric logo' },
+    { name: 'Client 4', logo: '/images/logo-client-4.png', aiHint: 'tech logo' },
+    { name: 'Client 5', logo: '/images/logo-client-5.png', aiHint: 'creative logo' },
+    { name: 'Client 6', logo: '/images/logo-client-6.png', aiHint: 'bold logo' },
 ];
 
 export default function TestimonialsSection() {
