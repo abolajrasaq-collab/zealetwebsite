@@ -20,16 +20,16 @@ export default function ShopPage() {
               A curated collection of goods for creatives, storytellers, and art lovers.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {products.map((product) => (
               <Card key={product.slug} className="overflow-hidden group bg-card flex flex-col">
                 <CardContent className="p-0">
-                  <div className="relative aspect-square">
+                  <div className="relative aspect-video">
                     <Image
                       src={product.image}
                       alt={product.name}
                       width={800}
-                      height={800}
+                      height={450}
                       data-ai-hint={product.aiHint}
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />

@@ -36,7 +36,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
             </Button>
           </div>
           <div className="grid md:grid-cols-2 gap-12 lg:gap-20">
-            <div className="relative aspect-square w-full rounded-lg overflow-hidden shadow-lg">
+            <div className="relative aspect-video w-full rounded-lg overflow-hidden shadow-lg">
               <Image
                 src={product.image}
                 alt={product.name}
