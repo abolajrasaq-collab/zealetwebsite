@@ -3,6 +3,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/com
 import { Video, Brush, Cuboid, Camera, Code, Monitor, Film, Clapperboard, Palette, ScreenShare } from 'lucide-react';
 
 const filmCapabilities = [
+  { title: 'Creative Direction' },
   { title: 'Film Direction' },
   { title: 'Director of Photography (DOP)' },
   { title: 'Cinematic Drone Pilot' },
