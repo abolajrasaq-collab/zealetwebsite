@@ -16,7 +16,7 @@ function SubmitButton() {
 
   return (
     <Button type="submit" disabled={pending} className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
-      {pending ? 'Sending...' : 'Send Message'}
+      {pending ? 'Sending...' : 'Let\'s build something unforgettable'}
     </Button>
   );
 }
@@ -31,7 +31,7 @@ export default function ContactSection() {
     <section id="contact" className="py-20 md:py-32 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Get In Touch</h2>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight font-headline">Get In Touch</h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-foreground/80">
             Have a project in mind or just want to say hello? I'd love to hear from you.
           </p>

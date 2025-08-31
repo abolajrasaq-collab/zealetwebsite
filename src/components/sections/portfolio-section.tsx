@@ -60,7 +60,7 @@ const projects: Project[] = [
     description: 'A historical drama about love and loss during wartime.',
     longDescription: 'This screenplay tells the poignant story of two star-crossed lovers separated by war. It\'s a tale of resilience, hope, and the enduring power of memory against the backdrop of historical turmoil.',
     media: [
-        { url: 'https://picsum.photos/1200/800?random=4', aiHint: 'wartime letter' },
+        { url: 'https://i.imgur.com/9g3C8Y1.jpeg', aiHint: 'wartime letter' },
     ],
     vimeoUrl: 'https://vimeo.com/902839943',
     youtubeUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
@@ -72,7 +72,7 @@ const projects: Project[] = [
     description: 'A dynamic look at street art and the artists behind it.',
     longDescription: 'This short documentary captures the vibrant and ephemeral world of street art. Through interviews with artists and time-lapse footage of their work, "Urban Canvas" explores the creative pulse of the city and the artists who bring its walls to life.',
     media: [
-        { url: 'https://picsum.photos/1200/800?random=5', aiHint: 'street art graffiti' },
+        { url: 'https://i.imgur.com/cV06T4g.jpeg', aiHint: 'street art graffiti' },
     ],
     vimeoUrl: 'https://vimeo.com/902839943',
   },
@@ -97,9 +97,9 @@ export default function PortfolioSection() {
     <section id="portfolio" className="py-20 md:py-32 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Portfolio</h2>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight font-headline">Showcase</h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-foreground/80">
-            A selection of my film and photography work.
+            A selection of my work across film, design, 3D, and photography.
           </p>
         </div>
         <Dialog>
@@ -124,8 +124,8 @@ export default function PortfolioSection() {
                 <div className="flex flex-col flex-grow p-6">
                     <div className="flex-grow">
                         <Badge variant="secondary" className="mb-2">{project.category}</Badge>
-                        <h3 className="text-xl font-semibold">{project.title}</h3>
-                        <p className="text-sm text-foreground/70 mt-1">{project.description}</p>
+                        <h3 className="text-xl font-semibold font-headline">{project.title}</h3>
+                        <p className="text-sm text-foreground/70 mt-1 font-serif">{project.description}</p>
                     </div>
                     <CardFooter className="p-0 pt-4 mt-auto">
                         <DialogTrigger asChild>
@@ -147,43 +147,55 @@ export default function PortfolioSection() {
           {selectedProject && (
             <DialogContent className="sm:max-w-4xl lg:max-w-6xl">
               <DialogHeader>
-                <DialogTitle className="text-3xl">{selectedProject.title}</DialogTitle>
-                <div className="mt-2 mb-4">
-                  <Badge variant="default" className="bg-accent text-accent-foreground">{selectedProject.category}</Badge>
+                <DialogTitle className="text-3xl font-headline">{selectedProject.title}</DialogTitle>
+                <div className="mt-2">
+                  <Badge>{selectedProject.category}</Badge>
                 </div>
               </DialogHeader>
-              <div className="grid md:grid-cols-2 gap-8 items-start">
+              <div className="grid md:grid-cols-2 gap-8 items-start mt-4">
                 <div>
-                  <Carousel className="w-full">
-                    <CarouselContent>
-                      {selectedProject.media.map((media, index) => (
-                        <CarouselItem key={index}>
-                            <div className="relative aspect-video rounded-lg overflow-hidden">
-                              <Image
-                                src={media.url}
-                                alt={`${selectedProject.title} - Image ${index + 1}`}
-                                width={1200}
-                                height={800}
-                                data-ai-hint={media.aiHint}
-                                className="object-cover w-full h-auto"
-                              />
-                            </div>
-                        </CarouselItem>
-                      ))}
-                    </CarouselContent>
-                    {selectedProject.media.length > 1 && (
-                        <>
-                            <CarouselPrevious className="left-2" />
-                            <CarouselNext className="right-2" />
-                        </>
-                    )}
-                  </Carousel>
+                  {selectedProject.type === 'video' && (selectedProject.vimeoUrl || selectedProject.youtubeUrl) ? (
+                    <div className="relative aspect-video rounded-lg overflow-hidden border">
+                       <Image
+                          src={selectedProject.media[0].url}
+                          alt={selectedProject.title}
+                          fill
+                          data-ai-hint={selectedProject.media[0].aiHint}
+                          className="object-cover"
+                        />
+                    </div>
+                  ) : (
+                    <Carousel className="w-full">
+                      <CarouselContent>
+                        {selectedProject.media.map((media, index) => (
+                          <CarouselItem key={index}>
+                              <div className="relative aspect-video rounded-lg overflow-hidden">
+                                <Image
+                                  src={media.url}
+                                  alt={`${selectedProject.title} - Image ${index + 1}`}
+                                  width={1200}
+                                  height={800}
+                                  data-ai-hint={media.aiHint}
+                                  className="object-cover w-full h-auto"
+                                />
+                              </div>
+                          </CarouselItem>
+                        ))}
+                      </CarouselContent>
+                      {selectedProject.media.length > 1 && (
+                          <>
+                              <CarouselPrevious className="left-2" />
+                              <CarouselNext className="right-2" />
+                          </>
+                      )}
+                    </Carousel>
+                  )}
                 </div>
-                <div className="prose prose-sm sm:prose-base dark:prose-invert max-h-[60vh] overflow-y-auto">
+                <div className="prose prose-sm sm:prose-base dark:prose-invert max-h-[60vh] overflow-y-auto font-serif">
                     <p className="text-lg text-foreground/80">{selectedProject.longDescription}</p>
                     {(selectedProject.vimeoUrl || selectedProject.youtubeUrl) && (
                       <div className="mt-6">
-                          <h4 className="font-semibold text-foreground mb-2">Watch Now:</h4>
+                          <h4 className="font-semibold text-foreground mb-2 font-headline">Watch Now:</h4>
                           <div className="flex flex-col gap-2">
                               {selectedProject.vimeoUrl && (
                                 <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground">

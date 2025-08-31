@@ -7,11 +7,11 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 
 const navLinks = [
-  { href: '#about', label: 'About' },
-  { href: '#services', label: 'Services' },
-  { href: '#portfolio', label: 'Portfolio' },
-  { href: '#testimonials', label: 'Testimonials' },
-  { href: '#blog', label: 'Blog' },
+  { href: '#about', label: 'Manifesto' },
+  { href: '#capabilities', label: 'Capabilities' },
+  { href: '#portfolio', label: 'Showcase' },
+  { href: '#testimonials', label: 'Collaborators' },
+  { href: '#journal', label: 'Journal' },
   { href: '#contact', label: 'Contact' },
 ];
 
@@ -40,7 +40,7 @@ export default function Header() {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <Link href="/" className="flex items-center gap-2 text-xl font-bold">
+          <Link href="/" className="flex items-center gap-2 text-xl font-bold font-headline">
             <Camera className="w-6 h-6 text-accent" />
             Abolaji
           </Link>

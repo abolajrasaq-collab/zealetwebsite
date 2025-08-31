@@ -14,19 +14,19 @@ export default function HeroSection() {
           className="object-cover"
           priority
         />
+        <div className="absolute inset-0 bg-black/50"></div>
       </div>
       <div className="relative z-10 flex flex-col items-center gap-6 px-4">
         <div className="animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight">ABOLAJI</h1>
-        </div>
-        <div className="animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-          <p className="max-w-2xl text-lg md:text-xl text-foreground/80">
-            Filmmaker, Photographer, and Visual Storyteller.
-          </p>
+          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight font-headline">
+            Abolaji Rasaq — Creative Generalist.
+            <br />
+            Storyteller. Designer. Director. Dream Builder.
+          </h1>
         </div>
         <div className="animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
           <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-            <Link href="#portfolio">View My Work</Link>
+            <Link href="#portfolio">Explore My Work</Link>
           </Button>
         </div>
       </div>

@@ -2,11 +2,11 @@ import Link from 'next/link';
 import { Camera, Instagram, Twitter, Linkedin } from 'lucide-react';
 
 const navLinks = [
-  { href: '#about', label: 'About' },
-  { href: '#services', label: 'Services' },
-  { href: '#portfolio', label: 'Portfolio' },
-  { href: '#testimonials', label: 'Testimonials' },
-  { href: '#blog', label: 'Blog' },
+  { href: '#about', label: 'Manifesto' },
+  { href: '#capabilities', label: 'Capabilities' },
+  { href: '#portfolio', label: 'Showcase' },
+  { href: '#testimonials', label: 'Collaborators' },
+  { href: '#journal', label: 'Journal' },
   { href: '#contact', label: 'Contact' },
 ];
 
@@ -17,9 +17,9 @@ export default function Footer() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-foreground/70">
         <div className="flex flex-col items-center gap-4">
            <Camera className="w-8 h-8 text-accent" />
-           <p className="text-2xl font-semibold text-foreground">Abolaji's Portfolio</p>
-           <p className="max-w-md">
-            Capturing moments that tell a story.
+           <p className="text-2xl font-semibold text-foreground">Abolaji Rasaq</p>
+           <p className="max-w-md font-headline">
+            Let’s build something unforgettable.
            </p>
         </div>
 
@@ -48,7 +48,7 @@ export default function Footer() {
         </div>
 
         <p className="text-sm">
-          &copy; {currentYear} Abolaji. All Rights Reserved.
+          &copy; {currentYear} Abolaji Rasaq. All Rights Reserved.
         </p>
       </div>
     </footer>
