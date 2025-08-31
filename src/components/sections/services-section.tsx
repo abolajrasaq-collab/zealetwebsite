@@ -1,5 +1,5 @@
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { Video, Brush, Cuboid, Camera } from 'lucide-react';
+import { Video, Brush, Cuboid, Camera, Code } from 'lucide-react';
 
 const capabilities = [
   {

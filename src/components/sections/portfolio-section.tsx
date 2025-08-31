@@ -14,7 +14,8 @@ type Project = {
   category: string;
   type: 'image' | 'video';
   description: string;
-  longDescription: string;
+  role: string;
+  story: string;
   media: { url: string, aiHint: string }[];
   vimeoUrl?: string;
   youtubeUrl?: string;
@@ -26,7 +27,8 @@ const projects: Project[] = [
     category: 'Narrative Film',
     type: 'image',
     description: 'A thrilling mystery set in the heart of a futuristic city.',
-    longDescription: 'In a rain-slicked metropolis of the future, a jaded detective must unravel a conspiracy that threatens to tear the city apart. "The Crimson Cipher" is a fast-paced cyberpunk thriller that explores themes of identity, memory, and what it means to be human in a world augmented by technology.',
+    role: 'Director, DOP',
+    story: 'For "The Crimson Cipher," my goal was to create a visually distinct cyberpunk world on a tight budget. I handled both the direction and cinematography, focusing on high-contrast lighting and a neon-noir aesthetic to build a tense, atmospheric mystery. The challenge was making our limited sets feel like a sprawling metropolis.',
     media: [
         { url: 'https://picsum.photos/1200/800?random=1', aiHint: 'cyberpunk city' },
         { url: 'https://picsum.photos/1200/800?random=9', aiHint: 'futuristic detective' },
@@ -37,7 +39,8 @@ const projects: Project[] = [
     category: 'Documentary',
      type: 'image',
     description: 'A collection of fantasy tales about nature and magic.',
-    longDescription: 'This anthology brings together a series of enchanting short stories, each exploring the mystical connection between humanity and the natural world. From haunted forests to sentient rivers, these tales are a tribute to the magic that lies just beyond the veil of our perception.',
+    role: 'VFX Artist, Motion Designer',
+    story: '"Whispers of the Wild" was a passion project combining practical effects with digital magic. I designed and animated the subtle VFX that brought the enchanted forest to life, focusing on making the magical elements feel organic and seamlessly integrated with the natural scenery.',
     media: [
         { url: 'https://picsum.photos/1200/800?random=2', aiHint: 'enchanted forest' },
         { url: 'https://picsum.photos/1200/800?random=11', aiHint: 'magical creature' },
@@ -48,7 +51,8 @@ const projects: Project[] = [
     category: 'Commercial',
     type: 'image',
     description: 'Crafting compelling copy for a leading tech brand.',
-    longDescription: 'A campaign for a major tech brand, focusing on clear, concise, and inspiring copy to launch their new line of products. The challenge was to communicate complex technical features in a way that was accessible and exciting for a broad audience.',
+    role: 'Brand Strategist, Motion Graphics Designer',
+    story: 'This campaign for a major tech brand required a complete visual overhaul for their new product launch. I developed the brand strategy and created a suite of motion graphics for the commercials, focusing on clean, inspiring visuals to make complex tech features feel accessible and exciting.',
     media: [
         { url: 'https://picsum.photos/1200/800?random=3', aiHint: 'tech product' },
     ],
@@ -58,7 +62,8 @@ const projects: Project[] = [
     category: 'Music Video',
     type: 'video',
     description: 'A historical drama about love and loss during wartime.',
-    longDescription: 'This screenplay tells the poignant story of two star-crossed lovers separated by war. It\'s a tale of resilience, hope, and the enduring power of memory against the backdrop of historical turmoil.',
+    role: 'Director, Editor',
+    story: 'For this music video, the artist wanted a cinematic, narrative-driven experience. I directed the video, focusing on telling a poignant story of two lovers separated by war. As the editor, I cut the piece to synchronize emotionally with the music\'s rhythm and crescendo, weaving the past and present together.',
     media: [
         { url: 'https://i.imgur.com/9g3C8Y1.jpeg', aiHint: 'wartime letter' },
     ],
@@ -70,7 +75,8 @@ const projects: Project[] = [
     category: 'Videography',
     type: 'video',
     description: 'A dynamic look at street art and the artists behind it.',
-    longDescription: 'This short documentary captures the vibrant and ephemeral world of street art. Through interviews with artists and time-lapse footage of their work, "Urban Canvas" explores the creative pulse of the city and the artists who bring its walls to life.',
+    role: 'Director, Camera Operator',
+    story: 'This short documentary was about capturing the kinetic energy of street art. I acted as a one-man-band, directing and operating the camera to get up close with the artists. The style is raw and energetic, using time-lapses and handheld shots to reflect the creativity happening on the city walls.',
     media: [
         { url: 'https://i.imgur.com/cV06T4g.jpeg', aiHint: 'street art graffiti' },
     ],
@@ -81,7 +87,8 @@ const projects: Project[] = [
     category: 'Fine Art',
     type: 'image',
     description: 'A black and white photography series on the human spirit.',
-    longDescription: 'A powerful and intimate series of black and white portraits, "Portraits of Resilience" captures the strength, vulnerability, and quiet dignity of its subjects. Each photograph tells a story, inviting the viewer to connect with the shared human experience.',
+    role: 'Photographer',
+    story: '"Portraits of Resilience" is a personal series. I wanted to capture the quiet dignity and strength of the human spirit through stark, intimate black and white portraits. Each photo session was a deep conversation, allowing me to capture an authentic and vulnerable moment with each subject.',
     media: [
         { url: 'https://picsum.photos/1200/800?random=6', aiHint: 'portrait black and white' },
         { url: 'https://picsum.photos/1200/800?random=7', aiHint: 'dramatic portrait' },
@@ -192,7 +199,8 @@ export default function PortfolioSection() {
                   )}
                 </div>
                 <div className="prose prose-sm sm:prose-base dark:prose-invert max-h-[60vh] overflow-y-auto font-serif">
-                    <p className="text-lg text-foreground/80">{selectedProject.longDescription}</p>
+                    <h4 className="font-semibold text-foreground mb-2 font-headline">My Role: {selectedProject.role}</h4>
+                    <p className="text-lg text-foreground/80">{selectedProject.story}</p>
                     {(selectedProject.vimeoUrl || selectedProject.youtubeUrl) && (
                       <div className="mt-6">
                           <h4 className="font-semibold text-foreground mb-2 font-headline">Watch Now:</h4>
@@ -207,7 +215,7 @@ export default function PortfolioSection() {
                               )}
                               {selectedProject.youtubeUrl && (
                                 <Button asChild variant="outline">
-                                  <a href={selectedProject.youtubeUrl} target="_blank" rel="noopener noreferrer">
+                                  <a href={selected.youtubeUrl} target="_blank" rel="noopener noreferrer">
                                       <Clapperboard className="mr-2 h-4 w-4" />
                                       Watch on YouTube
                                   </a>
