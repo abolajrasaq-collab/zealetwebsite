@@ -145,9 +145,9 @@ export default function PortfolioSection() {
             <DialogContent className="sm:max-w-4xl lg:max-w-6xl">
               <DialogHeader>
                 <DialogTitle className="text-3xl">{selectedProject.title}</DialogTitle>
-                <DialogDescription>
-                  <Badge variant="default" className="mt-2 mb-4 bg-accent text-accent-foreground">{selectedProject.category}</Badge>
-                </DialogDescription>
+                 <div className="mt-2 mb-4">
+                  <Badge variant="default" className="bg-accent text-accent-foreground">{selectedProject.category}</Badge>
+                </div>
               </DialogHeader>
               <div className="grid md:grid-cols-2 gap-8 items-start">
                 <div>
