@@ -1,19 +1,69 @@
+
+'use client';
+
+import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
+import Autoplay from "embla-carousel-autoplay";
+
+const heroImages = [
+    {
+        src: "https://i.imgur.com/orThoms.jpeg",
+        alt: "Filmmaker with a camera",
+        aiHint: "filmmaker camera"
+    },
+    {
+        src: "https://picsum.photos/1920/1080?random=10",
+        alt: "Abstract design elements",
+        aiHint: "abstract design"
+    },
+    {
+        src: "https://picsum.photos/1920/1080?random=11",
+        alt: "Futuristic 3D world",
+        aiHint: "futuristic world"
+    },
+     {
+        src: "https://picsum.photos/1920/1080?random=12",
+        alt: "Person writing in a journal",
+        aiHint: "storytelling journal"
+    }
+];
 
 export default function HeroSection() {
+    const plugin = React.useRef(
+        Autoplay({ delay: 3000, stopOnInteraction: false, stopOnMouseEnter: true })
+    );
+
   return (
     <section id="home" className="relative h-screen flex items-center justify-center text-center text-white">
       <div className="absolute inset-0 z-0">
-        <Image
-          src="https://i.imgur.com/orThoms.jpeg"
-          alt="Filmmaker with a camera"
-          data-ai-hint="filmmaker camera"
-          fill
-          className="object-cover"
-          priority
-        />
+        <Carousel
+            opts={{
+                loop: true,
+            }}
+            plugins={[plugin.current]}
+            className="w-full h-full"
+        >
+            <CarouselContent>
+                {heroImages.map((image, index) => (
+                <CarouselItem key={index}>
+                    <div className="w-full h-screen relative">
+                        <Image
+                            src={image.src}
+                            alt={image.alt}
+                            data-ai-hint={image.aiHint}
+                            fill
+                            className="object-cover"
+                            priority={index === 0}
+                        />
+                    </div>
+                </CarouselItem>
+                ))}
+            </CarouselContent>
+        </Carousel>
+
         <div className="absolute inset-0 bg-black/50"></div>
       </div>
       <div className="relative z-10 flex flex-col items-center gap-6 px-4">
