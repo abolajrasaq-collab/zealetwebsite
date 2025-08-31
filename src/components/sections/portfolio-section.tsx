@@ -216,7 +216,7 @@ export default function PortfolioSection() {
                               )}
                               {selectedProject.youtubeUrl && (
                                 <Button asChild variant="outline">
-                                  <a href={selected.youtubeUrl} target="_blank" rel="noopener noreferrer">
+                                  <a href={selectedProject.youtubeUrl} target="_blank" rel="noopener noreferrer">
                                       <Clapperboard className="mr-2 h-4 w-4" />
                                       Watch on YouTube
                                   </a>
@@ -234,3 +234,5 @@ export default function PortfolioSection() {
     </section>
   );
 }
+
+    
