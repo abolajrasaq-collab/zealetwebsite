@@ -7,9 +7,9 @@ export default function HeroSection() {
     <section id="home" className="relative h-screen flex items-center justify-center text-center text-white">
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://i.imgur.com/orThoms.jpg"
-          alt="Photographer holding a camera"
-          data-ai-hint="photographer camera"
+          src="https://picsum.photos/1920/1080?random=writer"
+          alt="Writer at a desk"
+          data-ai-hint="writer desk"
           fill
           className="object-cover"
           priority
@@ -18,16 +18,16 @@ export default function HeroSection() {
       </div>
       <div className="relative z-10 flex flex-col items-center gap-6 px-4">
         <div className="animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight">Abolaji's Lens</h1>
+          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight">Abolaji's Quill</h1>
         </div>
         <div className="animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
           <p className="max-w-2xl text-lg md:text-xl text-foreground/80">
-            Capturing life's fleeting moments with passion and precision.
+            Weaving words into worlds, one story at a time.
           </p>
         </div>
         <div className="animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
           <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-            <Link href="#portfolio">View My Work</Link>
+            <Link href="#portfolio">Explore My Work</Link>
           </Button>
         </div>
       </div>

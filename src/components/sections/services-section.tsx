@@ -1,26 +1,26 @@
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { Camera, Clapperboard, Briefcase, Star } from 'lucide-react';
+import { Book, Edit3, Newspaper, Mic } from 'lucide-react';
 
 const services = [
   {
-    icon: <Camera className="w-8 h-8 text-accent" />,
-    title: 'Portrait Photography',
-    description: 'Creating stunning portraits that capture your unique personality and style.',
+    icon: <Book className="w-8 h-8 text-accent" />,
+    title: 'Novel & Manuscript Writing',
+    description: 'Bringing your long-form fiction and non-fiction ideas to life with professional ghostwriting.',
   },
   {
-    icon: <Clapperboard className="w-8 h-8 text-accent" />,
-    title: 'Event Coverage',
-    description: 'Documenting your special events with a keen eye for detail and emotion.',
+    icon: <Edit3 className="w-8 h-8 text-accent" />,
+    title: 'Editing & Proofreading',
+    description: 'Polishing your manuscript to perfection, focusing on clarity, flow, and grammatical accuracy.',
   },
   {
-    icon: <Briefcase className="w-8 h-8 text-accent" />,
-    title: 'Commercial Projects',
-    description: 'High-quality imagery for your brand, products, and marketing campaigns.',
+    icon: <Newspaper className="w-8 h-8 text-accent" />,
+    title: 'Content & Copywriting',
+    description: 'Engaging content for blogs, websites, and marketing materials that captures your brand\'s voice.',
   },
   {
-    icon: <Star className="w-8 h-8 text-accent" />,
-    title: 'Creative Shoots',
-    description: 'Collaborating on unique and artistic projects to bring your vision to life.',
+    icon: <Mic className="w-8 h-8 text-accent" />,
+    title: 'Speech & Script Writing',
+    description: 'Crafting powerful speeches and scripts that resonate with your audience and deliver your message.',
   },
 ];
 
@@ -31,7 +31,7 @@ export default function ServicesSection() {
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">My Services</h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-foreground/80">
-            Offering a range of professional photography services tailored to your needs.
+            Offering a range of professional writing services tailored to your needs.
           </p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">

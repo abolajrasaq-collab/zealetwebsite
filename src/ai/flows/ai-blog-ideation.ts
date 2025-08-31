@@ -1,14 +1,13 @@
 'use server';
 /**
- * @fileOverview This file defines a Genkit flow for generating blog post ideas and outlines based on user-provided keywords or topics.
- *
- * - generateBlogIdeas - A function that triggers the blog idea generation flow.
- * - BlogIdeationInput - The input type for the generateBlogIdeas function.
- * - BlogIdeationOutput - The return type for the generateBlogIdeas function.
+ * @fileOverview This file is no longer used for blog ideation. It is kept for potential future AI features.
  */
 
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
+
+// The following schemas and flows are not currently used in the application
+// but are kept for reference or future use.
 
 const BlogIdeationInputSchema = z.object({
   topic: z.string().describe('The keyword or topic for generating blog post ideas.'),
