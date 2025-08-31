@@ -5,6 +5,7 @@ import { Video, Brush, Cuboid, Camera, Code, Monitor, Film, Clapperboard, Palett
 const filmCapabilities = [
   { title: 'Film Direction' },
   { title: 'Director of Photography (DOP)' },
+  { title: 'Cinematic Drone Pilot' },
   { title: 'Producing & Script Development' },
   { title: 'Documentary & Commercial Films' },
 ];
