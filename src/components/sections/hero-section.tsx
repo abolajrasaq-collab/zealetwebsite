@@ -1,3 +1,4 @@
+
 'use client';
 
 import React from 'react';
@@ -14,14 +15,14 @@ const heroImages = [
         aiHint: "filmmaker camera"
     },
     {
-        src: "https://picsum.photos/seed/hero2/1920/1080",
-        alt: "Abstract design elements",
-        aiHint: "abstract design"
+        src: "https://i.imgur.com/d8q3MAJ.jpeg",
+        alt: "Creative design process",
+        aiHint: "design process"
     },
     {
-        src: "https://picsum.photos/seed/hero3/1920/1080",
-        alt: "Futuristic 3D world",
-        aiHint: "futuristic world"
+        src: "https://i.imgur.com/Z6XMnlk.jpeg",
+        alt: "Man directing on set",
+        aiHint: "film set"
     },
      {
         src: "https://picsum.photos/seed/hero4/1920/1080",
