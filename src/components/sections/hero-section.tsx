@@ -37,7 +37,7 @@ export default function HeroSection() {
     );
 
   return (
-    <section id="home" className="relative h-screen flex items-center justify-center text-center text-white">
+    <section id="home" className="relative h-screen flex items-end justify-center text-center text-white pb-20 md:pb-32">
       <div className="absolute inset-0 z-0">
         <Carousel
             opts={{
