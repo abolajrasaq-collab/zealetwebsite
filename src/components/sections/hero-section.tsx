@@ -28,6 +28,11 @@ const heroImages = [
         src: "https://i.imgur.com/jS6T0Zu.jpeg",
         alt: "Person writing in a journal",
         aiHint: "storytelling journal"
+    },
+    {
+        src: "https://i.imgur.com/4sIbtJh.jpeg",
+        alt: "Abstract creative background",
+        aiHint: "creative abstract"
     }
 ];
 
