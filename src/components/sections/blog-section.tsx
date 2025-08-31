@@ -3,9 +3,11 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { blogPosts } from '@/lib/blog-data';
-
+import { ArrowRight } from 'lucide-react';
 
 export default function BlogSection() {
+  const recentPosts = blogPosts.slice(0, 3);
+
   return (
     <section id="journal" className="py-20 md:py-32 bg-card">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -16,7 +18,7 @@ export default function BlogSection() {
           </p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogPosts.map((post) => (
+          {recentPosts.map((post) => (
             <Card key={post.slug} className="overflow-hidden group bg-background flex flex-col">
               <CardHeader className="p-0">
                 <div className="relative aspect-video">
@@ -43,6 +45,14 @@ export default function BlogSection() {
               </CardContent>
             </Card>
           ))}
+        </div>
+         <div className="text-center mt-12">
+            <Button asChild size="lg" variant="outline">
+                <Link href="/blog">
+                    View All Articles
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                </Link>
+            </Button>
         </div>
       </div>
     </section>

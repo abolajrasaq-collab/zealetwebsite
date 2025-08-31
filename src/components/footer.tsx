@@ -3,12 +3,12 @@ import Link from 'next/link';
 import { Camera, Instagram, Twitter, Linkedin } from 'lucide-react';
 
 const navLinks = [
-  { href: '#about', label: 'Manifesto' },
-  { href: '#capabilities', label: 'Capabilities' },
-  { href: '#portfolio', label: 'Showcase' },
-  { href: '#testimonials', label: 'Collaborators' },
-  { href: '#journal', label: 'Journal' },
-  { href: '#contact', label: 'Contact' },
+  { href: '/#about', label: 'Manifesto' },
+  { href: '/#capabilities', label: 'Capabilities' },
+  { href: '/#portfolio', label: 'Showcase' },
+  { href: '/#testimonials', label: 'Collaborators' },
+  { href: '/blog', label: 'Journal' },
+  { href: '/#contact', label: 'Contact' },
 ];
 
 export default function Footer() {

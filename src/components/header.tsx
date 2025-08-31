@@ -8,12 +8,12 @@ import { cn } from '@/lib/utils';
 import Logo from '@/components/logo';
 
 const navLinks = [
-  { href: '#about', label: 'Manifesto' },
-  { href: '#capabilities', label: 'Capabilities' },
-  { href: '#portfolio', label: 'Showcase' },
-  { href: '#testimonials', label: 'Collaborators' },
-  { href: '#journal', label: 'Journal' },
-  { href: '#contact', label: 'Contact' },
+  { href: '/#about', label: 'Manifesto' },
+  { href: '/#capabilities', label: 'Capabilities' },
+  { href: '/#portfolio', label: 'Showcase' },
+  { href: '/#testimonials', label: 'Collaborators' },
+  { href: '/blog', label: 'Journal' },
+  { href: '/#contact', label: 'Contact' },
 ];
 
 export default function Header() {
@@ -32,6 +32,82 @@ export default function Header() {
     setMenuOpen(false);
   };
 
+  const NavLink = ({ href, label }: { href: string, label: string }) => {
+    const isInternalHashLink = href.startsWith('/#');
+    
+    const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+      if (isInternalHashLink) {
+        e.preventDefault();
+        const targetId = href.substring(2);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+      handleLinkClick();
+    };
+
+    if (isInternalHashLink) {
+      return (
+        <a
+          href={href}
+          onClick={handleClick}
+          className="text-sm font-medium text-foreground/80 hover:text-accent transition-colors"
+        >
+          {label}
+        </a>
+      );
+    }
+
+    return (
+      <Link
+        href={href}
+        onClick={handleLinkClick}
+        className="text-sm font-medium text-foreground/80 hover:text-accent transition-colors"
+      >
+        {label}
+      </Link>
+    );
+  };
+  
+    const MobileNavLink = ({ href, label }: { href: string, label: string }) => {
+    const isInternalHashLink = href.startsWith('/#');
+    
+    const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+      if (isInternalHashLink) {
+        e.preventDefault();
+        const targetId = href.substring(2);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+      handleLinkClick();
+    };
+
+    if (isInternalHashLink) {
+      return (
+        <a
+          href={href}
+          onClick={handleClick}
+          className="text-lg font-medium text-foreground/80 hover:text-accent transition-colors"
+        >
+          {label}
+        </a>
+      );
+    }
+
+    return (
+      <Link
+        href={href}
+        onClick={handleLinkClick}
+        className="text-lg font-medium text-foreground/80 hover:text-accent transition-colors"
+      >
+        {label}
+      </Link>
+    );
+  };
+
   return (
     <header
       className={cn(
@@ -47,13 +123,7 @@ export default function Header() {
           
           <nav className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-sm font-medium text-foreground/80 hover:text-accent transition-colors"
-              >
-                {link.label}
-              </Link>
+              <NavLink key={link.href} href={link.href} label={link.label} />
             ))}
           </nav>
           
@@ -80,14 +150,7 @@ export default function Header() {
                   </div>
                   <nav className="flex flex-col gap-6 p-4 mt-4">
                     {navLinks.map((link) => (
-                      <Link
-                        key={link.href}
-                        href={link.href}
-                        onClick={handleLinkClick}
-                        className="text-lg font-medium text-foreground/80 hover:text-accent transition-colors"
-                      >
-                        {link.label}
-                      </Link>
+                      <MobileNavLink key={link.href} href={link.href} label={link.label} />
                     ))}
                   </nav>
                 </div>
