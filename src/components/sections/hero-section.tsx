@@ -25,7 +25,7 @@ const heroImages = [
         aiHint: "film set"
     },
      {
-        src: "https://picsum.photos/seed/hero4/1920/1080",
+        src: "https://i.imgur.com/jS6T0Zu.jpeg",
         alt: "Person writing in a journal",
         aiHint: "storytelling journal"
     }
