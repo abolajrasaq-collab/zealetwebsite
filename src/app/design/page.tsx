@@ -6,8 +6,9 @@ import Footer from '@/components/footer';
 import { designWork, DesignWork } from '@/lib/design-data';
 import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
-import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Eye, Video } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
 
 export default function DesignPage() {
   const [selectedMedia, setSelectedMedia] = useState<DesignWork | null>(null);
@@ -58,29 +59,40 @@ export default function DesignPage() {
             </div>
 
             {selectedMedia && (
-              <DialogContent className="w-screen h-screen max-w-full max-h-full p-0 flex items-center justify-center bg-black/80 backdrop-blur-sm">
-                <div className="relative w-full h-full max-w-6xl max-h-[90vh]">
-                  {selectedMedia.type === 'video' ? (
-                    <div className="relative aspect-video w-full h-full">
-                       <iframe
-                          src={selectedMedia.mediaUrl}
-                          width="100%"
-                          height="100%"
-                          frameBorder="0"
-                          allow="autoplay; fullscreen; picture-in-picture"
-                          allowFullScreen
-                          className="absolute top-0 left-0"
-                        ></iframe>
-                    </div>
-                  ) : (
-                    <Image
-                      src={selectedMedia.mediaUrl}
-                      alt={selectedMedia.title}
-                      fill
-                      data-ai-hint={selectedMedia.aiHint}
-                      className="object-contain"
-                    />
-                  )}
+               <DialogContent className="w-screen h-screen max-w-full max-h-full p-0 flex flex-col md:flex-row">
+                <div className="md:w-3/4 w-full h-1/2 md:h-full bg-black flex items-center justify-center">
+                  <div className="relative w-full h-full max-w-6xl">
+                    {selectedMedia.type === 'video' ? (
+                      <div className="relative aspect-video w-full h-full">
+                         <iframe
+                            src={selectedMedia.mediaUrl}
+                            width="100%"
+                            height="100%"
+                            frameBorder="0"
+                            allow="autoplay; fullscreen; picture-in-picture"
+                            allowFullScreen
+                            className="absolute top-0 left-0"
+                          ></iframe>
+                      </div>
+                    ) : (
+                      <Image
+                        src={selectedMedia.mediaUrl}
+                        alt={selectedMedia.title}
+                        fill
+                        data-ai-hint={selectedMedia.aiHint}
+                        className="object-contain"
+                      />
+                    )}
+                  </div>
+                </div>
+                <div className="md:w-1/4 w-full h-1/2 md:h-full overflow-y-auto p-8 space-y-4 bg-card">
+                  <DialogHeader>
+                    <DialogTitle className="text-2xl font-bold">{selectedMedia.title}</DialogTitle>
+                    <DialogDescription>
+                       <Badge variant="secondary">{selectedMedia.category}</Badge>
+                    </DialogDescription>
+                  </DialogHeader>
+                  <p className="text-foreground/80">{selectedMedia.description}</p>
                 </div>
               </DialogContent>
             )}
