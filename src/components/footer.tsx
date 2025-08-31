@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from 'next/link';
@@ -51,6 +52,9 @@ export default function Footer() {
         </nav>
         
         <div className="flex justify-center gap-6 mb-8">
+            <a href="https://www.shutterstock.com/g/abolajirasaq" target="_blank" rel="noopener noreferrer" aria-label="Shutterstock" className="text-foreground/80 hover:text-accent transition-colors">
+                <Camera className="w-6 h-6" />
+            </a>
             <a href="#" aria-label="Instagram" className="text-foreground/80 hover:text-accent transition-colors">
               <Instagram className="w-6 h-6" />
             </a>
