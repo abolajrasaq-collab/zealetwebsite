@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 
 export default function AboutSection() {
@@ -16,19 +17,17 @@ export default function AboutSection() {
           </div>
           <div className="flex flex-col gap-6">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight font-headline">
-              I’m Not One Thing. I’m Many.
+              Who I Am
             </h2>
             <div className="space-y-4 text-lg text-foreground/80 font-serif">
               <p>
-                I’m a creative generalist. A polymath in motion.
-                Some call me a filmmaker, others a designer, a DOP, a motion wizard, or a problem solver. Truth is—I’m all of it.
+                I’m a creative generalist—part filmmaker, part designer, part problem-solver. For over a decade, I’ve worked across film, motion design, 3D, photography, UI/UX, and web development.
               </p>
               <p>
-                For over a decade, I’ve been directing films, producing commercials, building brands, designing 3D worlds, and shaping digital experiences.
-                Every frame, every pixel, every project—I fuse art, technology, and strategy into work that cuts through noise and demands attention.
+                What ties it all together? <strong className="text-foreground">Storytelling.</strong> Whether I’m directing a film, designing a product, or building a brand, my goal is always the same—create experiences that move people.
               </p>
-              <p className="text-foreground font-semibold">
-                This isn’t just a career. It’s a calling.
+              <p className="font-semibold text-foreground">
+                Think of me as your personal creative studio: one mind, many crafts, endless possibilities.
               </p>
             </div>
           </div>

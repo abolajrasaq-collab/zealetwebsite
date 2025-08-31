@@ -16,7 +16,7 @@ function SubmitButton() {
 
   return (
     <Button type="submit" disabled={pending} className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
-      {pending ? 'Sending...' : 'Work With Me'}
+      {pending ? 'Sending...' : 'Get in Touch'}
     </Button>
   );
 }
@@ -31,9 +31,9 @@ export default function ContactSection() {
     <section id="contact" className="py-20 md:py-32 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight font-headline">Let’s Build Something That Lasts.</h2>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight font-headline">Let’s Make Something Extraordinary.</h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-foreground/80 font-serif">
-            Whether it’s film, design, or the next big idea—you bring the vision, I’ll bring the firepower.
+             Whether it’s film, design, or digital innovation—I’d love to collaborate with you. Tell me your idea, and let’s bring it to life.
           </p>
         </div>
         <div className="grid lg:grid-cols-2 gap-12">

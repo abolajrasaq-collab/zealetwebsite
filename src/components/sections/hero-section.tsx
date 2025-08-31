@@ -74,7 +74,7 @@ export default function HeroSection() {
             Storyteller. Designer. Director. Dream Builder.
           </h1>
           <p className="mt-4 max-w-3xl mx-auto text-lg md:text-xl text-foreground/80">
-            I don’t just create visuals, I build worlds. From film to design, 3D to motion, pixels to stories—I make imagination tangible.
+            From films to pixels, stories to screens—I’m Abolaji Rasaq, a creative director and studio head blending art, design, and technology to shape culture.
           </p>
         </div>
         <div className="animate-fade-in-up flex flex-col sm:flex-row gap-4" style={{ animationDelay: '0.6s' }}>

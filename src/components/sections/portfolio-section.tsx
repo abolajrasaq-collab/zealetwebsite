@@ -1,3 +1,4 @@
+
 'use client';
 
 import Image from 'next/image';
@@ -106,7 +107,7 @@ export default function PortfolioSection() {
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight font-headline">Selected Works</h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-foreground/80 font-serif">
-            I’ve worked across formats, industries, and continents. Each project is a chance to tell a story in a way only I can.
+            Here’s a glimpse of the stories I’ve told, the visuals I’ve crafted, and the experiences I’ve built. Each project is a reflection of my multidisciplinary approach to creativity.
           </p>
         </div>
         <Dialog>

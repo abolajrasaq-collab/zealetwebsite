@@ -1,3 +1,4 @@
+
 import { Card, CardContent } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import Image from 'next/image';
@@ -6,7 +7,7 @@ const testimonials = [
   {
     name: 'Jane D.',
     title: 'Film Director',
-    quote: "Abolaji's ability to capture the essence of our story on film was breathtaking. His direction and cinematography were top-notch. Highly recommended!",
+    quote: "Abolaji is a rare kind of creative—he sees the big picture while mastering the smallest details.",
     logo: 'https://i.imgur.com/i1wQZxv.jpg',
     aiHint: 'woman portrait',
   },
