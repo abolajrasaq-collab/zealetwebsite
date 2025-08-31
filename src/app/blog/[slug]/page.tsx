@@ -49,7 +49,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                 className="object-cover"
               />
             </div>
-            <div className="prose prose-lg dark:prose-invert max-w-none mx-auto">
+            <div className="prose prose-lg prose-invert max-w-none mx-auto">
                 {/* @ts-ignore */}
                <Markdown>{post.content}</Markdown>
             </div>
