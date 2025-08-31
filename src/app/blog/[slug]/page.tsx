@@ -29,7 +29,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           <div className="max-w-4xl mx-auto">
             <div className="mb-8">
               <Button asChild variant="outline">
-                <Link href="/#blog" className="flex items-center gap-2">
+                <Link href="/" className="flex items-center gap-2">
                   <ArrowLeft className="w-4 h-4" />
                   Back to Blog
                 </Link>

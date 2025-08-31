@@ -3,7 +3,7 @@
 
 import { useActionState } from 'react';
 import { useFormStatus } from 'react-dom';
-import { Mail, Phone, Instagram, Twitter, Linkedin } from 'lucide-react';
+import { Mail, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -57,8 +57,7 @@ export default function ContactSection() {
               </Alert>
             )}
           </form>
-          <div className="flex flex-col justify-center items-center lg:items-start">
-            <div className="space-y-6 text-lg">
+          <div className="flex flex-col justify-center items-center lg:items-start space-y-6 text-lg">
               <a href="mailto:abolaji@example.com" className="flex items-center gap-4 group">
                 <Mail className="w-6 h-6 text-accent" />
                 <span className="group-hover:text-accent transition-colors">abolaji@example.com</span>
@@ -67,21 +66,6 @@ export default function ContactSection() {
                 <Phone className="w-6 h-6 text-accent" />
                 <span className="group-hover:text-accent transition-colors">+1 (234) 567-890</span>
               </a>
-            </div>
-            <div className="mt-12">
-              <h3 className="text-xl font-semibold mb-4 text-center lg:text-left">Follow Me</h3>
-              <div className="flex items-center gap-6">
-                <a href="#" aria-label="Instagram" className="text-foreground/80 hover:text-accent transition-colors">
-                  <Instagram className="w-7 h-7" />
-                </a>
-                <a href="#" aria-label="Twitter" className="text-foreground/80 hover:text-accent transition-colors">
-                  <Twitter className="w-7 h-7" />
-                </a>
-                <a href="#" aria-label="LinkedIn" className="text-foreground/80 hover:text-accent transition-colors">
-                  <Linkedin className="w-7 h-7" />
-                </a>
-              </div>
-            </div>
           </div>
         </div>
       </div>
