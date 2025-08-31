@@ -1,3 +1,4 @@
+
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import { blogPosts } from '@/lib/blog-data';
@@ -7,10 +8,7 @@ import { Badge } from '@/components/ui/badge';
 import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-
-// @ts-ignore
 import Markdown from 'react-markdown';
-
 
 export function generateStaticParams() {
   return blogPosts.map((post) => ({
@@ -49,8 +47,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                 className="object-cover"
               />
             </div>
-            <div className="prose prose-lg dark:prose-invert max-w-none mx-auto">
-                {/* @ts-ignore */}
+            <div className="prose prose-lg prose-invert max-w-none mx-auto">
                <Markdown>{post.content}</Markdown>
             </div>
           </div>
