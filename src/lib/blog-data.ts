@@ -1,5 +1,35 @@
 export const blogPosts = [
   {
+    title: 'The Unseen Power of Sound Design',
+    description: 'How soundscapes, foley, and scores shape emotion and build immersive worlds.',
+    image: 'https://picsum.photos/800/600?random=4',
+    aiHint: 'audio sound waves',
+    slug: 'the-unseen-power-of-sound-design',
+    content: `
+## The Unseen Power of Sound Design: Crafting Worlds with Audio
+
+While cinema is a visual medium, what we *hear* is just as important as what we see. Sound design is the invisible art that shapes emotion, builds atmosphere, and creates truly immersive worlds. It's the difference between watching a movie and experiencing it.
+
+### The Three Pillars of Sound Design
+
+Sound in film is built on three fundamental pillars:
+
+*   **Dialogue:** The clearest and most direct form of storytelling. Ensuring dialogue is clean, crisp, and well-mixed is paramount.
+*   **Sound Effects (SFX) & Foley:** From the roar of a spaceship to the subtle rustle of leaves, SFX and foley ground the world in reality. Foley is the art of creating custom sound effects for human movements, like footsteps or cloth rustling, performed in sync with the picture.
+*   **Music/Score:** The score is the emotional heartbeat of a film. It can create tension, evoke sadness, or inspire triumph. The right musical cue can make a scene unforgettable.
+
+### Sound as a Narrative Tool
+
+Beyond simply recreating reality, sound can be a powerful storytelling device:
+
+*   **Establishing Tone:** The ambient sounds of a scene—a quiet forest, a bustling city, an eerie silence—immediately establish the mood.
+*   **Creating Subjectivity:** Sound can put us in a character's headspace. Muffled audio can signify disorientation, while a racing heartbeat can build unbearable tension.
+*   **Motif and Symbolism:** A recurring sound effect or musical theme can become a powerful symbol, adding layers of meaning every time it's heard.
+
+Next time you watch a film, close your eyes for a moment. You might be surprised at how much of the story is told not by what you see, but by what you hear. That is the power of sound design.
+`
+  },
+  {
     title: 'The Art of Cinematic Lighting',
     description: 'A deep dive into creating mood and atmosphere with light in your films.',
     image: 'https://picsum.photos/800/600?random=1',
