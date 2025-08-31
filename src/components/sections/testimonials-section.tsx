@@ -8,32 +8,32 @@ const testimonials = [
     name: 'Jane D.',
     title: 'Film Director',
     quote: "Abolaji is a rare kind of creative—he sees the big picture while mastering the smallest details.",
-    logo: '/images/avatar-1.jpeg',
+    logo: 'https://picsum.photos/seed/avatar1/100/100',
     aiHint: 'woman portrait',
   },
   {
     name: 'Mark T.',
     title: 'Creative Director, Innovate Co.',
     quote: "Working with Abolaji was a seamless experience. His professionalism and creative input elevated our project beyond what we imagined. The final photos are stunning.",
-    logo: '/images/avatar-2.jpeg',
+    logo: 'https://picsum.photos/seed/avatar2/100/100',
     aiHint: 'man portrait',
   },
   {
     name: 'TechFront',
     title: 'Startup Client',
     quote: "The commercial Abolaji produced for us was a game-changer. His visual storytelling captured our brand perfectly and has had a huge impact on our marketing.",
-    logo: '/images/avatar-3.jpeg',
+    logo: 'https://picsum.photos/seed/avatar3/100/100',
     aiHint: 'office team',
   },
 ];
 
 const clientLogos = [
-    { name: 'Client 1', logo: '/images/logo-client-1.png', aiHint: 'minimalist logo' },
-    { name: 'Client 2', logo: '/images/logo-client-2.png', aiHint: 'abstract logo' },
-    { name: 'Client 3', logo: '/images/logo-client-3.png', aiHint: 'geometric logo' },
-    { name: 'Client 4', logo: '/images/logo-client-4.png', aiHint: 'tech logo' },
-    { name: 'Client 5', logo: '/images/logo-client-5.png', aiHint: 'creative logo' },
-    { name: 'Client 6', logo: '/images/logo-client-6.png', aiHint: 'bold logo' },
+    { name: 'Client 1', logo: 'https://picsum.photos/seed/logo1/120/40', aiHint: 'minimalist logo' },
+    { name: 'Client 2', logo: 'https://picsum.photos/seed/logo2/120/40', aiHint: 'abstract logo' },
+    { name: 'Client 3', logo: 'https://picsum.photos/seed/logo3/120/40', aiHint: 'geometric logo' },
+    { name: 'Client 4', logo: 'https://picsum.photos/seed/logo4/120/40', aiHint: 'tech logo' },
+    { name: 'Client 5', logo: 'https://picsum.photos/seed/logo5/120/40', aiHint: 'creative logo' },
+    { name: 'Client 6', logo: 'https://picsum.photos/seed/logo6/120/40', aiHint: 'bold logo' },
 ];
 
 export default function TestimonialsSection() {
