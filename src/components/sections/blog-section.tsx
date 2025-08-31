@@ -5,25 +5,25 @@ import Link from 'next/link';
 
 const blogPosts = [
   {
-    title: 'The Art of World-Building',
-    description: 'A deep dive into creating believable and immersive fictional worlds that readers will want to get lost in.',
+    title: 'The Art of Cinematic Lighting',
+    description: 'A deep dive into creating mood and atmosphere with light in your films.',
     image: 'https://picsum.photos/800/600?random=1',
-    aiHint: 'fantasy map',
-    slug: 'the-art-of-world-building',
+    aiHint: 'film set lighting',
+    slug: 'the-art-of-cinematic-lighting',
   },
   {
-    title: 'Crafting Compelling Characters',
-    description: 'Learn the secrets to developing characters that feel real, relatable, and unforgettable.',
+    title: 'Storytelling Through Composition',
+    description: 'Learn how to frame your shots to guide the audience\'s eye and enhance your narrative.',
     image: 'https://picsum.photos/800/600?random=2',
-    aiHint: 'character sketches',
-    slug: 'crafting-compelling-characters',
+    aiHint: 'camera viewfinder',
+    slug: 'storytelling-through-composition',
   },
   {
-    title: 'Plotting Your Novel: A Beginner\'s Guide',
-    description: 'From the initial idea to a full-fledged outline, here are the steps to plotting a successful novel.',
+    title: 'Location Scouting for Indie Films',
+    description: 'Tips and tricks for finding the perfect locations that won\'t break your budget.',
     image: 'https://picsum.photos/800/600?random=3',
-    aiHint: 'storyboard corkboard',
-    slug: 'plotting-your-novel',
+    aiHint: 'dramatic landscape',
+    slug: 'location-scouting-for-indie-films',
   },
 ];
 
@@ -32,9 +32,9 @@ export default function BlogSection() {
     <section id="blog" className="py-20 md:py-32 bg-card">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">From My Desk</h2>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">From The Field</h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-foreground/80">
-            Musings on the craft of writing, storytelling, and creative inspiration.
+            Insights on filmmaking, photography, and the creative process.
           </p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

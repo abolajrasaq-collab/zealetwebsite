@@ -9,7 +9,7 @@ export default function AboutSection() {
             <Image
               src="https://picsum.photos/600/750"
               alt="Abolaji"
-              data-ai-hint="writer portrait"
+              data-ai-hint="filmmaker portrait"
               fill
               className="object-cover"
             />
@@ -20,10 +20,10 @@ export default function AboutSection() {
             </h2>
             <div className="space-y-4 text-lg text-foreground/80">
               <p>
-                My name is Abolaji, and I'm a storyteller who uses words to translate emotions and narratives into compelling tales. My journey into writing started not just as a hobby, but as an obsession with language, plot, and the stories hidden in plain sight.
+                My name is Abolaji, and I'm a storyteller who uses a camera to translate emotions and narratives into compelling visual tales. My journey into filmmaking and photography started not just as a hobby, but as an obsession with light, composition, and the stories hidden in plain sight.
               </p>
               <p>
-                My philosophy is simple: every story should make you feel something. I strive to create narratives that are not only entertaining but also resonate on a deeper level, capturing the authentic essence of the human experience. Whether it's a short story, a novel, or a piece of copy, I bring a unique blend of technical skill and creative vision to the page.
+                My philosophy is simple: every frame should make you feel something. I strive to create visuals that are not only aesthetically pleasing but also resonate on a deeper level, capturing the authentic essence of the moment. Whether it's a cinematic film, a documentary, or a single photograph, I bring a unique blend of technical skill and creative vision to every project.
               </p>
             </div>
           </div>

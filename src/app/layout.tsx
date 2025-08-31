@@ -3,8 +3,8 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: "Abolaji's Quill | Writer & Storyteller",
-  description: "Welcome to the official website of Abolaji, a passionate writer and storyteller.",
+  title: "Abolaji's Portfolio | Filmmaker & Photographer",
+  description: "Welcome to the official portfolio of Abolaji, a passionate filmmaker and photographer.",
 };
 
 export default function RootLayout({

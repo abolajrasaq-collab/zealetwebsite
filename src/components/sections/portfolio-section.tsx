@@ -7,20 +7,23 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogTrigger } from '@/components/ui/dialog';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
-import { Eye, BookOpen } from 'lucide-react';
+import { Eye, Clapperboard, Video, Image as ImageIcon } from 'lucide-react';
 
 type Project = {
   title: string;
   category: string;
+  type: 'image' | 'video';
   description: string;
   longDescription: string;
   media: { url: string, aiHint: string }[];
+  videoUrl?: string;
 };
 
 const projects: Project[] = [
   {
     title: 'The Crimson Cipher',
-    category: 'Novel',
+    category: 'Narrative Film',
+    type: 'image',
     description: 'A thrilling mystery set in the heart of a futuristic city.',
     longDescription: 'In a rain-slicked metropolis of the future, a jaded detective must unravel a conspiracy that threatens to tear the city apart. "The Crimson Cipher" is a fast-paced cyberpunk thriller that explores themes of identity, memory, and what it means to be human in a world augmented by technology.',
     media: [
@@ -30,7 +33,8 @@ const projects: Project[] = [
   },
   {
     title: 'Whispers of the Wild',
-    category: 'Short Story Collection',
+    category: 'Documentary',
+     type: 'image',
     description: 'A collection of fantasy tales about nature and magic.',
     longDescription: 'This anthology brings together a series of enchanting short stories, each exploring the mystical connection between humanity and the natural world. From haunted forests to sentient rivers, these tales are a tribute to the magic that lies just beyond the veil of our perception.',
     media: [
@@ -40,7 +44,8 @@ const projects: Project[] = [
   },
   {
     title: 'Innovate & Inspire',
-    category: 'Copywriting',
+    category: 'Commercial',
+    type: 'image',
     description: 'Crafting compelling copy for a leading tech brand.',
     longDescription: 'A campaign for a major tech brand, focusing on clear, concise, and inspiring copy to launch their new line of products. The challenge was to communicate complex technical features in a way that was accessible and exciting for a broad audience.',
     media: [
@@ -49,11 +54,35 @@ const projects: Project[] = [
   },
   {
     title: 'Echoes of Yesterday',
-    category: 'Screenplay',
+    category: 'Music Video',
+    type: 'image',
     description: 'A historical drama about love and loss during wartime.',
     longDescription: 'This screenplay tells the poignant story of two star-crossed lovers separated by war. It\'s a tale of resilience, hope, and the enduring power of memory against the backdrop of historical turmoil.',
     media: [
         { url: 'https://picsum.photos/1200/800?random=4', aiHint: 'wartime letter' },
+    ],
+  },
+    {
+    title: 'Urban Canvas',
+    category: 'Videography',
+    type: 'video',
+    description: 'A dynamic look at street art and the artists behind it.',
+    longDescription: 'This short documentary captures the vibrant and ephemeral world of street art. Through interviews with artists and time-lapse footage of their work, "Urban Canvas" explores the creative pulse of the city and the artists who bring its walls to life.',
+    media: [
+        { url: 'https://picsum.photos/1200/800?random=5', aiHint: 'street art graffiti' },
+    ],
+    videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4',
+  },
+  {
+    title: 'Portraits of Resilience',
+    category: 'Fine Art',
+    type: 'image',
+    description: 'A black and white photography series on the human spirit.',
+    longDescription: 'A powerful and intimate series of black and white portraits, "Portraits of Resilience" captures the strength, vulnerability, and quiet dignity of its subjects. Each photograph tells a story, inviting the viewer to connect with the shared human experience.',
+    media: [
+        { url: 'https://picsum.photos/1200/800?random=6', aiHint: 'portrait black and white' },
+        { url: 'https://picsum.photos/1200/800?random=7', aiHint: 'dramatic portrait' },
+        { url: 'https://picsum.photos/1200/800?random=8', aiHint: 'elderly person portrait' },
     ],
   },
 ];
@@ -67,11 +96,11 @@ export default function PortfolioSection() {
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Portfolio</h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-foreground/80">
-            A selection of my published works and projects.
+            A selection of my film and photography work.
           </p>
         </div>
         <Dialog>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project) => (
               <Card key={project.title} className="overflow-hidden group bg-card flex flex-col">
                 <CardContent className="p-0">
@@ -84,6 +113,9 @@ export default function PortfolioSection() {
                       data-ai-hint={project.media[0].aiHint}
                       className="object-cover transition-transform duration-500 group-hover:scale-105 w-full h-auto"
                     />
+                     <div className="absolute top-3 right-3">
+                      {project.type === 'video' ? <Video className="w-5 h-5 text-white" /> : <ImageIcon className="w-5 h-5 text-white" />}
+                    </div>
                   </div>
                 </CardContent>
                 <div className="flex flex-col flex-grow p-6">
@@ -110,7 +142,7 @@ export default function PortfolioSection() {
           </div>
 
           {selectedProject && (
-            <DialogContent className="sm:max-w-4xl">
+            <DialogContent className="sm:max-w-4xl lg:max-w-6xl">
               <DialogHeader>
                 <DialogTitle className="text-3xl">{selectedProject.title}</DialogTitle>
                 <DialogDescription>
@@ -119,46 +151,55 @@ export default function PortfolioSection() {
               </DialogHeader>
               <div className="grid md:grid-cols-2 gap-8 items-start">
                 <div>
-                  <Carousel className="w-full">
-                    <CarouselContent>
-                      {selectedProject.media.map((media, index) => (
-                        <CarouselItem key={index}>
-                            <div className="relative aspect-video rounded-lg overflow-hidden">
-                              <Image
-                                src={media.url}
-                                alt={`${selectedProject.title} - Image ${index + 1}`}
-                                width={1200}
-                                height={800}
-                                data-ai-hint={media.aiHint}
-                                className="object-cover w-full h-auto"
-                              />
-                            </div>
-                        </CarouselItem>
-                      ))}
-                    </CarouselContent>
-                    {selectedProject.media.length > 1 && (
-                        <>
-                            <CarouselPrevious className="left-2" />
-                            <CarouselNext className="right-2" />
-                        </>
-                    )}
-                  </Carousel>
+                 {selectedProject.type === 'video' ? (
+                    <div className="relative aspect-video rounded-lg overflow-hidden">
+                      <video src={selectedProject.videoUrl} controls className="w-full h-full" />
+                    </div>
+                  ) : (
+                    <Carousel className="w-full">
+                      <CarouselContent>
+                        {selectedProject.media.map((media, index) => (
+                          <CarouselItem key={index}>
+                              <div className="relative aspect-video rounded-lg overflow-hidden">
+                                <Image
+                                  src={media.url}
+                                  alt={`${selectedProject.title} - Image ${index + 1}`}
+                                  width={1200}
+                                  height={800}
+                                  data-ai-hint={media.aiHint}
+                                  className="object-cover w-full h-auto"
+                                />
+                              </div>
+                          </CarouselItem>
+                        ))}
+                      </CarouselContent>
+                      {selectedProject.media.length > 1 && (
+                          <>
+                              <CarouselPrevious className="left-2" />
+                              <CarouselNext className="right-2" />
+                          </>
+                      )}
+                    </Carousel>
+                  )}
                 </div>
                 <div className="prose prose-sm sm:prose-base dark:prose-invert max-h-[60vh] overflow-y-auto">
                     <p className="text-lg text-foreground/80">{selectedProject.longDescription}</p>
                     <div className="mt-6">
-                        <h4 className="font-semibold text-foreground mb-2">Read an Excerpt:</h4>
-                         <div className="p-4 border rounded-md bg-muted/50 text-foreground/80">
-                           <p>The rain fell in sheets, blurring the neon signs into a watercolor mess. Detective Kaito stubbed out his cigarette, the smoke curling into the perpetually damp air. Another night in Neo-Kyoto, another ghost to chase...</p>
+                        <h4 className="font-semibold text-foreground mb-2">Watch Now:</h4>
+                         <div className="flex flex-col gap-2">
+                            <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground">
+                                <a href="#" target="_blank">
+                                    <Clapperboard className="mr-2 h-4 w-4" />
+                                    Watch on Vimeo
+                                </a>
+                            </Button>
+                             <Button asChild variant="outline">
+                                <a href="#" target="_blank">
+                                    <Clapperboard className="mr-2 h-4 w-4" />
+                                    Watch on YouTube
+                                </a>
+                            </Button>
                         </div>
-                    </div>
-                     <div className="mt-6">
-                        <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground">
-                            <Link href="#">
-                                <BookOpen className="mr-2 h-4 w-4" />
-                                Buy on Amazon
-                            </Link>
-                        </Button>
                     </div>
                 </div>
               </div>

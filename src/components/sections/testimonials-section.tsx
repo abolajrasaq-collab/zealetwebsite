@@ -8,8 +8,8 @@ const testimonials = [
     avatar: 'JD',
     image: 'https://i.imgur.com/i1wQZxv.jpg',
     aiHint: 'woman portrait',
-    title: 'A True Wordsmith',
-    quote: "Abolaji took my scattered ideas and turned them into a beautifully crafted manuscript. His ability to capture my voice was uncanny. I couldn't be happier with the result!",
+    title: 'Incredible Vision',
+    quote: "Abolaji's ability to capture the essence of our story on film was breathtaking. His direction and cinematography were top-notch. Highly recommended!",
     rating: 5,
   },
   {
@@ -17,8 +17,8 @@ const testimonials = [
     avatar: 'MT',
     image: 'https://i.imgur.com/p5A2S5v.jpg',
     aiHint: 'man portrait',
-    title: 'The Best Editor',
-    quote: "His sharp eye for detail and insightful feedback transformed my novel. Abolaji didn't just correct my grammar; he elevated my storytelling. An invaluable partner in my writing journey.",
+    title: 'A True Professional',
+    quote: "Working with Abolaji was a seamless experience. His professionalism and creative input elevated our project beyond what we imagined. The final photos are stunning.",
     rating: 5,
   },
   {
@@ -26,8 +26,8 @@ const testimonials = [
     avatar: 'IC',
     image: 'https://i.imgur.com/XWa4B3z.jpg',
     aiHint: 'office team',
-    title: 'Engaging & Professional',
-    quote: "The website copy Abolaji wrote for us was brilliant. It was clear, compelling, and perfectly aligned with our brand voice. Our customer engagement has increased significantly.",
+    title: 'Stunning Visuals',
+    quote: "The commercial Abolaji produced for us was a game-changer. His visual storytelling captured our brand perfectly and has had a huge impact on our marketing.",
     rating: 5,
   },
 ];

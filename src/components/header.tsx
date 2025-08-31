@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Feather, Menu, X } from 'lucide-react';
+import { Camera, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
@@ -41,8 +41,8 @@ export default function Header() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <Link href="/" className="flex items-center gap-2 text-xl font-bold">
-            <Feather className="w-6 h-6 text-accent" />
-            Abolaji's Quill
+            <Camera className="w-6 h-6 text-accent" />
+            Abolaji
           </Link>
           
           <nav className="hidden md:flex items-center gap-6">
@@ -69,8 +69,8 @@ export default function Header() {
                 <div className="flex flex-col h-full">
                   <div className="flex justify-between items-center p-4 border-b border-border">
                     <Link href="/" className="flex items-center gap-2 text-lg font-bold" onClick={handleLinkClick}>
-                      <Feather className="w-5 h-5 text-accent" />
-                      Abolaji's Quill
+                      <Camera className="w-5 h-5 text-accent" />
+                      Abolaji
                     </Link>
                     <SheetTrigger asChild>
                        <Button variant="ghost" size="icon">
