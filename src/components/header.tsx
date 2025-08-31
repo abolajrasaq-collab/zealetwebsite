@@ -42,7 +42,7 @@ export default function Header() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <Link href="/" className="flex items-center gap-2 text-xl font-bold">
-            <Logo className="w-16 h-16 text-white" />
+            <Logo className="w-12 h-12 text-accent" />
           </Link>
           
           <nav className="hidden md:flex items-center gap-6">
@@ -69,7 +69,7 @@ export default function Header() {
                 <div className="flex flex-col h-full">
                   <div className="flex justify-between items-center p-4 border-b border-border">
                     <Link href="/" className="flex items-center gap-2 text-lg font-bold" onClick={handleLinkClick}>
-                       <Logo className="w-12 h-12 text-white" />
+                       <Logo className="w-10 h-10 text-accent" />
                     </Link>
                     <SheetTrigger asChild>
                        <Button variant="ghost" size="icon">
