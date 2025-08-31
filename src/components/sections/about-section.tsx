@@ -16,10 +16,10 @@ export default function AboutSection() {
             />
           </div>
           <div className="flex flex-col gap-6">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight font-headline">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
               Who I Am
             </h2>
-            <div className="space-y-4 text-lg text-foreground/80 font-serif">
+            <div className="space-y-4 text-lg text-foreground/80">
               <p>
                 I’m a creative generalist—part filmmaker, part designer, part problem-solver. For over a decade, I’ve worked across film, motion design, 3D, photography, UI/UX, and web development.
               </p>

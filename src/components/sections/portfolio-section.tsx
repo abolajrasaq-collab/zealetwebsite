@@ -105,8 +105,8 @@ export default function PortfolioSection() {
     <section id="portfolio" className="py-20 md:py-32 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight font-headline">Selected Works</h2>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-foreground/80 font-serif">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Selected Works</h2>
+          <p className="mt-4 max-w-2xl mx-auto text-lg text-foreground/80">
             Here’s a glimpse of the stories I’ve told, the visuals I’ve crafted, and the experiences I’ve built. Each project is a reflection of my multidisciplinary approach to creativity.
           </p>
         </div>
@@ -132,8 +132,8 @@ export default function PortfolioSection() {
                 <div className="flex flex-col flex-grow p-6">
                     <div className="flex-grow">
                         <Badge variant="secondary" className="mb-2">{project.category}</Badge>
-                        <h3 className="text-xl font-semibold font-headline">{project.title}</h3>
-                        <p className="text-sm text-foreground/70 mt-1 font-serif">{project.description}</p>
+                        <h3 className="text-xl font-semibold">{project.title}</h3>
+                        <p className="text-sm text-foreground/70 mt-1">{project.description}</p>
                     </div>
                     <CardFooter className="p-0 pt-4 mt-auto">
                         <DialogTrigger asChild>
@@ -155,7 +155,7 @@ export default function PortfolioSection() {
           {selectedProject && (
             <DialogContent className="sm:max-w-4xl lg:max-w-6xl">
               <DialogHeader>
-                <DialogTitle className="text-3xl font-headline">{selectedProject.title}</DialogTitle>
+                <DialogTitle className="text-3xl">{selectedProject.title}</DialogTitle>
                 <div className="mt-2">
                   <Badge>{selectedProject.category}</Badge>
                 </div>
@@ -199,12 +199,12 @@ export default function PortfolioSection() {
                     </Carousel>
                   )}
                 </div>
-                <div className="prose prose-sm sm:prose-base dark:prose-invert max-h-[60vh] overflow-y-auto font-serif">
-                    <h4 className="font-semibold text-foreground mb-2 font-headline">My Role: {selectedProject.role}</h4>
+                <div className="prose prose-sm sm:prose-base dark:prose-invert max-h-[60vh] overflow-y-auto">
+                    <h4 className="font-semibold text-foreground mb-2">My Role: {selectedProject.role}</h4>
                     <p className="text-lg text-foreground/80">{selectedProject.story}</p>
                     {(selectedProject.vimeoUrl || selectedProject.youtubeUrl) && (
                       <div className="mt-6">
-                          <h4 className="font-semibold text-foreground mb-2 font-headline">Watch Now:</h4>
+                          <h4 className="font-semibold text-foreground mb-2">Watch Now:</h4>
                           <div className="flex flex-col gap-2">
                               {selectedProject.vimeoUrl && (
                                 <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground">
@@ -216,7 +216,7 @@ export default function PortfolioSection() {
                               )}
                               {selectedProject.youtubeUrl && (
                                 <Button asChild variant="outline">
-                                  <a href={selectedProject.youtubeUrl} target="_blank" rel="noopener noreferrer">
+                                  <a href={selected.youtubeUrl} target="_blank" rel="noopener noreferrer">
                                       <Clapperboard className="mr-2 h-4 w-4" />
                                       Watch on YouTube
                                   </a>

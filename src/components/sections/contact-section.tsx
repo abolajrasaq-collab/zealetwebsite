@@ -31,16 +31,16 @@ export default function ContactSection() {
     <section id="contact" className="py-20 md:py-32 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight font-headline">Let’s Make Something Extraordinary.</h2>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-foreground/80 font-serif">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Let’s Make Something Extraordinary.</h2>
+          <p className="mt-4 max-w-2xl mx-auto text-lg text-foreground/80">
              Whether it’s film, design, or digital innovation—I’d love to collaborate with you. Tell me your idea, and let’s bring it to life.
           </p>
         </div>
         <div className="grid lg:grid-cols-2 gap-12">
           <form action={formAction} className="space-y-6">
-            <Input type="text" name="name" placeholder="Your Name" required className="bg-card font-serif" />
-            <Input type="email" name="email" placeholder="Your Email" required className="bg-card font-serif" />
-            <Textarea name="message" placeholder="Your Message" rows={5} required className="bg-card font-serif" />
+            <Input type="text" name="name" placeholder="Your Name" required className="bg-card" />
+            <Input type="email" name="email" placeholder="Your Email" required className="bg-card" />
+            <Textarea name="message" placeholder="Your Message" rows={5} required className="bg-card" />
             <SubmitButton />
             {state.status === 'success' && (
               <Alert variant="default" className="bg-green-500/10 border-green-500/50 text-green-700 dark:text-green-400">
@@ -57,7 +57,7 @@ export default function ContactSection() {
               </Alert>
             )}
           </form>
-          <div className="flex flex-col justify-center items-center lg:items-start space-y-6 text-lg font-serif">
+          <div className="flex flex-col justify-center items-center lg:items-start space-y-6 text-lg">
               <a href="mailto:abolaji@example.com" className="flex items-center gap-4 group">
                 <Mail className="w-6 h-6 text-accent" />
                 <span className="group-hover:text-accent transition-colors">Email Me Directly</span>

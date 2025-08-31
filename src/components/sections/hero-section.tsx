@@ -68,12 +68,12 @@ export default function HeroSection() {
       </div>
       <div className="relative z-10 flex flex-col items-center gap-6 px-4">
         <div className="animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight font-headline">
+          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight">
             Abolaji Rasaq — Creative Generalist.
             <br />
             Storyteller. Designer. Director. Dream Builder.
           </h1>
-          <p className="mt-4 max-w-3xl mx-auto text-lg md:text-xl text-foreground/80 font-serif">
+          <p className="mt-4 max-w-3xl mx-auto text-lg md:text-xl text-foreground/80">
             From films to pixels, stories to screens—I’m Abolaji Rasaq, a creative director and studio head blending art, design, and technology to shape culture.
           </p>
         </div>

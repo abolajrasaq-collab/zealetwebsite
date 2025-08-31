@@ -1,10 +1,11 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Camera, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
+import Logo from '@/components/logo';
 
 const navLinks = [
   { href: '#about', label: 'Manifesto' },
@@ -40,9 +41,8 @@ export default function Header() {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <Link href="/" className="flex items-center gap-2 text-xl font-bold font-headline">
-            <Camera className="w-6 h-6 text-accent" />
-            Abolaji
+          <Link href="/" className="flex items-center gap-2 text-xl font-bold">
+            <Logo className="w-16 h-16 text-white" />
           </Link>
           
           <nav className="hidden md:flex items-center gap-6">
@@ -69,8 +69,7 @@ export default function Header() {
                 <div className="flex flex-col h-full">
                   <div className="flex justify-between items-center p-4 border-b border-border">
                     <Link href="/" className="flex items-center gap-2 text-lg font-bold" onClick={handleLinkClick}>
-                      <Camera className="w-5 h-5 text-accent" />
-                      Abolaji
+                       <Logo className="w-12 h-12 text-white" />
                     </Link>
                     <SheetTrigger asChild>
                        <Button variant="ghost" size="icon">

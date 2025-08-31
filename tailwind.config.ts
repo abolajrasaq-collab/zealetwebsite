@@ -10,9 +10,10 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        body: ['Lora', 'serif'],
-        headline: ['Inter', 'sans-serif'],
-        serif: ['Lora', 'serif'],
+        sans: ['Roboto', 'sans-serif'],
+        serif: ['Roboto', 'sans-serif'],
+        body: ['Roboto', 'sans-serif'],
+        headline: ['Roboto', 'sans-serif'],
         code: ['monospace'],
       },
       colors: {

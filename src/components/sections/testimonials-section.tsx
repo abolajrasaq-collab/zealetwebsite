@@ -41,8 +41,8 @@ export default function TestimonialsSection() {
     <section id="testimonials" className="py-20 md:py-32 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight font-headline">What People Say</h2>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-foreground/80 font-serif">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">What People Say</h2>
+          <p className="mt-4 max-w-2xl mx-auto text-lg text-foreground/80">
             I've had the pleasure of working with amazing brands, studios, and individuals.
           </p>
         </div>
@@ -50,7 +50,7 @@ export default function TestimonialsSection() {
           {testimonials.map((testimonial, index) => (
             <Card key={index} className="bg-card border-border p-6 flex flex-col text-left">
                <CardContent className="p-0 flex-grow">
-                <p className="text-foreground/80 font-serif text-lg">"{testimonial.quote}"</p>
+                <p className="text-foreground/80 text-lg">"{testimonial.quote}"</p>
               </CardContent>
               <div className="flex items-center mt-6">
                   <Avatar className="w-12 h-12 mr-4 border-2 border-accent">
@@ -58,15 +58,15 @@ export default function TestimonialsSection() {
                     <AvatarFallback>{testimonial.name.substring(0,2)}</AvatarFallback>
                   </Avatar>
                   <div>
-                    <h3 className="text-lg font-semibold text-foreground font-headline">{testimonial.name}</h3>
-                    <p className="text-sm text-foreground/70 font-serif">{testimonial.title}</p>
+                    <h3 className="text-lg font-semibold text-foreground">{testimonial.name}</h3>
+                    <p className="text-sm text-foreground/70">{testimonial.title}</p>
                   </div>
               </div>
             </Card>
           ))}
         </div>
         <div className="mt-20">
-            <h3 className="text-center text-lg font-semibold text-foreground/80 mb-8 font-headline">Trusted by Industry-Leading Brands & Visionary Partners</h3>
+            <h3 className="text-center text-lg font-semibold text-foreground/80 mb-8">Trusted by Industry-Leading Brands & Visionary Partners</h3>
             <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8">
                 {clientLogos.map((client, index) => (
                      <Image

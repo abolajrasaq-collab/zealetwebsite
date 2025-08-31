@@ -10,8 +10,8 @@ export default function BlogSection() {
     <section id="journal" className="py-20 md:py-32 bg-card">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight font-headline">The Journal</h2>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-foreground/80 font-serif">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">The Journal</h2>
+          <p className="mt-4 max-w-2xl mx-auto text-lg text-foreground/80">
             Bold takes on creativity, tech, African cinema, design, and storytelling.
           </p>
         </div>
@@ -32,8 +32,8 @@ export default function BlogSection() {
               </CardHeader>
               <CardContent className="p-6 flex-grow flex flex-col">
                 <div className="flex-grow">
-                  <h3 className="text-xl font-semibold font-headline">{post.title}</h3>
-                  <p className="text-sm text-foreground/70 mt-2 font-serif">{post.description}</p>
+                  <h3 className="text-xl font-semibold">{post.title}</h3>
+                  <p className="text-sm text-foreground/70 mt-2">{post.description}</p>
                 </div>
                 <CardFooter className="p-0 pt-6 mt-auto">
                   <Button asChild variant="outline" className="w-full">
