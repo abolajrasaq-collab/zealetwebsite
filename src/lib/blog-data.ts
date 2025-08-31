@@ -3,7 +3,7 @@ export const blogPosts = [
   {
     title: 'The Unseen Power of Sound Design',
     description: 'How soundscapes, foley, and scores shape emotion and build immersive worlds.',
-    image: '/images/blog-sound.jpeg',
+    image: 'https://picsum.photos/800/600?random=b1',
     aiHint: 'audio sound waves',
     slug: 'the-unseen-power-of-sound-design',
     content: `
@@ -33,7 +33,7 @@ Next time you watch a film, close your eyes for a moment. You might be surprised
   {
     title: 'The Art of Cinematic Lighting',
     description: 'A deep dive into creating mood and atmosphere with light in your films.',
-    image: '/images/blog-lighting.jpeg',
+    image: 'https://picsum.photos/800/600?random=b2',
     aiHint: 'film set lighting',
     slug: 'the-art-of-cinematic-lighting',
     content: `
@@ -69,7 +69,7 @@ By mastering the art of cinematic lighting, you move beyond simply capturing an 
   {
     title: 'Storytelling Through Composition',
     description: 'Learn how to frame your shots to guide the audience\'s eye and enhance your narrative.',
-    image: '/images/blog-composition.jpeg',
+    image: 'https://picsum.photos/800/600?random=b3',
     aiHint: 'camera viewfinder',
     slug: 'storytelling-through-composition',
     content: `
@@ -107,7 +107,7 @@ By consciously applying these compositional techniques, you can add layers of me
   {
     title: 'Location Scouting for Indie Films',
     description: 'Tips and tricks for finding the perfect locations that won\'t break your budget.',
-    image: '/images/blog-location.jpeg',
+    image: 'https://picsum.photos/800/600?random=b4',
     aiHint: 'dramatic landscape',
     slug: 'location-scouting-for-indie-films',
     content: `
