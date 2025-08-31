@@ -10,6 +10,7 @@ import ContactSection from '@/components/sections/contact-section';
 import Footer from '@/components/footer';
 import PhilosophySection from '@/components/sections/philosophy-section';
 import FilmographySection from '@/components/sections/filmography-section';
+import ShutterstockCta from '@/components/sections/shutterstock-cta';
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
         <FilmographySection />
         <PhilosophySection />
         <TestimonialsSection />
+        <ShutterstockCta />
         <BlogSection />
         <ContactSection />
       </main>
