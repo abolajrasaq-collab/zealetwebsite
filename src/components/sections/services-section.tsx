@@ -1,6 +1,6 @@
 
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { Video, Brush, Cuboid, Camera, Code, Monitor, Film, Clapperboard, Palette, ScreenShare } from 'lucide-react';
+import { Clapperboard, Palette, ScreenShare } from 'lucide-react';
 
 const filmCapabilities = [
   { title: 'Creative Direction' },
