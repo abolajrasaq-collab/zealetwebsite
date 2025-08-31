@@ -19,7 +19,7 @@ export async function sendMessage(prevState: any, formData: FormData) {
   if (!validatedFields.success) {
     return {
       status: 'error',
-      message: validatedFields.error.flatten().fieldErrors,
+      message: "Please fill out all fields correctly.",
     };
   }
 
