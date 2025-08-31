@@ -1,7 +1,8 @@
 
 'use client';
 
-import { useFormState, useFormStatus } from 'react-dom';
+import { useActionState } from 'react';
+import { useFormStatus } from 'react-dom';
 import { Mail, Phone, Instagram, Twitter, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -21,7 +22,7 @@ function SubmitButton() {
 }
 
 export default function ContactSection() {
-    const [state, formAction] = useFormState(sendMessage, {
+    const [state, formAction] = useActionState(sendMessage, {
         status: 'idle',
         message: '',
       });
@@ -45,14 +46,14 @@ export default function ContactSection() {
               <Alert variant="default" className="bg-green-500/10 border-green-500/50 text-green-700 dark:text-green-400">
                 <CircleCheck className="h-4 w-4" />
                 <AlertTitle>Success!</AlertTitle>
-                <AlertDescription>{state.message}</AlertDescription>
+                <AlertDescription>{state.message as string}</AlertDescription>
               </Alert>
             )}
             {state.status === 'error' && (
               <Alert variant="destructive">
                 <AlertTriangle className="h-4 w-4" />
                 <AlertTitle>Error!</AlertTitle>
-                <AlertDescription>{state.message}</AlertDescription>
+                <AlertDescription>{state.message as string}</AlertDescription>
               </Alert>
             )}
           </form>
