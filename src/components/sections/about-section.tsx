@@ -8,7 +8,7 @@ export default function AboutSection() {
         <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="relative aspect-square md:aspect-[4/5] rounded-lg overflow-hidden shadow-2xl animate-fade-in-up">
             <Image
-              src="https://picsum.photos/800/1000?random=portrait"
+              src="/images/portrait.jpeg"
               alt="Abolaji Rasaq in action"
               data-ai-hint="filmmaker portrait action"
               fill

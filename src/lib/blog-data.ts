@@ -3,7 +3,7 @@ export const blogPosts = [
   {
     title: 'The Unseen Power of Sound Design',
     description: 'How soundscapes, foley, and scores shape emotion and build immersive worlds.',
-    image: 'https://picsum.photos/800/600?random=b1',
+    image: '/images/blog-1.jpeg',
     aiHint: 'audio sound waves',
     slug: 'the-unseen-power-of-sound-design',
     content: `
@@ -33,7 +33,7 @@ Next time you watch a film, close your eyes for a moment. You might be surprised
   {
     title: 'The Art of Cinematic Lighting',
     description: 'A deep dive into creating mood and atmosphere with light in your films.',
-    image: 'https://picsum.photos/800/600?random=b2',
+    image: '/images/blog-2.jpeg',
     aiHint: 'film set lighting',
     slug: 'the-art-of-cinematic-lighting',
     content: `
@@ -69,7 +69,7 @@ By mastering the art of cinematic lighting, you move beyond simply capturing an 
   {
     title: 'Storytelling Through Composition',
     description: 'Learn how to frame your shots to guide the audience\'s eye and enhance your narrative.',
-    image: 'https://picsum.photos/800/600?random=b3',
+    image: '/images/blog-3.jpeg',
     aiHint: 'camera viewfinder',
     slug: 'storytelling-through-composition',
     content: `
@@ -83,7 +83,7 @@ One of the most fundamental principles is the **Rule of Thirds**. Imagine your f
 
 ### Leading Lines
 
-Use natural lines within your scene—roads, rivers, fences, or architectural features—to lead the viewer’s eye towards your subject. Leading lines create a sense of depth and can make a static image feel more dynamic.
+Use natural lines within your scene—roads, rivers, fences, or architectural features—to lead the viewer’s eye towards your subject. Leading lines create a sense of depth and can make a static image feel more a dynamic.
 
 ### Framing within a Frame
 
@@ -107,7 +107,7 @@ By consciously applying these compositional techniques, you can add layers of me
   {
     title: 'Location Scouting for Indie Films',
     description: 'Tips and tricks for finding the perfect locations that won\'t break your budget.',
-    image: 'https://picsum.photos/800/600?random=b4',
+    image: '/images/blog-4.jpeg',
     aiHint: 'dramatic landscape',
     slug: 'location-scouting-for-indie-films',
     content: `
