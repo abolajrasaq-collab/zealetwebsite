@@ -6,15 +6,21 @@ import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogTrigger } from '@/components/ui/dialog';
-import { Eye } from 'lucide-react';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import { Eye, Film, ImageIcon } from 'lucide-react';
+
+type ProjectMedia = {
+  type: 'image' | 'video';
+  url: string;
+  aiHint?: string;
+};
 
 type Project = {
   title: string;
   category: string;
   description: string;
   longDescription: string;
-  imageUrl: string;
-  aiHint: string;
+  media: ProjectMedia[];
 };
 
 const projects: Project[] = [
@@ -23,64 +29,78 @@ const projects: Project[] = [
     category: 'Cityscape',
     description: 'A series capturing the raw beauty of cityscapes.',
     longDescription: 'This project involved exploring the hidden alleys and towering skyscrapers of the city at night, capturing the vibrant energy and neon-lit beauty of the urban landscape. The goal was to find unique perspectives and showcase the city in a way that feels both grand and intimate.',
-    imageUrl: 'https://picsum.photos/600/400?random=1',
-    aiHint: 'cityscape night'
+    media: [
+        { type: 'image', url: 'https://picsum.photos/1200/800?random=1', aiHint: 'cityscape night' },
+        { type: 'image', url: 'https://picsum.photos/1200/800?random=9', aiHint: 'city street' },
+        { type: 'image', url: 'https://picsum.photos/1200/800?random=10', aiHint: 'neon sign' },
+    ],
   },
   {
     title: 'Ethereal Portraits',
     category: 'Portrait',
     description: 'Exploring light and shadow in personal portraiture.',
     longDescription: 'A collection of portraits that play with natural light and shadow to create an ethereal, dreamlike quality. Each photo aims to capture the subject\'s personality and mood in a soft, artistic manner, emphasizing emotion over context.',
-    imageUrl: 'https://picsum.photos/600/400?random=2',
-    aiHint: 'portrait shadow'
+    media: [
+        { type: 'image', url: 'https://picsum.photos/1200/800?random=2', aiHint: 'portrait shadow' },
+        { type: 'image', url: 'https://picsum.photos/1200/800?random=11', aiHint: 'woman face' },
+    ],
   },
   {
     title: 'MKL Watches',
     category: 'Product',
     description: 'Clean and elegant product photography.',
     longDescription: 'A commercial shoot for MKL Watches, focusing on clean, elegant, and high-detail product photography. The challenge was to highlight the craftsmanship and luxury of the timepieces using precise lighting and minimalist compositions.',
-    imageUrl: 'https://picsum.photos/600/400?random=3',
-    aiHint: 'watch product'
+    media: [
+        { type: 'image', url: 'https://picsum.photos/1200/800?random=3', aiHint: 'watch product' },
+    ],
   },
   {
     title: 'Wedding Bells',
     category: 'Event',
     description: 'Capturing the magic of a once-in-a-lifetime day.',
     longDescription: 'Documenting the joy, tears, and candid moments of a beautiful wedding day. The approach was photojournalistic, aiming to tell the story of the day as it unfolded naturally, preserving authentic memories for the couple.',
-    imageUrl: 'https://picsum.photos/600/400?random=4',
-    aiHint: 'wedding couple'
+    media: [
+        { type: 'image', url: 'https://picsum.photos/1200/800?random=4', aiHint: 'wedding couple' },
+        { type: 'image', url: 'https://picsum.photos/1200/800?random=12', aiHint: 'wedding rings' },
+    ],
   },
   {
     title: 'Nature\'s Palette',
     category: 'Landscape',
     description: 'A journey through vibrant and serene landscapes.',
     longDescription: 'This series is a celebration of the natural world, from majestic mountain ranges to serene forest scenes. The focus was on capturing the vibrant colors and diverse textures of nature, showcasing its calming and awe-inspiring beauty.',
-    imageUrl: 'https://picsum.photos/600/400?random=5',
-    aiHint: 'landscape mountain'
+    media: [
+        { type: 'image', url: 'https://picsum.photos/1200/800?random=5', aiHint: 'landscape mountain' },
+        { type: 'image', url: 'https://picsum.photos/1200/800?random=13', aiHint: 'forest path' },
+    ],
   },
   {
     title: 'Street Style',
     category: 'Fashion',
     description: 'Candid moments and fashion on the streets.',
     longDescription: 'Capturing the unique and expressive world of street fashion. This project involved finding individuals with a distinct sense of style and documenting their look in the context of their urban environment, blending fashion with everyday life.',
-    imageUrl: 'https://picsum.photos/600/400?random=6',
-    aiHint: 'street fashion'
+    media: [
+        { type: 'image', url: 'https://picsum.photos/1200/800?random=6', aiHint: 'street fashion' },
+    ],
   },
   {
     title: 'Corporate Anthem',
     category: 'Videography',
     description: 'A short film for a major tech company\'s brand relaunch.',
     longDescription: 'This corporate video was created to inspire and energize the employees of a major tech company after a significant rebranding. The film combines cinematic shots of the new office space with employee interviews to create a powerful and uplifting narrative about the company\'s future.',
-    imageUrl: 'https://picsum.photos/600/400?random=7',
-    aiHint: 'cinematic film'
+    media: [
+        { type: 'video', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
+        { type: 'image', url: 'https://picsum.photos/1200/800?random=7', aiHint: 'cinematic film' },
+    ],
   },
   {
     title: 'The Unseen',
     category: 'Fine Art',
     description: 'Abstract photography that explores texture and form.',
     longDescription: 'A fine art series that challenges the viewer to see the world differently. By focusing on abstract details, textures, and forms found in everyday objects, this collection transforms the mundane into something extraordinary and thought-provoking.',
-    imageUrl: 'https://picsum.photos/600/400?random=8',
-    aiHint: 'abstract art'
+    media: [
+        { type: 'image', url: 'https://picsum.photos/1200/800?random=8', aiHint: 'abstract art' },
+    ],
   },
 ];
 
@@ -103,13 +123,17 @@ export default function PortfolioSection() {
                 <CardContent className="p-0">
                   <div className="relative aspect-video">
                     <Image
-                      src={project.imageUrl}
+                      src={project.media.find(m => m.type === 'image')?.url || 'https://picsum.photos/600/400'}
                       alt={project.title}
                       width={600}
                       height={400}
-                      data-ai-hint={project.aiHint}
+                      data-ai-hint={project.media[0].aiHint}
                       className="object-cover transition-transform duration-500 group-hover:scale-105 w-full h-auto"
                     />
+                     <div className="absolute top-2 right-2">
+                        {project.media.some(m => m.type === 'video') && <Badge variant="secondary" className="mr-1"><Film className="w-3 h-3 mr-1" /> Video</Badge>}
+                        {project.media.filter(m => m.type === 'image').length > 1 && <Badge variant="secondary"><ImageIcon className="w-3 h-3 mr-1" /> Gallery</Badge>}
+                    </div>
                   </div>
                 </CardContent>
                 <div className="flex flex-col flex-grow p-6">
@@ -136,26 +160,62 @@ export default function PortfolioSection() {
           </div>
 
           {selectedProject && (
-            <DialogContent className="sm:max-w-4xl">
+            <DialogContent className="sm:max-w-6xl">
               <DialogHeader>
                 <DialogTitle className="text-3xl">{selectedProject.title}</DialogTitle>
                 <DialogDescription>
                   <Badge variant="default" className="mt-2 mb-4 bg-accent text-accent-foreground">{selectedProject.category}</Badge>
                 </DialogDescription>
               </DialogHeader>
-              <div className="grid md:grid-cols-2 gap-8">
-                <div className="relative aspect-video rounded-lg overflow-hidden">
-                    <Image
-                        src={selectedProject.imageUrl.replace('400', '800').replace('600','1200')}
-                        alt={selectedProject.title}
-                        width={1200}
-                        height={800}
-                        data-ai-hint={selectedProject.aiHint}
-                        className="object-cover w-full h-auto"
-                    />
+              <div className="grid md:grid-cols-2 gap-8 items-start">
+                <div>
+                  <Carousel className="w-full">
+                    <CarouselContent>
+                      {selectedProject.media.map((media, index) => (
+                        <CarouselItem key={index}>
+                          {media.type === 'image' ? (
+                            <div className="relative aspect-video rounded-lg overflow-hidden">
+                              <Image
+                                src={media.url}
+                                alt={`${selectedProject.title} - Image ${index + 1}`}
+                                width={1200}
+                                height={800}
+                                data-ai-hint={media.aiHint}
+                                className="object-cover w-full h-auto"
+                              />
+                            </div>
+                          ) : (
+                            <div className="relative aspect-video rounded-lg overflow-hidden bg-black">
+                                <iframe
+                                    className="w-full h-full"
+                                    src={media.url}
+                                    title="YouTube video player"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerPolicy="strict-origin-when-cross-origin"
+                                    allowFullScreen
+                                ></iframe>
+                            </div>
+                          )}
+                        </CarouselItem>
+                      ))}
+                    </CarouselContent>
+                    {selectedProject.media.length > 1 && (
+                        <>
+                            <CarouselPrevious className="left-2" />
+                            <CarouselNext className="right-2" />
+                        </>
+                    )}
+                  </Carousel>
                 </div>
                 <div className="prose prose-sm sm:prose-base dark:prose-invert">
                     <p className="text-lg text-foreground/80">{selectedProject.longDescription}</p>
+                    <div className="mt-6">
+                        <h4 className="font-semibold text-foreground mb-2">Project Links:</h4>
+                        <ul className="list-none p-0 space-y-2">
+                           <li><a href="#" className="text-accent hover:underline">View on Behance</a></li>
+                           <li><a href="#" className="text-accent hover:underline">Download High-Res Images</a></li>
+                        </ul>
+                    </div>
                 </div>
               </div>
             </DialogContent>
