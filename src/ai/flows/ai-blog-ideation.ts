@@ -1,13 +1,11 @@
 'use server';
 /**
- * @fileOverview This file is no longer used for blog ideation. It is kept for potential future AI features.
+ * @fileOverview This file contains AI flows for blog ideation and content creation.
+ * It is no longer used for the primary blog ideation in the UI, but the flows are kept for potential future AI features.
  */
 
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
-
-// The following schemas and flows are not currently used in the application
-// but are kept for reference or future use.
 
 const BlogIdeationInputSchema = z.object({
   topic: z.string().describe('The keyword or topic for generating blog post ideas.'),
