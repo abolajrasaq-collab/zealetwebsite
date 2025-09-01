@@ -19,11 +19,23 @@ type Project = {
   role: string;
   story: string;
   media: { url: string, aiHint: string }[];
-  vimeoUrl?: string;
   youtubeUrl?: string;
 };
 
 const projects: Project[] = [
+  {
+    title: 'Showreel 2024',
+    client: 'Personal',
+    category: 'Showreel',
+    type: 'video',
+    description: 'A collection of my best work in film, design, and storytelling.',
+    role: 'Director, Designer, Editor',
+    story: 'This is a fast-paced look at some of my favorite projects, showcasing a range of skills from directing and cinematography to motion graphics and 3D design.',
+    media: [
+        { url: 'https://i.ytimg.com/vi/N8hRH3nGn1E/hqdefault.jpg', aiHint: 'showreel film' },
+    ],
+    youtubeUrl: 'https://www.youtube.com/embed/N8hRH3nGn1E?autoplay=1',
+  },
   {
     title: 'Naija Odyssey',
     client: 'WhatsApp',
@@ -37,19 +49,6 @@ const projects: Project[] = [
     ],
     youtubeUrl: 'https://www.youtube.com/embed/lc12-a6XmDA?autoplay=1',
   },
-    {
-    title: 'Oshodi Transport Interchange',
-    client: 'Lagos State Government',
-    category: 'Architecture Photography',
-    type: 'image',
-    description: 'Area photograph of Oshodi Transport Interchange shot at night.',
-    role: 'Photographer',
-    story: 'Commissioned by the Lagos State Government, this project aimed to capture the monumental scale and vibrant energy of the newly built Oshodi Transport Interchange. My focus was on night photography to highlight the architectural lighting and the constant flow of a city that never sleeps. The challenge was finding unique perspectives amidst the controlled chaos.',
-    media: [
-        { url: 'https://picsum.photos/seed/p2-1/1280/720', aiHint: 'modern architecture night' },
-        { url: 'https://picsum.photos/seed/p2-2/1280/720', aiHint: 'bus terminal night' },
-    ],
-  },
   {
     title: 'The Afrofuturist',
     client: 'Personal Project',
@@ -62,6 +61,19 @@ const projects: Project[] = [
       { url: 'https://i.ytimg.com/vi/8D3iVPDmasI/hqdefault.jpg', aiHint: 'afrofuturism fashion' },
     ],
     youtubeUrl: 'https://www.youtube.com/embed/8D3iVPDmasI?autoplay=1',
+  },
+    {
+    title: 'Oshodi Transport Interchange',
+    client: 'Lagos State Government',
+    category: 'Architecture Photography',
+    type: 'image',
+    description: 'Area photograph of Oshodi Transport Interchange shot at night.',
+    role: 'Photographer',
+    story: 'Commissioned by the Lagos State Government, this project aimed to capture the monumental scale and vibrant energy of the newly built Oshodi Transport Interchange. My focus was on night photography to highlight the architectural lighting and the constant flow of a city that never sleeps. The challenge was finding unique perspectives amidst the controlled chaos.',
+    media: [
+        { url: 'https://picsum.photos/seed/p2-1/1280/720', aiHint: 'modern architecture night' },
+        { url: 'https://picsum.photos/seed/p2-2/1280/720', aiHint: 'bus terminal night' },
+    ],
   },
   {
     title: 'Portraits of Resilience',
@@ -137,10 +149,10 @@ export default function PortfolioSection() {
             <DialogContent className="w-screen h-screen max-w-full max-h-full p-0">
                 <div className="grid md:grid-cols-3 h-full">
                     <div className="md:col-span-2 bg-black flex items-center justify-center">
-                      {selectedProject.type === 'video' && (selectedProject.vimeoUrl || selectedProject.youtubeUrl) ? (
+                      {selectedProject.type === 'video' && selectedProject.youtubeUrl ? (
                         <div className="relative aspect-video w-full max-w-4xl mx-auto rounded-lg overflow-hidden border">
                            <iframe
-                                src={selectedProject.youtubeUrl || `https://player.vimeo.com/video/${selectedProject.vimeoUrl?.split('/').pop()}?autoplay=1`}
+                                src={selectedProject.youtubeUrl}
                                 width="100%"
                                 height="100%"
                                 frameBorder="0"
@@ -200,18 +212,10 @@ export default function PortfolioSection() {
                             <p className="text-foreground/80">{selectedProject.story}</p>
                         </div>
                         
-                        {(selectedProject.vimeoUrl || selectedProject.youtubeUrl) && (
+                        {selectedProject.youtubeUrl && (
                           <div className="pt-4">
                               <h4 className="font-semibold text-foreground mb-4">Watch Now</h4>
                               <div className="flex flex-col gap-3">
-                                  {selectedProject.vimeoUrl && (
-                                    <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-                                        <a href={selectedProject.vimeoUrl} target="_blank" rel="noopener noreferrer">
-                                            <Clapperboard className="mr-2 h-4 w-4" />
-                                            Watch on Vimeo
-                                        </a>
-                                    </Button>
-                                  )}
                                   {selectedProject.youtubeUrl && (
                                     <Button asChild size="lg" variant="outline">
                                       <a href={selectedProject.youtubeUrl} target="_blank" rel="noopener noreferrer">
