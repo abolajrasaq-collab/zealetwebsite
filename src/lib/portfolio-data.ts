@@ -198,6 +198,18 @@ export const projects: Project[] = [
   },
   // Design
   {
+    title: 'Zoropay Explainer animation Video',
+    category: 'Design',
+    tags: ['Animation', 'Explainer Video'],
+    description: 'An explainer animation video created for Zoropay.',
+    thumbnail: 'https://i.ytimg.com/vi/PdmlejkTy50/hqdefault.jpg',
+    media: [{ url: 'https://i.ytimg.com/vi/PdmlejkTy50/hqdefault.jpg', aiHint: 'explainer video animation' }],
+    youtubeUrl: 'https://www.youtube.com/embed/PdmlejkTy50?autoplay=1',
+    story: 'This is an explainer animation video created for the fintech company Zoropay, demonstrating how their service works in a clear and engaging way.',
+    role: 'Motion Designer',
+    client: 'Zoropay'
+  },
+  {
     title: 'Project Phoenix',
     category: 'Design',
     tags: ['Brand Identity'],
