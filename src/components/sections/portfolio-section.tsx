@@ -25,17 +25,17 @@ type Project = {
 
 const projects: Project[] = [
   {
-    title: 'The Crimson Cipher',
-    client: 'Fictional Studio',
-    category: 'Narrative Film',
-    type: 'image',
-    description: 'A thrilling mystery set in the heart of a futuristic city.',
-    role: 'Director, DOP',
-    story: 'For "The Crimson Cipher," my goal was to create a visually distinct cyberpunk world on a tight budget. I handled both the direction and cinematography, focusing on high-contrast lighting and a neon-noir aesthetic to build a tense, atmospheric mystery. The challenge was making our limited sets feel like a sprawling metropolis.',
+    title: 'Naija Odyssey',
+    client: 'WhatsApp',
+    category: 'Commercial',
+    type: 'video',
+    description: 'A short film about NBA star Giannis Antetokounmpo reconciling his Nigerian roots.',
+    role: 'Director',
+    story: 'For this project with WhatsApp, I had the honor of directing "Naija Odyssey," a short film that tells the powerful story of Giannis Antetokounmpo. The film explores his journey of reconciliation with his Nigerian heritage, his family, and his identity. We aimed for a cinematic and deeply personal feel.',
     media: [
-        { url: 'https://picsum.photos/seed/p1-1/1280/720', aiHint: 'cyberpunk city' },
-        { url: 'https://picsum.photos/seed/p1-2/1280/720', aiHint: 'futuristic detective' },
+        { url: 'https://i.ytimg.com/vi/lc12-a6XmDA/maxresdefault.jpg', aiHint: 'man thinking film' },
     ],
+    youtubeUrl: 'https://www.youtube.com/watch?v=lc12-a6XmDA',
   },
     {
     title: 'Oshodi Transport Interchange',
@@ -51,42 +51,17 @@ const projects: Project[] = [
     ],
   },
   {
-    title: 'Innovate & Inspire',
-    client: 'Global Tech Inc.',
-    category: 'Commercial',
-    type: 'image',
-    description: 'Crafting compelling visuals for a leading tech brand.',
-    role: 'Brand Strategist, Motion Graphics Designer',
-    story: 'This campaign for a major tech brand required a complete visual overhaul for their new product launch. I developed the brand strategy and created a suite of motion graphics for the commercials, focusing on clean, inspiring visuals to make complex tech features feel accessible and exciting.',
-    media: [
-        { url: 'https://picsum.photos/seed/p3-1/1280/720', aiHint: 'tech product' },
-    ],
-  },
-  {
-    title: 'Echoes of Yesterday',
-    client: 'Indie Artist',
-    category: 'Music Video',
-    type: 'video',
-    description: 'A historical drama about love and loss during wartime.',
-    role: 'Director, Editor',
-    story: 'For this music video, the artist wanted a cinematic, narrative-driven experience. I directed the video, focusing on telling a poignant story of two lovers separated by war. As the editor, I cut the piece to synchronize emotionally with the music\'s rhythm and crescendo, weaving the past and present together.',
-    media: [
-        { url: 'https://picsum.photos/seed/p4-1/1280/720', aiHint: 'wartime letter' },
-    ],
-    vimeoUrl: 'https://vimeo.com/902839943',
-  },
-    {
-    title: 'Urban Canvas',
-    client: 'Arts Collective',
+    title: 'The Afrofuturist',
+    client: 'Personal Project',
     category: 'Videography',
     type: 'video',
-    description: 'A dynamic look at street art and the artists behind it.',
-    role: 'Director, Camera Operator',
-    story: 'This short documentary was about capturing the kinetic energy of street art. I acted as a one-man-band, directing and operating the camera to get up close with the artists. The style is raw and energetic, using time-lapses and handheld shots to reflect the creativity happening on the city walls.',
+    description: 'A visual exploration of Afrofuturism through fashion, design, and narrative.',
+    role: 'Director, Editor',
+    story: 'This piece is a visual poem that explores the vibrant and imaginative world of Afrofuturism. I wanted to blend narrative, fashion, and abstract visuals to create a powerful statement about identity, technology, and the future. The project was a labor of love, combining my skills in direction, cinematography, and editing.',
     media: [
-        { url: 'https://picsum.photos/seed/p5-1/1280/720', aiHint: 'street art graffiti' },
+      { url: 'https://i.ytimg.com/vi/zPOa2-A8d2M/maxresdefault.jpg', aiHint: 'afrofuturism fashion' },
     ],
-    vimeoUrl: 'https://vimeo.com/902839943',
+    youtubeUrl: 'https://www.youtube.com/watch?v=zPOa2-A8d2M',
   },
   {
     title: 'Portraits of Resilience',
@@ -106,6 +81,11 @@ const projects: Project[] = [
 
 export default function PortfolioSection() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  
+  const getYouTubeEmbedUrl = (url: string) => {
+    const videoId = url.split('v=')[1]?.split('&')[0];
+    return videoId ? `https://www.youtube.com/embed/${videoId}?autoplay=1` : '';
+  }
 
   return (
     <section id="portfolio" className="py-20 md:py-32 bg-background">
@@ -165,7 +145,7 @@ export default function PortfolioSection() {
                       {selectedProject.type === 'video' && (selectedProject.vimeoUrl || selectedProject.youtubeUrl) ? (
                         <div className="relative aspect-video w-full max-w-4xl mx-auto rounded-lg overflow-hidden border">
                            <iframe
-                                src={`https://player.vimeo.com/video/${selectedProject.vimeoUrl?.split('/').pop()}`}
+                                src={selectedProject.youtubeUrl ? getYouTubeEmbedUrl(selectedProject.youtubeUrl) : `https://player.vimeo.com/video/${selectedProject.vimeoUrl?.split('/').pop()}`}
                                 width="100%"
                                 height="100%"
                                 frameBorder="0"
@@ -257,3 +237,5 @@ export default function PortfolioSection() {
     </section>
   );
 }
+
+    

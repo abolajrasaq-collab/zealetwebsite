@@ -23,8 +23,14 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'imgur.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'i.ytimg.com',
+      }
     ],
   },
 };
 
 export default nextConfig;
+
+    
