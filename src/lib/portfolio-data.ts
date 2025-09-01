@@ -96,8 +96,8 @@ export const projects: Project[] = [
     description: 'Two delinquent teenagers skip school to watch fight scenes at an abandoned warehouse. They are forced to confront each other in a deadly match that they will forever regret.',
     role: 'Director, DOP',
     story: 'Two delinquent teenagers skip school to watch fight scenes at an abandoned warehouse. They are forced to confront each other in a deadly match that they will forever regret.',
-    thumbnail: 'https://i.ytimg.com/vi/8D3iVPDmasI/hqdefault.jpg',
-    media: [{ url: 'https://i.ytimg.com/vi/8D3iVPDmasI/hqdefault.jpg', aiHint: 'teenagers fighting' }],
+    thumbnail: 'https://i.imgur.com/u48VF7z.jpeg',
+    media: [{ url: 'https://i.imgur.com/u48VF7z.jpeg', aiHint: 'teenagers fighting' }],
     youtubeUrl: 'https://www.youtube.com/embed/8D3iVPDmasI?autoplay=1',
     btsMedia: [
       { url: 'https://picsum.photos/seed/bts-akiti1/600/400', aiHint: 'warehouse location', type: 'image' },
