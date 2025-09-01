@@ -83,7 +83,14 @@ export default function PortfolioSection() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   
   const getYouTubeEmbedUrl = (url: string) => {
-    const videoId = url.split('v=')[1]?.split('&')[0];
+    let videoId;
+    try {
+        const urlObj = new URL(url);
+        videoId = urlObj.searchParams.get('v');
+    } catch (e) {
+        // Fallback for invalid URLs
+        return '';
+    }
     return videoId ? `https://www.youtube.com/embed/${videoId}?autoplay=1` : '';
   }
 
@@ -145,7 +152,7 @@ export default function PortfolioSection() {
                       {selectedProject.type === 'video' && (selectedProject.vimeoUrl || selectedProject.youtubeUrl) ? (
                         <div className="relative aspect-video w-full max-w-4xl mx-auto rounded-lg overflow-hidden border">
                            <iframe
-                                src={selectedProject.youtubeUrl ? getYouTubeEmbedUrl(selectedProject.youtubeUrl) : `https://player.vimeo.com/video/${selectedProject.vimeoUrl?.split('/').pop()}`}
+                                src={selectedProject.youtubeUrl ? getYouTubeEmbedUrl(selectedProject.youtubeUrl) : `https://player.vimeo.com/video/${selectedProject.vimeoUrl?.split('/').pop()}?autoplay=1`}
                                 width="100%"
                                 height="100%"
                                 frameBorder="0"
@@ -237,5 +244,3 @@ export default function PortfolioSection() {
     </section>
   );
 }
-
-    
