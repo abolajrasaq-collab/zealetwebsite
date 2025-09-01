@@ -147,8 +147,8 @@ Finding the perfect location is a treasure hunt. With creativity and persistence
   {
     title: 'Dreams are Just Biochemical Noise, Not Spiritual Messages',
     description: 'Exploring the science behind dreams and why we interpret them the way we do.',
-    image: 'https://picsum.photos/seed/blog5/800/600',
-    aiHint: 'abstract brain waves',
+    image: 'https://i.imgur.com/5uLpE6A.jpeg',
+    aiHint: 'african person dreaming',
     slug: 'dreams-are-just-biochemical-noise',
     content: `
 We overhype dreams.
@@ -209,8 +209,8 @@ Biochemist. Creative Director. Realist.
   {
     title: 'The Economic Importance of One Citizen',
     description: 'When a nation doesn’t value its people, it silently kills its economy. You can\'t grow an economy with broke people.',
-    image: 'https://picsum.photos/seed/blog6/800/600',
-    aiHint: 'hopeful girl portrait',
+    image: 'https://i.imgur.com/gK4Rz93.jpeg',
+    aiHint: 'nigerian girl hopeful',
     slug: 'the-economic-importance-of-one-citizen',
     content: `
 ## The Economic Importance of One Citizen
@@ -275,7 +275,7 @@ Until we believe that, we’ll keep moving in circles.
   {
     title: "From 'Mummy and Daddy' to Viral Skits: How Nigerian Kids Are Owning Their Stories",
     description: "An exploration of how Nigerian kids have transformed traditional childhood storytelling into a viral digital movement.",
-    image: 'https://picsum.photos/seed/blog7/800/600',
+    image: 'https://i.imgur.com/kS9yX1M.jpeg',
     aiHint: 'nigerian children playing',
     slug: 'from-mummy-and-daddy-to-viral-skits',
     content: `
@@ -295,7 +295,5 @@ One thing is clear: Nigerian creativity has never been limited. It was always th
 
 *Originally published on [Medium](https://medium.com/@abolajirasaq/from-mummy-and-daddy-to-viral-skits-how-nigerian-kids-are-owning-their-stories-4d522eab9b41).*
 `
-  },
+  }
 ];
-
-    
