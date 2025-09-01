@@ -33,7 +33,7 @@ const projects: Project[] = [
     role: 'Director',
     story: 'For this project with WhatsApp, I had the honor of directing "Naija Odyssey," a short film that tells the powerful story of Giannis Antetokounmpo. The film explores his journey of reconciliation with his Nigerian heritage, his family, and his identity. We aimed for a cinematic and deeply personal feel.',
     media: [
-        { url: 'https://i.ytimg.com/vi/lc12-a6XmDA/maxresdefault.jpg', aiHint: 'man thinking film' },
+        { url: 'https://i.ytimg.com/vi/lc12-a6XmDA/hqdefault.jpg', aiHint: 'man thinking film' },
     ],
     youtubeUrl: 'https://www.youtube.com/watch?v=lc12-a6XmDA',
   },
@@ -59,7 +59,7 @@ const projects: Project[] = [
     role: 'Director, Editor',
     story: 'This piece is a visual poem that explores the vibrant and imaginative world of Afrofuturism. I wanted to blend narrative, fashion, and abstract visuals to create a powerful statement about identity, technology, and the future. The project was a labor of love, combining my skills in direction, cinematography, and editing.',
     media: [
-      { url: 'https://i.ytimg.com/vi/zPOa2-A8d2M/maxresdefault.jpg', aiHint: 'afrofuturism fashion' },
+      { url: 'https://i.ytimg.com/vi/zPOa2-A8d2M/hqdefault.jpg', aiHint: 'afrofuturism fashion' },
     ],
     youtubeUrl: 'https://www.youtube.com/watch?v=zPOa2-A8d2M',
   },
