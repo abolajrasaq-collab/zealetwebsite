@@ -71,6 +71,18 @@ export const projects: Project[] = [
     youtubeUrl: 'https://www.youtube.com/embed/ODb7xM0TuFQ?autoplay=1',
   },
   {
+    title: 'Indomie Half Time',
+    client: 'Dufil Prima Food Ltd.',
+    category: 'Commercial',
+    tags: ['Directing', 'Commercial'],
+    description: 'A commercial for Indomie, perfect for a half-time break.',
+    role: 'Director',
+    story: 'This commercial for Indomie captures the energy and excitement of enjoying a quick, delicious meal during a break.',
+    thumbnail: 'https://i.ytimg.com/vi/rAmbeN2qaL0/hqdefault.jpg',
+    media: [{ url: 'https://i.ytimg.com/vi/rAmbeN2qaL0/hqdefault.jpg', aiHint: 'instant noodles commercial' }],
+    youtubeUrl: 'https://www.youtube.com/embed/rAmbeN2qaL0?autoplay=1',
+  },
+  {
     title: 'ATUNIDA',
     category: 'Film',
     tags: ['Web Series', 'DOP'],
