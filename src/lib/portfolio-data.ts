@@ -211,6 +211,17 @@ export const projects: Project[] = [
     client: 'Zoropay'
   },
   {
+    title: 'ATIKO film OPENING TITLE SEQUENCE',
+    category: 'Design',
+    tags: ['Motion Graphics', 'Title Sequence'],
+    description: 'An opening title sequence for the film "ATIKO".',
+    thumbnail: 'https://i.ytimg.com/vi/eS9xn18Lwxw/hqdefault.jpg',
+    media: [{ url: 'https://i.ytimg.com/vi/eS9xn18Lwxw/hqdefault.jpg', aiHint: 'film title sequence' }],
+    youtubeUrl: 'https://www.youtube.com/embed/eS9xn18Lwxw?autoplay=1',
+    role: 'Motion Graphics Designer',
+    story: 'This project involved creating a dynamic and atmospheric opening title sequence for the film "ATIKO", setting the tone for the story to come.'
+  },
+  {
     title: 'Project Phoenix',
     category: 'Design',
     tags: ['Brand Identity'],
