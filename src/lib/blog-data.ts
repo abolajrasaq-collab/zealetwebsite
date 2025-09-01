@@ -147,8 +147,8 @@ Finding the perfect location is a treasure hunt. With creativity and persistence
   {
     title: 'Dreams are Just Biochemical Noise, Not Spiritual Messages',
     description: 'Exploring the science behind dreams and why we interpret them the way we do.',
-    image: 'https://i.imgur.com/5uLpE6A.jpeg',
-    aiHint: 'african person dreaming',
+    image: 'https://picsum.photos/seed/blog5/800/600',
+    aiHint: 'abstract brain waves',
     slug: 'dreams-are-just-biochemical-noise',
     content: `
 We overhype dreams.
@@ -209,8 +209,8 @@ Biochemist. Creative Director. Realist.
   {
     title: 'The Economic Importance of One Citizen',
     description: "When a nation doesn’t value its people, it silently kills its economy. You can't grow an economy with broke people.",
-    image: 'https://i.imgur.com/gK4Rz93.jpeg',
-    aiHint: 'nigerian girl hopeful',
+    image: 'https://picsum.photos/seed/blog6/800/600',
+    aiHint: 'crowd of people',
     slug: 'the-economic-importance-of-one-citizen',
     content: `
 ## The Economic Importance of One Citizen
@@ -275,8 +275,8 @@ Until we believe that, we’ll keep moving in circles.
   {
     title: "From 'Mummy and Daddy' to Viral Skits: How Nigerian Kids Are Owning Their Stories",
     description: "An exploration of how Nigerian kids have transformed traditional childhood storytelling into a viral digital movement.",
-    image: 'https://i.imgur.com/kS9yX1M.jpeg',
-    aiHint: 'nigerian children playing',
+    image: 'https://picsum.photos/seed/blog7/800/600',
+    aiHint: 'children playing storytelling',
     slug: 'from-mummy-and-daddy-to-viral-skits',
     content: `
 Back in the day, playtime meant gathering with friends to act out "Mummy and Daddy" or re-enacting scenes from our favorite Nollywood films. No script, no budget, just pure imagination. We played out scenarios of everyday Nigerian life, creating entire worlds in our compounds and streets. But today, that childhood storytelling tradition has evolved into skits, TikTok trends, and YouTube shorts, reaching audiences far beyond our immediate neighborhoods.
