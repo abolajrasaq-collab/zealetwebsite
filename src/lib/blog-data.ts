@@ -200,6 +200,10 @@ Let’s stop giving dreams the power they don’t deserve. Believe in your actio
 Abolaji Rasaq
 
 Biochemist. Creative Director. Realist.
+
+---
+
+*Originally published on [Medium](https://medium.com/@abolajirasaq/dreams-are-just-biochemical-noise-not-spiritual-messages-4e32ab70bb3c).*
 `
   },
 ];
