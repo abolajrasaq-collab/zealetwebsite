@@ -59,9 +59,9 @@ const projects: Project[] = [
     role: 'Director, Editor',
     story: 'This piece is a visual poem that explores the vibrant and imaginative world of Afrofuturism. I wanted to blend narrative, fashion, and abstract visuals to create a powerful statement about identity, technology, and the future. The project was a labor of love, combining my skills in direction, cinematography, and editing.',
     media: [
-      { url: 'https://i.ytimg.com/vi/zPOa2-A8d2M/hqdefault.jpg', aiHint: 'afrofuturism fashion' },
+      { url: 'https://i.ytimg.com/vi/8D3iVPDmasI/hqdefault.jpg', aiHint: 'afrofuturism fashion' },
     ],
-    youtubeUrl: 'https://www.youtube.com/watch?v=zPOa2-A8d2M',
+    youtubeUrl: 'https://www.youtube.com/watch?v=8D3iVPDmasI',
   },
   {
     title: 'Portraits of Resilience',
