@@ -1,72 +1,95 @@
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import Image from 'next/image';
+'use client';
+
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import Link from 'next/link';
+import { Input } from '@/components/ui/input';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { generateBlogIdeas, BlogIdeationOutput } from '@/ai/flows/ai-blog-ideation';
+import { Sparkles } from 'lucide-react';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
-const blogPosts = [
-  {
-    title: 'The Art of World-Building',
-    description: 'A deep dive into creating believable and immersive fictional worlds that readers will want to get lost in.',
-    image: 'https://picsum.photos/800/600?random=1',
-    aiHint: 'fantasy map',
-    slug: 'the-art-of-world-building',
-  },
-  {
-    title: 'Crafting Compelling Characters',
-    description: 'Learn the secrets to developing characters that feel real, relatable, and unforgettable.',
-    image: 'https://picsum.photos/800/600?random=2',
-    aiHint: 'character sketches',
-    slug: 'crafting-compelling-characters',
-  },
-  {
-    title: 'Plotting Your Novel: A Beginner\'s Guide',
-    description: 'From the initial idea to a full-fledged outline, here are the steps to plotting a successful novel.',
-    image: 'https://picsum.photos/800/600?random=3',
-    aiHint: 'storyboard corkboard',
-    slug: 'plotting-your-novel',
-  },
-];
+export default function BlogIdeationSection() {
+  const [topic, setTopic] = useState('');
+  const [ideas, setIdeas] = useState<BlogIdeationOutput['ideas']>([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-export default function BlogSection() {
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!topic.trim()) {
+      setError('Please enter a topic.');
+      return;
+    }
+    setLoading(true);
+    setError(null);
+    setIdeas([]);
+
+    try {
+      const result = await generateBlogIdeas({ topic });
+      setIdeas(result.ideas);
+    } catch (err) {
+      setError('An error occurred while generating ideas. Please try again.');
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
-    <section id="blog" className="py-20 md:py-32 bg-card">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">From My Desk</h2>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-foreground/80">
-            Musings on the craft of writing, storytelling, and creative inspiration.
-          </p>
+    <Card className="bg-card border-border shadow-lg">
+      <CardHeader>
+        <div className="flex items-center gap-3">
+          <Sparkles className="w-8 h-8 text-accent" />
+          <div>
+            <CardTitle className="text-2xl">AI Blog Idea Generator</CardTitle>
+            <CardDescription>Overcome writer's block. Enter a topic to get unique blog post ideas.</CardDescription>
+          </div>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogPosts.map((post) => (
-            <Card key={post.slug} className="overflow-hidden group bg-background flex flex-col">
-              <CardHeader className="p-0">
-                <div className="relative aspect-video">
-                  <Image
-                    src={post.image}
-                    alt={post.title}
-                    width={800}
-                    height={600}
-                    data-ai-hint={post.aiHint}
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
+      </CardHeader>
+      <CardContent>
+        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2 mb-6">
+          <Input
+            type="text"
+            value={topic}
+            onChange={(e) => setTopic(e.target.value)}
+            placeholder="e.g., 'The future of African cinema'"
+            className="flex-grow bg-background"
+            disabled={loading}
+          />
+          <Button type="submit" disabled={loading} className="bg-accent hover:bg-accent/90 text-accent-foreground">
+            {loading ? 'Generating...' : 'Generate Ideas'}
+          </Button>
+        </form>
+
+        {error && <p className="text-destructive text-center">{error}</p>}
+
+        {loading && (
+          <div className="space-y-4 mt-6">
+            {[...Array(3)].map((_, i) => (
+                <div key={i} className="p-4 border rounded-md">
+                    <div className="h-6 bg-muted rounded-md w-3/4 animate-pulse mb-2"></div>
+                    <div className="h-4 bg-muted rounded-md w-full animate-pulse"></div>
                 </div>
-              </CardHeader>
-              <CardContent className="p-6 flex-grow flex flex-col">
-                <div className="flex-grow">
-                  <h3 className="text-xl font-semibold">{post.title}</h3>
-                  <p className="text-sm text-foreground/70 mt-2">{post.description}</p>
-                </div>
-                <CardFooter className="p-0 pt-6 mt-auto">
-                  <Button asChild variant="outline" className="w-full">
-                    <Link href={`/blog/${post.slug}`}>Read More</Link>
-                  </Button>
-                </CardFooter>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </div>
-    </section>
+            ))}
+          </div>
+        )}
+
+        {ideas.length > 0 && (
+          <div className="mt-6">
+            <h3 className="text-xl font-semibold mb-4 text-center">Generated Ideas</h3>
+            <Accordion type="single" collapsible className="w-full">
+              {ideas.map((idea, index) => (
+                <AccordionItem value={`item-${index}`} key={index}>
+                  <AccordionTrigger className="text-lg font-medium text-left">{idea.title}</AccordionTrigger>
+                  <AccordionContent className="prose prose-sm dark:prose-invert">
+                    <p>{idea.outline}</p>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        )}
+      </CardContent>
+    </Card>
   );
 }

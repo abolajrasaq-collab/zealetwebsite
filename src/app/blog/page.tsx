@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { blogPosts } from '@/lib/blog-data';
+import BlogIdeationSection from '@/components/sections/blog-ideation-section';
 
 export default function BlogListPage() {
   return (
@@ -18,34 +19,40 @@ export default function BlogListPage() {
               A collection of thoughts, stories, and insights on creativity, design, and filmmaking.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post) => (
-              <Card key={post.slug} className="overflow-hidden group bg-card flex flex-col">
-                <CardHeader className="p-0">
-                  <div className="relative aspect-video">
-                    <Image
-                      src={post.image}
-                      alt={post.title}
-                      width={800}
-                      height={600}
-                      data-ai-hint={post.aiHint}
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  </div>
-                </CardHeader>
-                <CardContent className="p-6 flex-grow flex flex-col">
-                  <div className="flex-grow">
-                    <h3 className="text-xl font-semibold">{post.title}</h3>
-                    <p className="text-sm text-foreground/70 mt-2">{post.description}</p>
-                  </div>
-                  <CardFooter className="p-0 pt-6 mt-auto">
-                    <Button asChild variant="outline" className="w-full">
-                      <Link href={`/blog/${post.slug}`}>Read More</Link>
-                    </Button>
-                  </CardFooter>
-                </CardContent>
-              </Card>
-            ))}
+
+          <BlogIdeationSection />
+
+          <div className="mt-16 border-t border-border pt-16">
+            <h2 className="text-3xl font-bold text-center mb-12">All Articles</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {blogPosts.map((post) => (
+                <Card key={post.slug} className="overflow-hidden group bg-card flex flex-col">
+                  <CardHeader className="p-0">
+                    <div className="relative aspect-video">
+                      <Image
+                        src={post.image}
+                        alt={post.title}
+                        width={800}
+                        height={600}
+                        data-ai-hint={post.aiHint}
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
+                  </CardHeader>
+                  <CardContent className="p-6 flex-grow flex flex-col">
+                    <div className="flex-grow">
+                      <h3 className="text-xl font-semibold">{post.title}</h3>
+                      <p className="text-sm text-foreground/70 mt-2">{post.description}</p>
+                    </div>
+                    <CardFooter className="p-0 pt-6 mt-auto">
+                      <Button asChild variant="outline" className="w-full">
+                        <Link href={`/blog/${post.slug}`}>Read More</Link>
+                      </Button>
+                    </CardFooter>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </main>
