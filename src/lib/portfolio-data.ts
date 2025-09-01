@@ -19,6 +19,7 @@ export type Project = {
   btsMedia?: ProjectMedia[];
   youtubeUrl?: string;
   vimeoId?: string;
+  filmUrl?: string;
 };
 
 
@@ -85,6 +86,7 @@ export const projects: Project[] = [
       { url: 'https://picsum.photos/seed/bts3-2/600/400', aiHint: 'actress portrait', type: 'image' },
       { url: 'https://picsum.photos/seed/bts3-3/600/400', aiHint: 'camera on tripod', type: 'image' },
     ],
+    filmUrl: '#'
   },
   {
     title: 'AKITI (MONKEY)',
@@ -100,7 +102,8 @@ export const projects: Project[] = [
     btsMedia: [
       { url: 'https://picsum.photos/seed/bts-akiti1/600/400', aiHint: 'warehouse location', type: 'image' },
       { url: 'https://picsum.photos/seed/bts-akiti2/600/400', aiHint: 'fight choreography', type: 'image' },
-    ]
+    ],
+    filmUrl: '#'
   },
   {
     title: 'BEFORE SEVEN',
@@ -115,7 +118,8 @@ export const projects: Project[] = [
     youtubeUrl: 'https://www.youtube.com/embed/qnwRZOHADsw?autoplay=1',
     btsMedia: [
       { url: 'https://picsum.photos/seed/bts-beforeseven1/600/400', aiHint: 'dramatic lighting setup', type: 'image' },
-    ]
+    ],
+    filmUrl: '#'
   },
   {
     title: 'CBN Revolution',
@@ -143,6 +147,7 @@ export const projects: Project[] = [
     thumbnail: 'https://i.imgur.com/1g9YgqV.jpeg',
     media: [{ url: 'https://i.imgur.com/1g9YgqV.jpeg', aiHint: 'dramatic movie poster' }],
     vimeoId: '902839943',
+    filmUrl: '#',
   },
   // Design
   {

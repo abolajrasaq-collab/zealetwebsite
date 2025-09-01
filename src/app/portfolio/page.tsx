@@ -9,7 +9,7 @@ import Image from 'next/image';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
-import { Eye, Video, Image as ImageIcon } from 'lucide-react';
+import { Eye, Video, Image as ImageIcon, Clapperboard } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
@@ -168,6 +168,17 @@ const ProjectModalContent = ({ project }: { project: Project | null }) => {
                         <div className="prose prose-base dark:prose-invert">
                             <h4 className="font-semibold text-foreground mb-2">About The Project</h4>
                             <p className="text-foreground/80">{project.story}</p>
+                        </div>
+                    )}
+
+                    {project.filmUrl && (
+                        <div className="pt-4">
+                            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground w-full">
+                                <a href={project.filmUrl} target="_blank" rel="noopener noreferrer">
+                                    <Clapperboard className="mr-2 h-4 w-4" />
+                                    Watch Now
+                                </a>
+                            </Button>
                         </div>
                     )}
                 </div>

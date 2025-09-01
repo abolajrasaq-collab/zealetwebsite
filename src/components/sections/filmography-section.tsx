@@ -8,7 +8,10 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Clapperboard, PlayCircle } from 'lucide-react';
-import { filmProjects, FilmProject } from '@/lib/filmography-data';
+import { projects } from '@/lib/portfolio-data';
+import type { Project as FilmProject } from '@/lib/portfolio-data';
+
+const filmProjects = projects.filter(p => p.category === 'Film' || p.category === 'Commercial' || p.category === 'Showreel');
 
 export default function FilmographySection() {
   const [selectedFilm, setSelectedFilm] = useState<FilmProject | null>(null);
@@ -30,11 +33,11 @@ export default function FilmographySection() {
                   <CardContent className="p-0">
                     <div className="relative aspect-[2/3]">
                       <Image
-                        src={project.poster}
+                        src={project.thumbnail}
                         alt={`${project.title} Poster`}
                         width={500}
                         height={750}
-                        data-ai-hint={project.aiHint}
+                        data-ai-hint={project.media[0].aiHint}
                         className="object-cover transition-transform duration-500 group-hover:scale-105 w-full h-full"
                       />
                       <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
@@ -53,7 +56,7 @@ export default function FilmographySection() {
                     <div className="md:col-span-2 bg-black flex items-center justify-center">
                       <div className="relative aspect-video w-full max-w-4xl mx-auto rounded-lg overflow-hidden border">
                           <iframe
-                              src={`https://player.vimeo.com/video/${selectedFilm.vimeoId}?autoplay=1&title=0&byline=0&portrait=0`}
+                              src={selectedFilm.youtubeUrl || `https://player.vimeo.com/video/${selectedFilm.vimeoId}?autoplay=1&title=0&byline=0&portrait=0`}
                               width="100%"
                               height="100%"
                               frameBorder="0"
@@ -69,13 +72,15 @@ export default function FilmographySection() {
                         </DialogHeader>
 
                         <div className="grid grid-cols-2 gap-x-4 gap-y-6 text-sm">
-                            <div>
-                                <h4 className="font-semibold text-foreground/70 mb-1">Year</h4>
-                                <p className="font-medium text-foreground">{selectedFilm.year}</p>
-                            </div>
+                            {selectedFilm.year && (
+                                <div>
+                                    <h4 className="font-semibold text-foreground/70 mb-1">Year</h4>
+                                    <p className="font-medium text-foreground">{selectedFilm.year}</p>
+                                </div>
+                            )}
                             <div>
                                 <h4 className="font-semibold text-foreground/70 mb-1">Type</h4>
-                                <p className="font-medium text-foreground">{selectedFilm.type}</p>
+                                <p className="font-medium text-foreground">{selectedFilm.category}</p>
                             </div>
                             <div className="col-span-2">
                                 <h4 className="font-semibold text-foreground/70 mb-1">My Role</h4>
@@ -85,7 +90,7 @@ export default function FilmographySection() {
 
                         <div className="prose prose-base dark:prose-invert">
                             <h4 className="font-semibold text-foreground mb-2">Synopsis</h4>
-                            <p className="text-foreground/80">{selectedFilm.synopsis}</p>
+                            <p className="text-foreground/80">{selectedFilm.story}</p>
                         </div>
                         
                         {selectedFilm.filmUrl && (
