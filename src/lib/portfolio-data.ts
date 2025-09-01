@@ -133,6 +133,17 @@ export const projects: Project[] = [
     youtubeUrl: 'https://www.youtube.com/embed/6cOSPnWh9xQ?autoplay=1',
   },
   {
+    title: 'The Samaritan',
+    category: 'Film',
+    tags: ['Narrative', 'Directing'],
+    description: 'A short film about an act of kindness.',
+    role: 'Director',
+    story: 'This film explores what it means to be a good samaritan in the modern world.',
+    thumbnail: 'https://i.imgur.com/qdjaTKy.jpeg',
+    media: [{ url: 'https://i.imgur.com/qdjaTKy.jpeg', aiHint: 'dramatic film poster' }],
+    youtubeUrl: 'https://www.youtube.com/embed/bRMvni0znGI?autoplay=1',
+  },
+  {
     title: 'CBN Revolution',
     client: 'Documentary',
     category: 'Film',
