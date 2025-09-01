@@ -88,18 +88,18 @@ const projects: Project[] = [
     ],
     youtubeUrl: 'https://www.youtube.com/embed/qnwRZOHADsw?autoplay=1',
   },
-    {
-    title: 'Oshodi Transport Interchange',
-    client: 'Lagos State Government',
-    category: 'Architecture Photography',
-    type: 'image',
-    description: 'Area photograph of Oshodi Transport Interchange shot at night.',
-    role: 'Photographer',
-    story: 'Commissioned by the Lagos State Government, this project aimed to capture the monumental scale and vibrant energy of the newly built Oshodi Transport Interchange. My focus was on night photography to highlight the architectural lighting and the constant flow of a city that never sleeps. The challenge was finding unique perspectives amidst the controlled chaos.',
+  {
+    title: 'SAKOPE (COMPLETE DOSAGE)',
+    client: 'Personal Project',
+    category: 'Narrative Short Film',
+    type: 'video',
+    description: 'Malomo, an illiterate girl undergoing training at a local hospital as an auxiliary nurse, leaves because of high handedness, and starts hawking drugs, claiming to be a professional nurse until her customers start falling apart.',
+    role: 'Director, Producer, DOP',
+    story: 'Malomo, an illiterate girl undergoing training at a local hospital as an auxiliary nurse, leaves because of high handedness, and starts hawking drugs, claiming to be a professional nurse until her customers start falling apart.',
     media: [
-        { url: 'https://picsum.photos/seed/p2-1/1280/720', aiHint: 'modern architecture night' },
-        { url: 'https://picsum.photos/seed/p2-2/1280/720', aiHint: 'bus terminal night' },
+        { url: 'https://i.ytimg.com/vi/ralH8-n4QKk/hqdefault.jpg', aiHint: 'girl selling medicine' },
     ],
+    youtubeUrl: 'https://www.youtube.com/embed/ralH8-n4QKk?autoplay=1',
   },
 ];
 
