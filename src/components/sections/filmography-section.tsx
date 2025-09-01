@@ -1,4 +1,3 @@
-
 'use client';
 
 import Image from 'next/image';
@@ -9,7 +8,7 @@ import { Clapperboard, PlayCircle } from 'lucide-react';
 import { projects } from '@/lib/portfolio-data';
 import type { Project as FilmProject } from '@/lib/portfolio-data';
 
-const filmProjects = projects.filter(p => p.category === 'Film' || p.category === 'Commercial' || p.category === 'Showreel');
+const filmProjects = projects.filter(p => p.category === 'Film');
 
 export default function FilmographySection() {
   const [selectedFilm, setSelectedFilm] = useState<FilmProject | null>(null);
