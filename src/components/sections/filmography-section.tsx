@@ -26,26 +26,21 @@ export default function FilmographySection() {
           </p>
         </div>
         <Dialog>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6">
             {filmProjects.map((project) => (
               <DialogTrigger asChild key={project.title} onClick={() => setSelectedFilm(project)}>
-                <Card className="overflow-hidden group bg-background flex flex-col cursor-pointer">
-                  <CardContent className="p-0">
-                    <div className="relative aspect-[2/3]">
-                      <Image
-                        src={project.thumbnail}
-                        alt={`${project.title} Poster`}
-                        width={500}
-                        height={750}
-                        data-ai-hint={project.media[0].aiHint}
-                        className="object-cover transition-transform duration-500 group-hover:scale-105 w-full h-full"
-                      />
-                      <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                        <PlayCircle className="w-16 h-16 text-white" />
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                <div className="group relative aspect-[2/3] overflow-hidden rounded-lg cursor-pointer shadow-lg transition-transform hover:scale-105">
+                  <Image
+                    src={project.thumbnail}
+                    alt={`${project.title} Poster`}
+                    fill
+                    data-ai-hint={project.media[0].aiHint}
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <PlayCircle className="w-16 h-16 text-white" />
+                  </div>
+                </div>
               </DialogTrigger>
             ))}
           </div>
