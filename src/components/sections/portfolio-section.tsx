@@ -75,6 +75,19 @@ const projects: Project[] = [
     ],
     youtubeUrl: 'https://www.youtube.com/embed/8D3iVPDmasI?autoplay=1',
   },
+  {
+    title: 'BEFORE SEVEN',
+    client: 'Personal Project',
+    category: 'Narrative Short Film',
+    type: 'video',
+    description: 'A teenage girl made a mistake that made her family rejects her. She\'s racing against time before she makes a decision she would forever regret.',
+    role: 'Director, DOP',
+    story: 'A teenage girl made a mistake that made her family rejects her. She\'s racing against time before she makes a decision she would forever regret.',
+    media: [
+      { url: 'https://i.ytimg.com/vi/qnwRZOHADsw/hqdefault.jpg', aiHint: 'teenage girl emotional' },
+    ],
+    youtubeUrl: 'https://www.youtube.com/embed/qnwRZOHADsw?autoplay=1',
+  },
     {
     title: 'Oshodi Transport Interchange',
     client: 'Lagos State Government',
