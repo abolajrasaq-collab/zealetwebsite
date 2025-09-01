@@ -11,10 +11,8 @@ import Logo from '@/components/logo';
 const navLinks = [
   { href: '/#about', label: 'Manifesto' },
   { href: '/#capabilities', label: 'Capabilities' },
-  { href: '/portfolio', label: 'Portfolio' },
+  { href: '/portfolio', label: 'Work' },
   { href: '/#filmography', label: 'Filmography' },
-  { href: '/design', label: 'Design' },
-  { href: '/drone', label: 'Drone' },
   { href: '/shop', label: 'Shop' },
   { href: '/#testimonials', label: 'Collaborators' },
   { href: '/blog', label: 'Journal' },
