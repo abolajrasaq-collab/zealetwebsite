@@ -144,4 +144,16 @@ When you visit a potential location, be thorough:
 Finding the perfect location is a treasure hunt. With creativity and persistence, you can find incredible places that will elevate your film without draining your budget.
 `
   },
+  {
+    title: 'Dreams are Just Biochemical Noise, Not Spiritual Messages',
+    description: 'Exploring the science behind dreams and why we interpret them the way we do.',
+    image: 'https://picsum.photos/seed/blog5/800/600',
+    aiHint: 'abstract brain waves',
+    slug: 'dreams-are-just-biochemical-noise',
+    content: `
+## Dreams are Just Biochemical Noise, Not Spiritual Messages
+
+This is a placeholder for your article. Please provide the full content and I will update it here.
+`
+  },
 ];
