@@ -86,7 +86,7 @@ export const projects: Project[] = [
       { url: 'https://picsum.photos/seed/bts3-2/600/400', aiHint: 'actress portrait', type: 'image' },
       { url: 'https://picsum.photos/seed/bts3-3/600/400', aiHint: 'camera on tripod', type: 'image' },
     ],
-    filmUrl: '#'
+    filmUrl: 'https://www.youtube.com/watch?v=ralH8-n4QKk'
   },
   {
     title: 'AKITI (MONKEY)',
@@ -103,7 +103,7 @@ export const projects: Project[] = [
       { url: 'https://picsum.photos/seed/bts-akiti1/600/400', aiHint: 'warehouse location', type: 'image' },
       { url: 'https://picsum.photos/seed/bts-akiti2/600/400', aiHint: 'fight choreography', type: 'image' },
     ],
-    filmUrl: '#'
+    filmUrl: 'https://www.youtube.com/watch?v=8D3iVPDmasI'
   },
   {
     title: 'BEFORE SEVEN',
@@ -119,7 +119,7 @@ export const projects: Project[] = [
     btsMedia: [
       { url: 'https://picsum.photos/seed/bts-beforeseven1/600/400', aiHint: 'dramatic lighting setup', type: 'image' },
     ],
-    filmUrl: '#'
+    filmUrl: 'https://www.youtube.com/watch?v=qnwRZOHADsw'
   },
   {
     title: 'BADAGRY HERITAGE',
