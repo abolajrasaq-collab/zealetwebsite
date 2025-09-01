@@ -89,17 +89,17 @@ const projects: Project[] = [
     youtubeUrl: 'https://www.youtube.com/embed/qnwRZOHADsw?autoplay=1',
   },
   {
-    title: 'SAKOPE (COMPLETE DOSAGE)',
-    client: 'Personal Project',
-    category: 'Narrative Short Film',
+    title: 'CBN Revolution',
+    client: 'Documentary',
+    category: 'Documentary',
     type: 'video',
-    description: 'Malomo, an illiterate girl undergoing training at a local hospital as an auxiliary nurse, leaves because of high handedness, and starts hawking drugs, claiming to be a professional nurse until her customers start falling apart.',
-    role: 'Director, Producer, DOP',
-    story: 'Malomo, an illiterate girl undergoing training at a local hospital as an auxiliary nurse, leaves because of high handedness, and starts hawking drugs, claiming to be a professional nurse until her customers start falling apart.',
+    description: 'A documentary about wheat production in Nigeria.',
+    role: 'Director',
+    story: 'This documentary explores the revolution of wheat production in Nigeria, highlighting the stories of the farmers and the impact on the national economy.',
     media: [
-        { url: 'https://i.ytimg.com/vi/ralH8-n4QKk/hqdefault.jpg', aiHint: 'girl selling medicine' },
+        { url: 'https://i.ytimg.com/vi/-2UfFpUNPnE/hqdefault.jpg', aiHint: 'wheat farm documentary' },
     ],
-    youtubeUrl: 'https://www.youtube.com/embed/ralH8-n4QKk?autoplay=1',
+    youtubeUrl: 'https://www.youtube.com/embed/-2UfFpUNPnE?autoplay=1',
   },
 ];
 
