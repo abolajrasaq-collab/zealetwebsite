@@ -186,94 +186,92 @@ export default function PortfolioSection() {
 
           {selectedProject && (
             <DialogContent className="w-screen h-screen max-w-full max-h-full p-0 flex flex-col">
-                <div className="flex-shrink-0 md:h-3/5 bg-black flex items-center justify-center">
-                  {selectedProject.type === 'video' && selectedProject.youtubeUrl ? (
-                    <div className="relative aspect-video w-full h-full max-w-4xl mx-auto">
-                       <iframe
-                            src={selectedProject.youtubeUrl}
-                            width="100%"
-                            height="100%"
-                            frameBorder="0"
-                            allow="autoplay; fullscreen; picture-in-picture"
-                            allowFullScreen
-                            className="absolute top-0 left-0 w-full h-full"
-                        ></iframe>
+                <div className="flex-grow grid md:grid-cols-3 overflow-y-auto">
+                    <div className="md:col-span-2 bg-black flex items-center justify-center p-4">
+                      {selectedProject.type === 'video' && selectedProject.youtubeUrl ? (
+                        <div className="relative aspect-video w-full max-w-4xl mx-auto">
+                           <iframe
+                                src={selectedProject.youtubeUrl}
+                                width="100%"
+                                height="100%"
+                                frameBorder="0"
+                                allow="autoplay; fullscreen; picture-in-picture"
+                                allowFullScreen
+                                className="absolute top-0 left-0 w-full h-full"
+                            ></iframe>
+                        </div>
+                      ) : (
+                        <Carousel className="w-full max-w-4xl mx-auto">
+                          <CarouselContent>
+                            {selectedProject.media.map((media, index) => (
+                              <CarouselItem key={index}>
+                                  <div className="relative aspect-video">
+                                    <Image
+                                      src={media.url}
+                                      alt={`${selectedProject.title} - Image ${index + 1}`}
+                                      fill
+                                      data-ai-hint={media.aiHint}
+                                      className="object-contain"
+                                    />
+                                  </div>
+                              </CarouselItem>
+                            ))}
+                          </CarouselContent>
+                          {selectedProject.media.length > 1 && (
+                              <>
+                                  <CarouselPrevious className="-left-12" />
+                                  <CarouselNext className="-right-12" />
+                              </>
+                          )}
+                        </Carousel>
+                      )}
                     </div>
-                  ) : (
-                    <Carousel className="w-full max-w-4xl mx-auto">
-                      <CarouselContent>
-                        {selectedProject.media.map((media, index) => (
-                          <CarouselItem key={index}>
-                              <div className="relative aspect-video">
+                    <div className="col-span-1 h-full p-8 md:p-12 space-y-8 overflow-y-auto border-l">
+                        <DialogHeader>
+                            <DialogTitle className="text-3xl md:text-4xl font-bold">{selectedProject.title}</DialogTitle>
+                        </DialogHeader>
+
+                        <div className="grid grid-cols-2 gap-x-4 gap-y-6 text-sm">
+                            <div>
+                                <h4 className="font-semibold text-foreground/70 mb-1">Client</h4>
+                                <p className="font-medium text-foreground">{selectedProject.client}</p>
+                            </div>
+                            <div>
+                                <h4 className="font-semibold text-foreground/70 mb-1">Type</h4>
+                                <p className="font-medium text-foreground">{selectedProject.category}</p>
+                            </div>
+                            <div className="col-span-2">
+                                <h4 className="font-semibold text-foreground/70 mb-1">My Role</h4>
+                                <p className="font-medium text-foreground">{selectedProject.role}</p>
+                            </div>
+                        </div>
+
+                        <div className="prose prose-base dark:prose-invert">
+                            <h4 className="font-semibold text-foreground mb-2">About The Project</h4>
+                            <p className="text-foreground/80">{selectedProject.story}</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="flex-shrink-0 p-8 md:p-12 border-t">
+                     <h4 className="font-semibold text-foreground mb-4 text-xl">Behind The Scenes</h4>
+                     <ScrollArea className="w-full whitespace-nowrap">
+                        <div className="flex space-x-4 pb-4">
+                          {selectedProject.btsMedia.map((media, index) => (
+                            <figure key={index} className="shrink-0">
+                              <div className="overflow-hidden rounded-md w-80 h-52 relative">
                                 <Image
                                   src={media.url}
-                                  alt={`${selectedProject.title} - Image ${index + 1}`}
-                                  fill
+                                  alt={`Behind the scenes ${index + 1}`}
                                   data-ai-hint={media.aiHint}
-                                  className="object-contain"
+                                  fill
+                                  className="object-cover"
                                 />
                               </div>
-                          </CarouselItem>
-                        ))}
-                      </CarouselContent>
-                      {selectedProject.media.length > 1 && (
-                          <>
-                              <CarouselPrevious className="-left-12" />
-                              <CarouselNext className="-right-12" />
-                          </>
-                      )}
-                    </Carousel>
-                  )}
-                </div>
-                <div className="flex-grow overflow-y-auto">
-                    <div className="grid md:grid-cols-3 h-full">
-                        <div className="col-span-1 h-full p-8 md:p-12 space-y-8 border-r">
-                            <DialogHeader>
-                                <DialogTitle className="text-3xl md:text-4xl font-bold">{selectedProject.title}</DialogTitle>
-                            </DialogHeader>
-
-                            <div className="grid grid-cols-2 gap-x-4 gap-y-6 text-sm">
-                                <div>
-                                    <h4 className="font-semibold text-foreground/70 mb-1">Client</h4>
-                                    <p className="font-medium text-foreground">{selectedProject.client}</p>
-                                </div>
-                                <div>
-                                    <h4 className="font-semibold text-foreground/70 mb-1">Type</h4>
-                                    <p className="font-medium text-foreground">{selectedProject.category}</p>
-                                </div>
-                                <div className="col-span-2">
-                                    <h4 className="font-semibold text-foreground/70 mb-1">My Role</h4>
-                                    <p className="font-medium text-foreground">{selectedProject.role}</p>
-                                </div>
-                            </div>
-
-                            <div className="prose prose-base dark:prose-invert">
-                                <h4 className="font-semibold text-foreground mb-2">About The Project</h4>
-                                <p className="text-foreground/80">{selectedProject.story}</p>
-                            </div>
+                            </figure>
+                          ))}
                         </div>
-                        <div className="md:col-span-2 p-8 md:p-12">
-                             <h4 className="font-semibold text-foreground mb-4 text-xl">Behind The Scenes</h4>
-                             <ScrollArea className="w-full whitespace-nowrap">
-                                <div className="flex space-x-4 pb-4">
-                                  {selectedProject.btsMedia.map((media, index) => (
-                                    <figure key={index} className="shrink-0">
-                                      <div className="overflow-hidden rounded-md w-80 h-52 relative">
-                                        <Image
-                                          src={media.url}
-                                          alt={`Behind the scenes ${index + 1}`}
-                                          data-ai-hint={media.aiHint}
-                                          fill
-                                          className="object-cover"
-                                        />
-                                      </div>
-                                    </figure>
-                                  ))}
-                                </div>
-                                <ScrollBar orientation="horizontal" />
-                              </ScrollArea>
-                        </div>
-                    </div>
+                        <ScrollBar orientation="horizontal" />
+                      </ScrollArea>
                 </div>
             </DialogContent>
           )}
@@ -282,4 +280,3 @@ export default function PortfolioSection() {
     </section>
   );
 }
-
