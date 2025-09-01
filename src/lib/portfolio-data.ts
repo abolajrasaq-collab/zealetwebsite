@@ -65,8 +65,8 @@ export const projects: Project[] = [
     role: 'Director of Photography',
     description: 'A Nollywood web series about a young man who will go to any length to win the heart of his neighbor.',
     story: 'Atúnidá is a nollywood limited web series that follows the story of a young shy man who falls in love with his neighbor and would go to any length to win her heart even if it would cost him his own life.',
-    thumbnail: 'https://i.ytimg.com/vi/KkKJJ6hfWGc/hqdefault.jpg',
-    media: [{ url: 'https://i.ytimg.com/vi/KkKJJ6hfWGc/hqdefault.jpg', aiHint: 'nollywood web series' }],
+    thumbnail: 'https://i.imgur.com/N7L6dm6.jpeg',
+    media: [{ url: 'https://i.imgur.com/N7L6dm6.jpeg', aiHint: 'nollywood web series' }],
     youtubeUrl: 'https://www.youtube.com/embed/KkKJJ6hfWGc?autoplay=1',
   },
   // Films
@@ -78,8 +78,8 @@ export const projects: Project[] = [
     description: 'An illiterate girl hawking drugs as a professional nurse soon finds her customers falling apart.',
     role: 'Director, Producer, DOP',
     story: 'Malomo, an illiterate girl undergoing training at a local hospital as an auxiliary nurse, leaves because of high handedness, and starts hawking drugs, claiming to be a professional nurse until her customers start falling apart.',
-    thumbnail: 'https://i.ytimg.com/vi/ralH8-n4QKk/hqdefault.jpg',
-    media: [{ url: 'https://i.ytimg.com/vi/ralH8-n4QKk/hqdefault.jpg', aiHint: 'girl hawking drugs' }],
+    thumbnail: 'https://i.imgur.com/iEpNS7H.jpeg',
+    media: [{ url: 'https://i.imgur.com/iEpNS7H.jpeg', aiHint: 'girl hawking drugs' }],
     youtubeUrl: 'https://www.youtube.com/embed/ralH8-n4QKk?autoplay=1',
     btsMedia: [
       { url: 'https://picsum.photos/seed/bts3-1/600/400', aiHint: 'short film set', type: 'image' },
@@ -113,8 +113,8 @@ export const projects: Project[] = [
     description: 'A teenage girl made a mistake that made her family rejects her. She\'s racing against time before she makes a decision she would forever regret.',
     role: 'Director, DOP',
     story: 'A teenage girl made a mistake that made her family rejects her. She\'s racing against time before she makes a decision she would forever regret.',
-    thumbnail: 'https://i.ytimg.com/vi/qnwRZOHADsw/hqdefault.jpg',
-    media: [{ url: 'https://i.ytimg.com/vi/qnwRZOHADsw/hqdefault.jpg', aiHint: 'teenage girl emotional' }],
+    thumbnail: 'https://i.imgur.com/USxAmQq.jpeg',
+    media: [{ url: 'https://i.imgur.com/USxAmQq.jpeg', aiHint: 'teenage girl emotional' }],
     youtubeUrl: 'https://www.youtube.com/embed/qnwRZOHADsw?autoplay=1',
     btsMedia: [
       { url: 'https://picsum.photos/seed/bts-beforeseven1/600/400', aiHint: 'dramatic lighting setup', type: 'image' },
