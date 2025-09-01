@@ -128,8 +128,8 @@ export const projects: Project[] = [
     description: 'A documentary exploring the rich history and cultural heritage of Badagry.',
     role: 'Director',
     story: 'This film delves into the historical significance of Badagry, a coastal town with a profound and complex past, from its role in the slave trade to its vibrant culture today.',
-    thumbnail: 'https://i.imgur.com/iEpNS7H.jpeg',
-    media: [{ url: 'https://i.imgur.com/iEpNS7H.jpeg', aiHint: 'historical documentary' }],
+    thumbnail: 'https://imgur.com/3FLoZax.jpeg',
+    media: [{ url: 'https://imgur.com/3FLoZax.jpeg', aiHint: 'historical documentary' }],
     youtubeUrl: 'https://www.youtube.com/embed/6cOSPnWh9xQ?autoplay=1',
   },
   {
