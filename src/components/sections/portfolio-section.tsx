@@ -101,20 +101,6 @@ const projects: Project[] = [
         { url: 'https://picsum.photos/seed/p2-2/1280/720', aiHint: 'bus terminal night' },
     ],
   },
-  {
-    title: 'Portraits of Resilience',
-    client: 'Personal Project',
-    category: 'Fine Art',
-    type: 'image',
-    description: 'A black and white photography series on the human spirit.',
-    role: 'Photographer',
-    story: '"Portraits of Resilience" is a personal series. I wanted to capture the quiet dignity and strength of the human spirit through stark, intimate black and white portraits. Each photo session was a deep conversation, allowing me to capture an authentic and vulnerable moment with each subject.',
-    media: [
-        { url: 'https://picsum.photos/seed/p6-1/1280/720', aiHint: 'portrait black and white' },
-        { url: 'https://picsum.photos/seed/p6-2/1280/720', aiHint: 'dramatic portrait' },
-        { url: 'https://picsum.photos/seed/p6-3/1280/720', aiHint: 'elderly person portrait' },
-    ],
-  },
 ];
 
 export default function PortfolioSection() {
