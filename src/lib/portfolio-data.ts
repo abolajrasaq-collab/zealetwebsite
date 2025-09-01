@@ -122,6 +122,17 @@ export const projects: Project[] = [
     filmUrl: '#'
   },
   {
+    title: 'BADAGRY HERITAGE',
+    category: 'Film',
+    tags: ['Documentary', 'Directing', 'History'],
+    description: 'A documentary exploring the rich history and cultural heritage of Badagry.',
+    role: 'Director',
+    story: 'This film delves into the historical significance of Badagry, a coastal town with a profound and complex past, from its role in the slave trade to its vibrant culture today.',
+    thumbnail: 'https://i.imgur.com/iEpNS7H.jpeg',
+    media: [{ url: 'https://i.imgur.com/iEpNS7H.jpeg', aiHint: 'historical documentary' }],
+    youtubeUrl: 'https://www.youtube.com/embed/6cOSPnWh9xQ?autoplay=1',
+  },
+  {
     title: 'CBN Revolution',
     client: 'Documentary',
     category: 'Film',
