@@ -14,6 +14,7 @@ export type Project = {
   client?: string;
   role?: string;
   story?: string;
+  process?: string;
   thumbnail: string;
   media: ProjectMedia[];
   btsMedia?: ProjectMedia[];

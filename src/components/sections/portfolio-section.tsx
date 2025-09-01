@@ -10,16 +10,17 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, Di
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { Eye, Clapperboard, Video, Image as ImageIcon, ArrowRight } from 'lucide-react';
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
-import { projects, Project } from '@/lib/portfolio-data';
+import { projects, Project, ProjectMedia } from '@/lib/portfolio-data';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
+import Markdown from 'react-markdown';
 
 const recentProjects = projects.slice(0, 6);
 
 export default function PortfolioSection() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-    const renderMedia = (media: any, title: string, isBts = false) => {
+    const renderMedia = (media: ProjectMedia, title: string, isBts = false) => {
         const isVideo = media.type === 'video' || (isBts && media.url.includes('vimeo'));
         if (isVideo) {
              return (
@@ -106,7 +107,7 @@ export default function PortfolioSection() {
 
           {selectedProject && (
             <DialogContent className="w-screen h-screen max-w-full max-h-full p-0 flex flex-col">
-                <div className="flex-grow grid md:grid-cols-3 overflow-y-auto">
+                <div className="flex-grow grid md:grid-cols-3 overflow-hidden">
                     <div className="md:col-span-2 bg-black flex items-center justify-center p-4">
                       {selectedProject.youtubeUrl ? (
                         <div className="relative aspect-video w-full max-w-4xl mx-auto">
@@ -180,6 +181,13 @@ export default function PortfolioSection() {
                                 <p className="text-foreground/80">{selectedProject.story}</p>
                             </div>
                         )}
+                        
+                        {selectedProject.process && (
+                            <div className="prose prose-base dark:prose-invert">
+                                <h4 className="font-semibold text-foreground mb-2">Process & Progress</h4>
+                                <Markdown className="text-foreground/80">{selectedProject.process}</Markdown>
+                            </div>
+                        )}
 
                         {selectedProject.filmUrl && (
                             <div className="pt-4">
@@ -191,25 +199,26 @@ export default function PortfolioSection() {
                                 </Button>
                             </div>
                         )}
+
+                         {selectedProject.btsMedia && selectedProject.btsMedia.length > 0 && (
+                            <div className="pt-4">
+                                <h4 className="font-semibold text-foreground mb-4 text-xl">Behind The Scenes</h4>
+                                <ScrollArea className="w-full whitespace-nowrap">
+                                    <div className="flex space-x-4 pb-4">
+                                    {selectedProject.btsMedia.map((media, index) => (
+                                        <figure key={index} className="shrink-0">
+                                        <div className="overflow-hidden rounded-md w-80 h-52 relative bg-black/20">
+                                            {renderMedia(media, `Behind the scenes ${index + 1}`, true)}
+                                        </div>
+                                        </figure>
+                                    ))}
+                                    </div>
+                                    <ScrollBar orientation="horizontal" />
+                                </ScrollArea>
+                            </div>
+                        )}
                     </div>
                 </div>
-                {selectedProject.btsMedia && selectedProject.btsMedia.length > 0 && (
-                    <div className="flex-shrink-0 p-8 md:p-12 border-t">
-                        <h4 className="font-semibold text-foreground mb-4 text-xl">Behind The Scenes</h4>
-                        <ScrollArea className="w-full whitespace-nowrap">
-                            <div className="flex space-x-4 pb-4">
-                            {selectedProject.btsMedia.map((media, index) => (
-                                <figure key={index} className="shrink-0">
-                                <div className="overflow-hidden rounded-md w-80 h-52 relative bg-black/20">
-                                    {renderMedia(media, `Behind the scenes ${index + 1}`, true)}
-                                </div>
-                                </figure>
-                            ))}
-                            </div>
-                            <ScrollBar orientation="horizontal" />
-                        </ScrollArea>
-                    </div>
-                )}
             </DialogContent>
           )}
         </Dialog>

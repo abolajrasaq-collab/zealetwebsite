@@ -15,6 +15,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { cn } from '@/lib/utils';
+import Markdown from 'react-markdown';
 
 const categories = ['All', 'Film', 'Commercial', 'Design', 'Drone', 'Photography'];
 
@@ -96,7 +97,7 @@ const ProjectModalContent = ({ project }: { project: Project | null }) => {
 
     return (
         <DialogContent className="w-screen h-screen max-w-full max-h-full p-0 flex flex-col">
-            <div className="flex-grow grid md:grid-cols-3 overflow-y-auto">
+            <div className="flex-grow grid md:grid-cols-3 overflow-hidden">
                 <div className="md:col-span-2 bg-black flex items-center justify-center p-4">
                     {project.youtubeUrl ? (
                         <div className="relative aspect-video w-full max-w-4xl mx-auto">
@@ -170,6 +171,13 @@ const ProjectModalContent = ({ project }: { project: Project | null }) => {
                             <p className="text-foreground/80">{project.story}</p>
                         </div>
                     )}
+                    
+                    {project.process && (
+                        <div className="prose prose-base dark:prose-invert">
+                            <h4 className="font-semibold text-foreground mb-2">Process & Progress</h4>
+                             <Markdown className="text-foreground/80">{project.process}</Markdown>
+                        </div>
+                    )}
 
                     {project.filmUrl && (
                         <div className="pt-4">
@@ -181,25 +189,26 @@ const ProjectModalContent = ({ project }: { project: Project | null }) => {
                             </Button>
                         </div>
                     )}
+
+                    {project.btsMedia && project.btsMedia.length > 0 && (
+                        <div className="pt-4">
+                            <h4 className="font-semibold text-foreground mb-4 text-xl">Behind The Scenes</h4>
+                            <ScrollArea className="w-full whitespace-nowrap">
+                                <div className="flex space-x-4 pb-4">
+                                {project.btsMedia.map((media, index) => (
+                                    <figure key={index} className="shrink-0">
+                                        <div className="overflow-hidden rounded-md w-80 h-52 relative bg-black/20">
+                                            {renderMedia(media, `Behind the scenes ${index + 1}`, true)}
+                                        </div>
+                                    </figure>
+                                ))}
+                                </div>
+                                <ScrollBar orientation="horizontal" />
+                            </ScrollArea>
+                        </div>
+                    )}
                 </div>
             </div>
-            {project.btsMedia && project.btsMedia.length > 0 && (
-                 <div className="flex-shrink-0 p-8 md:p-12 border-t">
-                    <h4 className="font-semibold text-foreground mb-4 text-xl">Behind The Scenes</h4>
-                    <ScrollArea className="w-full whitespace-nowrap">
-                        <div className="flex space-x-4 pb-4">
-                        {project.btsMedia.map((media, index) => (
-                            <figure key={index} className="shrink-0">
-                                <div className="overflow-hidden rounded-md w-80 h-52 relative bg-black/20">
-                                    {renderMedia(media, `Behind the scenes ${index + 1}`, true)}
-                                </div>
-                            </figure>
-                        ))}
-                        </div>
-                        <ScrollBar orientation="horizontal" />
-                    </ScrollArea>
-                </div>
-            )}
         </DialogContent>
     );
 };
@@ -211,7 +220,7 @@ export default function PortfolioPage() {
 
     const filteredProjects = useMemo(() => {
         if (activeTab === 'All') return projects;
-        return projects.filter(p => p.category === activeTab || (activeTab === 'Film' && (p.category === 'Showreel' || p.category === 'Commercial')));
+        return projects.filter(p => p.category === activeTab || (p.tags.includes(activeTab)));
     }, [activeTab]);
 
   return (
