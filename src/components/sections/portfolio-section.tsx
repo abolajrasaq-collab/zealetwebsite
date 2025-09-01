@@ -9,6 +9,7 @@ import { Badge } from '@/components/ui/badge';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogTrigger } from '@/components/ui/dialog';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { Eye, Clapperboard, Video, Image as ImageIcon } from 'lucide-react';
+import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
 
 type Project = {
   title: string;
@@ -19,6 +20,7 @@ type Project = {
   role: string;
   story: string;
   media: { url: string, aiHint: string }[];
+  btsMedia: { url: string, aiHint: string, type: 'image' | 'video' }[];
   youtubeUrl?: string;
 };
 
@@ -35,6 +37,11 @@ const projects: Project[] = [
         { url: 'https://i.ytimg.com/vi/N8hRH3nGn1E/hqdefault.jpg', aiHint: 'showreel film' },
     ],
     youtubeUrl: 'https://www.youtube.com/embed/N8hRH3nGn1E?autoplay=1',
+    btsMedia: [
+      { url: 'https://picsum.photos/seed/bts1-1/600/400', aiHint: 'film set camera', type: 'image' },
+      { url: 'https://picsum.photos/seed/bts1-2/600/400', aiHint: 'director chair', type: 'image' },
+      { url: 'https://picsum.photos/seed/bts1-3/600/400', aiHint: 'lighting setup', type: 'image' },
+    ],
   },
   {
     title: 'Trophy Extra Special Stout',
@@ -48,6 +55,10 @@ const projects: Project[] = [
         { url: 'https://i.ytimg.com/vi/j9VXRaAILR8/hqdefault.jpg', aiHint: 'beer commercial' },
     ],
     youtubeUrl: 'https://www.youtube.com/embed/j9VXRaAILR8?autoplay=1',
+    btsMedia: [
+      { url: 'https://picsum.photos/seed/bts2-1/600/400', aiHint: 'beer product shot', type: 'image' },
+      { url: 'https://picsum.photos/seed/bts2-2/600/400', aiHint: 'behind the scenes commercial', type: 'image' },
+    ],
   },
   {
     title: 'SAKOPE (COMPLETE DOSAGE)',
@@ -61,6 +72,11 @@ const projects: Project[] = [
       { url: 'https://i.ytimg.com/vi/ralH8-n4QKk/hqdefault.jpg', aiHint: 'girl hawking drugs' },
     ],
     youtubeUrl: 'https://www.youtube.com/embed/ralH8-n4QKk?autoplay=1',
+    btsMedia: [
+      { url: 'https://picsum.photos/seed/bts3-1/600/400', aiHint: 'short film set', type: 'image' },
+      { url: 'https://picsum.photos/seed/bts3-2/600/400', aiHint: 'actress portrait', type: 'image' },
+      { url: 'https://picsum.photos/seed/bts3-3/600/400', aiHint: 'camera on tripod', type: 'image' },
+    ],
   },
   {
     title: 'AKITI (MONKEY)',
@@ -74,6 +90,10 @@ const projects: Project[] = [
       { url: 'https://i.ytimg.com/vi/8D3iVPDmasI/hqdefault.jpg', aiHint: 'teenagers fighting' },
     ],
     youtubeUrl: 'https://www.youtube.com/embed/8D3iVPDmasI?autoplay=1',
+    btsMedia: [
+        { url: 'https://picsum.photos/seed/bts-akiti1/600/400', aiHint: 'warehouse location', type: 'image' },
+        { url: 'https://picsum.photos/seed/bts-akiti2/600/400', aiHint: 'fight choreography', type: 'image' },
+    ]
   },
   {
     title: 'BEFORE SEVEN',
@@ -87,6 +107,9 @@ const projects: Project[] = [
       { url: 'https://i.ytimg.com/vi/qnwRZOHADsw/hqdefault.jpg', aiHint: 'teenage girl emotional' },
     ],
     youtubeUrl: 'https://www.youtube.com/embed/qnwRZOHADsw?autoplay=1',
+    btsMedia: [
+        { url: 'https://picsum.photos/seed/bts-beforeseven1/600/400', aiHint: 'dramatic lighting setup', type: 'image' },
+    ]
   },
   {
     title: 'CBN Revolution',
@@ -100,6 +123,10 @@ const projects: Project[] = [
         { url: 'https://i.ytimg.com/vi/-2UfFpUNPnE/hqdefault.jpg', aiHint: 'wheat farm documentary' },
     ],
     youtubeUrl: 'https://www.youtube.com/embed/-2UfFpUNPnE?autoplay=1',
+    btsMedia: [
+        { url: 'https://picsum.photos/seed/bts-cbn1/600/400', aiHint: 'interview setup', type: 'image' },
+        { url: 'https://picsum.photos/seed/bts-cbn2/600/400', aiHint: 'drone shot wheat field', type: 'image' },
+    ]
   },
 ];
 
@@ -158,87 +185,94 @@ export default function PortfolioSection() {
           </div>
 
           {selectedProject && (
-            <DialogContent className="w-screen h-screen max-w-full max-h-full p-0">
-                <div className="grid md:grid-cols-3 h-full">
-                    <div className="md:col-span-2 bg-black flex items-center justify-center">
-                      {selectedProject.type === 'video' && selectedProject.youtubeUrl ? (
-                        <div className="relative aspect-video w-full max-w-4xl mx-auto rounded-lg overflow-hidden border">
-                           <iframe
-                                src={selectedProject.youtubeUrl}
-                                width="100%"
-                                height="100%"
-                                frameBorder="0"
-                                allow="autoplay; fullscreen; picture-in-picture"
-                                allowFullScreen
-                                className="absolute top-0 left-0 w-full h-full"
-                            ></iframe>
-                        </div>
-                      ) : (
-                        <Carousel className="w-full max-w-4xl mx-auto">
-                          <CarouselContent>
-                            {selectedProject.media.map((media, index) => (
-                              <CarouselItem key={index}>
-                                  <div className="relative aspect-video">
-                                    <Image
-                                      src={media.url}
-                                      alt={`${selectedProject.title} - Image ${index + 1}`}
-                                      fill
-                                      data-ai-hint={media.aiHint}
-                                      className="object-contain"
-                                    />
-                                  </div>
-                              </CarouselItem>
-                            ))}
-                          </CarouselContent>
-                          {selectedProject.media.length > 1 && (
-                              <>
-                                  <CarouselPrevious className="-left-12" />
-                                  <CarouselNext className="-right-12" />
-                              </>
-                          )}
-                        </Carousel>
-                      )}
+            <DialogContent className="w-screen h-screen max-w-full max-h-full p-0 flex flex-col">
+                <div className="flex-shrink-0 md:h-3/5 bg-black flex items-center justify-center">
+                  {selectedProject.type === 'video' && selectedProject.youtubeUrl ? (
+                    <div className="relative aspect-video w-full h-full max-w-4xl mx-auto">
+                       <iframe
+                            src={selectedProject.youtubeUrl}
+                            width="100%"
+                            height="100%"
+                            frameBorder="0"
+                            allow="autoplay; fullscreen; picture-in-picture"
+                            allowFullScreen
+                            className="absolute top-0 left-0 w-full h-full"
+                        ></iframe>
                     </div>
-                    <div className="col-span-1 h-full overflow-y-auto p-8 md:p-12 space-y-8">
-                        <DialogHeader>
-                            <DialogTitle className="text-3xl md:text-4xl font-bold">{selectedProject.title}</DialogTitle>
-                        </DialogHeader>
-
-                        <div className="grid grid-cols-2 gap-x-4 gap-y-6 text-sm">
-                            <div>
-                                <h4 className="font-semibold text-foreground/70 mb-1">Client</h4>
-                                <p className="font-medium text-foreground">{selectedProject.client}</p>
-                            </div>
-                            <div>
-                                <h4 className="font-semibold text-foreground/70 mb-1">Type</h4>
-                                <p className="font-medium text-foreground">{selectedProject.category}</p>
-                            </div>
-                            <div className="col-span-2">
-                                <h4 className="font-semibold text-foreground/70 mb-1">My Role</h4>
-                                <p className="font-medium text-foreground">{selectedProject.role}</p>
-                            </div>
-                        </div>
-
-                        <div className="prose prose-base dark:prose-invert">
-                            <h4 className="font-semibold text-foreground mb-2">About The Project</h4>
-                            <p className="text-foreground/80">{selectedProject.story}</p>
-                        </div>
-                        
-                        {selectedProject.youtubeUrl && (
-                          <div className="pt-4">
-                              <h4 className="font-semibold text-foreground mb-4">Watch Now</h4>
-                              <div className="flex flex-col gap-3">
-                                  {selectedProject.youtubeUrl && (
-                                    <Button asChild size="lg" variant="outline">
-                                      <a href={selectedProject.youtubeUrl} target="_blank" rel="noopener noreferrer">
-                                          <Clapperboard className="mr-2 h-4 w-4" />
-                                          Watch on YouTube
-                                      </a>
-                                    </Button>
-                                  )}
+                  ) : (
+                    <Carousel className="w-full max-w-4xl mx-auto">
+                      <CarouselContent>
+                        {selectedProject.media.map((media, index) => (
+                          <CarouselItem key={index}>
+                              <div className="relative aspect-video">
+                                <Image
+                                  src={media.url}
+                                  alt={`${selectedProject.title} - Image ${index + 1}`}
+                                  fill
+                                  data-ai-hint={media.aiHint}
+                                  className="object-contain"
+                                />
                               </div>
-                          </div>
-                        )}
+                          </CarouselItem>
+                        ))}
+                      </CarouselContent>
+                      {selectedProject.media.length > 1 && (
+                          <>
+                              <CarouselPrevious className="-left-12" />
+                              <CarouselNext className="-right-12" />
+                          </>
+                      )}
+                    </Carousel>
+                  )}
+                </div>
+                <div className="flex-grow overflow-y-auto">
+                    <div className="grid md:grid-cols-3 h-full">
+                        <div className="col-span-1 h-full p-8 md:p-12 space-y-8 border-r">
+                            <DialogHeader>
+                                <DialogTitle className="text-3xl md:text-4xl font-bold">{selectedProject.title}</DialogTitle>
+                            </DialogHeader>
+
+                            <div className="grid grid-cols-2 gap-x-4 gap-y-6 text-sm">
+                                <div>
+                                    <h4 className="font-semibold text-foreground/70 mb-1">Client</h4>
+                                    <p className="font-medium text-foreground">{selectedProject.client}</p>
+                                </div>
+                                <div>
+                                    <h4 className="font-semibold text-foreground/70 mb-1">Type</h4>
+                                    <p className="font-medium text-foreground">{selectedProject.category}</p>
+                                </div>
+                                <div className="col-span-2">
+                                    <h4 className="font-semibold text-foreground/70 mb-1">My Role</h4>
+                                    <p className="font-medium text-foreground">{selectedProject.role}</p>
+                                </div>
+                            </div>
+
+                            <div className="prose prose-base dark:prose-invert">
+                                <h4 className="font-semibold text-foreground mb-2">About The Project</h4>
+                                <p className="text-foreground/80">{selectedProject.story}</p>
+                            </div>
+                        </div>
+                        <div className="md:col-span-2 p-8 md:p-12">
+                             <h4 className="font-semibold text-foreground mb-4 text-xl">Behind The Scenes</h4>
+                             <ScrollArea className="w-full whitespace-nowrap">
+                                <div className="flex space-x-4 pb-4">
+                                  {selectedProject.btsMedia.map((media, index) => (
+                                    <figure key={index} className="shrink-0">
+                                      <div className="overflow-hidden rounded-md w-80 h-52 relative">
+                                        <Image
+                                          src={media.url}
+                                          alt={`Behind the scenes ${index + 1}`}
+                                          data-ai-hint={media.aiHint}
+                                          fill
+                                          className="object-cover"
+                                        />
+                                      </div>
+                                    </figure>
+                                  ))}
+                                </div>
+                                <ScrollBar orientation="horizontal" />
+                              </ScrollArea>
+                        </div>
                     </div>
                 </div>
             </DialogContent>
@@ -248,3 +282,4 @@ export default function PortfolioSection() {
     </section>
   );
 }
+
