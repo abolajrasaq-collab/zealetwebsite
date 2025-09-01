@@ -12,11 +12,42 @@ import { Eye, Clapperboard, Video, Image as ImageIcon, ArrowRight } from 'lucide
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
 import { projects, Project } from '@/lib/portfolio-data';
 import Link from 'next/link';
+import { cn } from '@/lib/utils';
 
 const recentProjects = projects.slice(0, 6);
 
 export default function PortfolioSection() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
+    const renderMedia = (media: any, title: string, isBts = false) => {
+        const isVideo = media.type === 'video' || (isBts && media.url.includes('vimeo'));
+        if (isVideo) {
+             return (
+                <div className="relative aspect-video w-full">
+                    <iframe
+                        src={media.url} // Assuming BTS video URL is embeddable
+                        width="100%"
+                        height="100%"
+                        frameBorder="0"
+                        allow="autoplay; fullscreen; picture-in-picture"
+                        allowFullScreen
+                        className="absolute top-0 left-0"
+                    ></iframe>
+                </div>
+            )
+        }
+        return (
+            <div className={cn("relative", isBts ? "w-80 h-52" : "aspect-video")}>
+                <Image
+                    src={media.url}
+                    alt={title}
+                    fill
+                    data-ai-hint={media.aiHint}
+                    className="object-contain"
+                />
+            </div>
+        );
+    };
 
   return (
     <section id="portfolio" className="py-20 md:py-32 bg-background">
@@ -106,15 +137,7 @@ export default function PortfolioSection() {
                           <CarouselContent>
                             {selectedProject.media.map((media, index) => (
                               <CarouselItem key={index}>
-                                  <div className="relative aspect-video">
-                                    <Image
-                                      src={media.url}
-                                      alt={`${selectedProject.title} - Image ${index + 1}`}
-                                      fill
-                                      data-ai-hint={media.aiHint}
-                                      className="object-contain"
-                                    />
-                                  </div>
+                                  {renderMedia(media, `${selectedProject.title} - Image ${index + 1}`)}
                               </CarouselItem>
                             ))}
                           </CarouselContent>
@@ -140,7 +163,7 @@ export default function PortfolioSection() {
                                 </div>
                             )}
                             <div>
-                                <h4 className="font-semibold text-foreground/70 mb-1">Type</h4>
+                                <h4 className="font-semibold text-foreground/70 mb-1">Category</h4>
                                 <p className="font-medium text-foreground">{selectedProject.category}</p>
                             </div>
                             {selectedProject.role && (
@@ -157,6 +180,17 @@ export default function PortfolioSection() {
                                 <p className="text-foreground/80">{selectedProject.story}</p>
                             </div>
                         )}
+
+                        {selectedProject.filmUrl && (
+                            <div className="pt-4">
+                                <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground w-full">
+                                    <a href={selectedProject.filmUrl} target="_blank" rel="noopener noreferrer">
+                                        <Clapperboard className="mr-2 h-4 w-4" />
+                                        Watch Now
+                                    </a>
+                                </Button>
+                            </div>
+                        )}
                     </div>
                 </div>
                 {selectedProject.btsMedia && selectedProject.btsMedia.length > 0 && (
@@ -166,14 +200,8 @@ export default function PortfolioSection() {
                             <div className="flex space-x-4 pb-4">
                             {selectedProject.btsMedia.map((media, index) => (
                                 <figure key={index} className="shrink-0">
-                                <div className="overflow-hidden rounded-md w-80 h-52 relative">
-                                    <Image
-                                    src={media.url}
-                                    alt={`Behind the scenes ${index + 1}`}
-                                    data-ai-hint={media.aiHint}
-                                    fill
-                                    className="object-cover"
-                                    />
+                                <div className="overflow-hidden rounded-md w-80 h-52 relative bg-black/20">
+                                    {renderMedia(media, `Behind the scenes ${index + 1}`, true)}
                                 </div>
                                 </figure>
                             ))}

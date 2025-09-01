@@ -144,6 +144,7 @@ export const projects: Project[] = [
     tags: ['Narrative', 'Directing', 'Writing', 'Editing'],
     role: 'Writer, Director, Editor',
     description: 'In a world silenced by a mysterious event, a lone survivor discovers he may not be truly alone.',
+    story: 'In a world silenced by a mysterious event, a lone survivor discovers he may not be truly alone. A story about connection in the face of absolute isolation.',
     thumbnail: 'https://i.imgur.com/1g9YgqV.jpeg',
     media: [{ url: 'https://i.imgur.com/1g9YgqV.jpeg', aiHint: 'dramatic movie poster' }],
     vimeoId: '902839943',
@@ -157,6 +158,9 @@ export const projects: Project[] = [
     description: 'A complete brand identity system for a tech startup, focusing on a modern, scalable logo and visual language.',
     thumbnail: 'https://picsum.photos/seed/design1/800/600',
     media: [{ url: 'https://picsum.photos/seed/design1/1920/1080', aiHint: 'modern logo design', type: 'image' }],
+    story: 'This project involved creating a full brand identity from the ground up for a new tech startup. The focus was on a clean, memorable logo that could scale across various digital and print applications, supported by a modern color palette and typography system.',
+    role: 'Lead Designer',
+    client: 'Phoenix Systems'
   },
   {
     title: 'Quantum Leap',
@@ -166,6 +170,9 @@ export const projects: Project[] = [
     thumbnail: 'https://picsum.photos/seed/design2/800/600',
     media: [{ url: 'https://picsum.photos/seed/design2/800/600', aiHint: 'abstract motion graphics', type: 'video' }],
     vimeoId: '902839943',
+    story: 'For this title sequence, the challenge was to make abstract scientific concepts visually compelling. Using a combination of 2D and 3D motion graphics, I created a dynamic and engaging sequence that sets the tone for the series.',
+    role: 'Motion Designer',
+    client: 'Axis Mundi Productions'
   },
   {
     title: 'Neo-Genesis',
@@ -174,6 +181,9 @@ export const projects: Project[] = [
     description: 'A series of futuristic 3D illustrations for an editorial piece on artificial intelligence and its impact on society.',
     thumbnail: 'https://picsum.photos/seed/design3/800/600',
     media: [{ url: 'https://picsum.photos/seed/design3/1920/1080', aiHint: 'futuristic 3d render', type: 'image' }],
+    story: 'These 3D illustrations were commissioned for a feature article in a tech magazine. The goal was to create surreal, thought-provoking images that explored the relationship between humanity and artificial intelligence.',
+    role: '3D Artist',
+    client: 'FutureForward Magazine'
   },
   // Drone
   {
@@ -184,14 +194,22 @@ export const projects: Project[] = [
     thumbnail: 'https://picsum.photos/seed/drone1/800/600',
     media: [{ url: 'https://picsum.photos/seed/drone1/800/600', aiHint: 'drone coastline video', type: 'video' }],
     vimeoId: '902839943',
+    story: 'This personal project was an exercise in capturing the epic scale of nature. Using a drone, I aimed to create a sense of awe and tranquility by showcasing the dramatic landscapes of the Big Sur coastline from a unique perspective.',
+    role: 'Drone Pilot, Editor'
   },
   // Photography
   {
     title: 'Urban Geometry',
     category: 'Photography',
     tags: ['Architecture', 'Chicago'],
-    description: 'A top-down photograph of Chicago\'s iconic architecture, highlighting the geometric patterns of the city.',
+    description: 'A collection of architectural photographs of Chicago, highlighting the geometric patterns of the city.',
     thumbnail: 'https://picsum.photos/seed/drone2/800/600',
-    media: [{ url: 'https://picsum.photos/seed/drone2/1920/1080', aiHint: 'drone city architecture', type: 'image' }],
+    media: [
+      { url: 'https://picsum.photos/seed/photo1/1080/1920', aiHint: 'abstract architecture', type: 'image' },
+      { url: 'https://picsum.photos/seed/photo2/1920/1080', aiHint: 'skyscraper facade', type: 'image' },
+      { url: 'https://picsum.photos/seed/photo3/1920/1080', aiHint: 'city reflections', type: 'image' }
+    ],
+    story: 'This photo series explores the intersection of light, shadow, and form in the urban environment. By focusing on the details of Chicago\'s iconic architecture, I aimed to reveal the hidden geometry and abstract beauty of the cityscape.',
+    role: 'Photographer'
   },
 ];

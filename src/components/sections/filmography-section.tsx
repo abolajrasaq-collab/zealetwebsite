@@ -82,20 +82,23 @@ export default function FilmographySection() {
                                 <h4 className="font-semibold text-foreground/70 mb-1">Type</h4>
                                 <p className="font-medium text-foreground">{selectedFilm.category}</p>
                             </div>
-                            <div className="col-span-2">
-                                <h4 className="font-semibold text-foreground/70 mb-1">My Role</h4>
-                                <p className="font-medium text-foreground">{selectedFilm.role}</p>
-                            </div>
+                            {selectedFilm.role && (
+                                <div className="col-span-2">
+                                    <h4 className="font-semibold text-foreground/70 mb-1">My Role</h4>
+                                    <p className="font-medium text-foreground">{selectedFilm.role}</p>
+                                </div>
+                            )}
                         </div>
 
-                        <div className="prose prose-base dark:prose-invert">
-                            <h4 className="font-semibold text-foreground mb-2">Synopsis</h4>
-                            <p className="text-foreground/80">{selectedFilm.story}</p>
-                        </div>
+                         {selectedFilm.story && (
+                            <div className="prose prose-base dark:prose-invert">
+                                <h4 className="font-semibold text-foreground mb-2">Synopsis</h4>
+                                <p className="text-foreground/80">{selectedFilm.story}</p>
+                            </div>
+                        )}
                         
                         {selectedFilm.filmUrl && (
                           <div className="pt-4">
-                              <h4 className="font-semibold text-foreground mb-4">Watch The Full Film</h4>
                                <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground w-full">
                                   <a href={selectedFilm.filmUrl} target="_blank" rel="noopener noreferrer">
                                       <Clapperboard className="mr-2 h-4 w-4" />

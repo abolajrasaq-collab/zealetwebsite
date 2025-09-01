@@ -211,7 +211,7 @@ export default function PortfolioPage() {
 
     const filteredProjects = useMemo(() => {
         if (activeTab === 'All') return projects;
-        return projects.filter(p => p.category === activeTab || (activeTab === 'Film' && p.category === 'Showreel'));
+        return projects.filter(p => p.category === activeTab || (activeTab === 'Film' && (p.category === 'Showreel' || p.category === 'Commercial')));
     }, [activeTab]);
 
   return (
