@@ -37,6 +37,19 @@ const projects: Project[] = [
     youtubeUrl: 'https://www.youtube.com/embed/N8hRH3nGn1E?autoplay=1',
   },
   {
+    title: 'Trophy Extra Special Stout',
+    client: 'Trophy Beer (Spec)',
+    category: 'Commercial',
+    type: 'video',
+    description: 'A spec commercial for Trophy Extra Special Stout, capturing the spirit of celebration and camaraderie.',
+    role: 'Director',
+    story: 'This spec ad was created to capture the energetic and celebratory essence of Trophy Extra Special Stout. The goal was to create a visually dynamic piece that felt authentic to the brand\'s target audience, focusing on moments of connection and shared enjoyment.',
+    media: [
+        { url: 'https://i.ytimg.com/vi/j9VXRaAILR8/hqdefault.jpg', aiHint: 'beer commercial' },
+    ],
+    youtubeUrl: 'https://www.youtube.com/embed/j9VXRaAILR8?autoplay=1',
+  },
+  {
     title: 'Naija Odyssey',
     client: 'WhatsApp',
     category: 'Commercial',
