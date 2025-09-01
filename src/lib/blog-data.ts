@@ -208,7 +208,7 @@ Biochemist. Creative Director. Realist.
   },
   {
     title: 'The Economic Importance of One Citizen',
-    description: 'When a nation doesn’t value its people, it silently kills its economy. You can\'t grow an economy with broke people.',
+    description: "When a nation doesn’t value its people, it silently kills its economy. You can't grow an economy with broke people.",
     image: 'https://i.imgur.com/gK4Rz93.jpeg',
     aiHint: 'nigerian girl hopeful',
     slug: 'the-economic-importance-of-one-citizen',
@@ -260,7 +260,7 @@ This is what happens when a country refuses to value its human resources. You do
 
 Let that sink in.
 
-If we want to change, we must start from the ground up, not with more conferences, but with policies that put money in people’s pockets, restore dignity, and revive the spending power of the average citizen.
+If we want change, we must start from the ground up, not with more conferences, but with policies that put money in people’s pockets, restore dignity, and revive the spending power of the average citizen.
 That’s how we build a strong economy, one human being at a time.
 
 One citizen matters. One life counts. One Nigerian can spark change.
