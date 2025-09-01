@@ -206,4 +206,72 @@ Biochemist. Creative Director. Realist.
 *Originally published on [Medium](https://medium.com/@abolajirasaq/dreams-are-just-biochemical-noise-not-spiritual-messages-4e32ab70bb3c).*
 `
   },
+  {
+    title: 'The Economic Importance of One Citizen',
+    description: 'When a nation doesn’t value its people, it silently kills its economy. You can\'t grow an economy with broke people.',
+    image: 'https://picsum.photos/seed/blog6/800/600',
+    aiHint: 'hopeful girl portrait',
+    slug: 'the-economic-importance-of-one-citizen',
+    content: `
+## The Economic Importance of One Citizen
+
+In Nigeria, the life of an average citizen is treated like it’s dispensable. But here’s the bitter truth: when a nation doesn’t value its people, it silently kills its economy. You can't grow an economy with broke people.
+
+Every citizen is not just a number in the census. They are potential builders, creators, innovators, workers, consumers, and taxpayers.
+
+One citizen could be the next entrepreneur who employs 5,000 people, the next teacher who raises future doctors, the next welder who builds our bridges, or the next filmmaker who exports Nigerian culture to the world.
+But what do we do instead? We let insecurity swallow them. We let poverty choke them. We let poor healthcare waste them. We ignore their dreams. We shut down their potential.
+
+Now ask yourself, how can an economy grow when the engine (the people) is neglected?
+A nation’s greatest resource is not oil. Not gold. Not land. It’s human capital. Nigeria has over 200 million people, yet we’re acting like we have nothing. Because we’ve failed to invest in these lives.
+
+Countries that developed didn’t do so because they had magic. They understood one thing: you lift the people, you lift the economy.
+
+When a child in Makoko gets quality education, she grows up to become a contributor, not a liability.
+
+When a youth in Jos learns software development, he becomes a job creator, not a yahoo boy. When an artisan in Ibadan is supported with tools and a little capital, he feeds a family and pays taxes.
+
+The Nigerian economy is not special. An economy is only as strong as the spending power of its people.
+
+The real GDP is not in oil wells or CBN charts. It’s in the hands of the ordinary Nigerian who wakes up every morning with one mission: survive and provide.
+
+One citizen, yes, just one, with money in their pocket, is a spark. They buy food. They pay for transport. They pay school fees. They give tips. They rent apartments. They spend airtime. They even sponsor someone else.
+That’s how economies grow. Money moving. People spending. But when that same citizen is broke, the economy shrinks. A broke citizen is not just a personal tragedy; it's an economic emergency.
+
+That’s a barber without a customer. That’s a mechanic without a car to fix. That’s a rider earning nothing. That’s a market woman watching her goods rot.
+
+We often underestimate what it means when the average Nigerian can’t afford garri.
+But what it really means is: the value of our currency is dead on the streets, even if it’s dancing in Abuja.
+
+The truth is simple. No people, no economy. No money in people’s hands, no growth. No value for human lives, no future. We don’t need more oil.
+
+We need more valued people. Nigerians are our greatest natural resource. But we treat them like liabilities. We underpay them. We overwork them. We rob them of opportunity. Then we wonder why the country is stuck. We’re killing the hope of a nation.
+
+We say Nigeria is hard, but let’s face it, the real hardship is the mindset that says one life doesn’t matter.
+
+If you really want to fix the economy, start by valuing the lives of those at the bottom.
+Start by seeing the average Nigerian as a full human being with value, not just someone to use and dump during elections.
+
+My mechanic just left for Canada. This guy could dismantle a V6 engine with his eyes half-closed. Poached by a workshop over there. They saw what we ignored.
+
+He’s not a big name. Not a politician. Not an influencer. Just another “Kazeem” to many. But to me, and many others, he was valuable. Now he's gone.
+
+This is what happens when a country refuses to value its human resources. You don’t need to lock the airport; they will leave through the cracks in your system. What we refuse to value here, the world is ready to pay top dollar for.
+
+Let that sink in.
+
+If we want to change, we must start from the ground up, not with more conferences, but with policies that put money in people’s pockets, restore dignity, and revive the spending power of the average citizen.
+That’s how we build a strong economy, one human being at a time.
+
+One citizen matters. One life counts. One Nigerian can spark change.
+
+Until we believe that, we’ll keep moving in circles.
+
+---
+
+*Originally published on [Medium](https://medium.com/@abolajirasaq/the-economic-importance-of-one-citizen-cae2a97b74cb).*
+`
+  },
 ];
+
+    
