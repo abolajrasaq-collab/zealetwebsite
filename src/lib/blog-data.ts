@@ -272,6 +272,30 @@ Until we believe that, we’ll keep moving in circles.
 *Originally published on [Medium](https://medium.com/@abolajirasaq/the-economic-importance-of-one-citizen-cae2a97b74cb).*
 `
   },
+  {
+    title: "From 'Mummy and Daddy' to Viral Skits: How Nigerian Kids Are Owning Their Stories",
+    description: "An exploration of how Nigerian kids have transformed traditional childhood storytelling into a viral digital movement.",
+    image: 'https://picsum.photos/seed/blog7/800/600',
+    aiHint: 'nigerian children playing',
+    slug: 'from-mummy-and-daddy-to-viral-skits',
+    content: `
+Back in the day, playtime meant gathering with friends to act out "Mummy and Daddy" or re-enacting scenes from our favorite Nollywood films. No script, no budget, just pure imagination. We played out scenarios of everyday Nigerian life, creating entire worlds in our compounds and streets. But today, that childhood storytelling tradition has evolved into skits, TikTok trends, and YouTube shorts, reaching audiences far beyond our immediate neighborhoods.
+
+Young Nigerians have found new ways to express themselves, and they’re doing it without restrictions. A phone, an idea, and a little editing magic, that’s all it takes. From comedy to social commentary, they weave stories that reflect their realities, their humor, and their frustrations. These aren’t just random clips; they are a continuation of a long history of oral storytelling, now amplified by technology.
+
+It’s fascinating watching young creators build entire characters and universes in a few seconds. The same playful spirit that fueled our childhood games is now fueling an industry. What used to be “Mummy and Daddy” roleplay is now full-blown skit-making with millions of views. The difference? Back then, our audience was just the kids on the block. Today, it’s the entire world.
+
+And they are unapologetic about it. There’s no need to wait for approval from traditional gatekeepers. Social media has become the new community center, where African kids share their stories on their own terms. Whether it’s a teenager mimicking a strict African parent or a group of friends recreating a viral scene in their dialect, the essence is the same, it’s live tales by moonlight, but this time, it’s broadcasted for the world to see.
+
+What’s even more exciting? The industry is paying attention. Some of these creators are landing movie deals, brand endorsements, and building careers out of what started as simple childhood play. They are proving that storytelling, no matter the medium, will always find an audience.
+
+One thing is clear: Nigerian creativity has never been limited. It was always there, in our childhood games, in our evening stories under the moonlight. The difference is that now, we have the tools to share it beyond our immediate circles. And we are making sure the world watches.
+
+---
+
+*Originally published on [Medium](https://medium.com/@abolajirasaq/from-mummy-and-daddy-to-viral-skits-how-nigerian-kids-are-owning-their-stories-4d522eab9b41).*
+`
+  },
 ];
 
     
