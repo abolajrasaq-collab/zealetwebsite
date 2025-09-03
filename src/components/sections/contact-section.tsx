@@ -62,9 +62,9 @@ export default function ContactSection() {
                 <Mail className="w-6 h-6 text-accent" />
                 <span className="group-hover:text-accent transition-colors">Email Me Directly</span>
               </a>
-              <a href="tel:+1234567890" className="flex items-center gap-4 group">
+              <a href="tel:+2348056555184" className="flex items-center gap-4 group">
                 <Phone className="w-6 h-6 text-accent" />
-                <span className="group-hover:text-accent transition-colors">+1 (234) 567-890</span>
+                <span className="group-hover:text-accent transition-colors">+234 805 655 5184</span>
               </a>
           </div>
         </div>
