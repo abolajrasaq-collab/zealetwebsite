@@ -58,7 +58,7 @@ export default function ContactSection() {
             )}
           </form>
           <div className="flex flex-col justify-center items-center lg:items-start space-y-6 text-lg">
-              <a href="mailto:abolaji@example.com" className="flex items-center gap-4 group">
+              <a href="mailto:abolajrasaq@gmail.com" className="flex items-center gap-4 group">
                 <Mail className="w-6 h-6 text-accent" />
                 <span className="group-hover:text-accent transition-colors">Email Me Directly</span>
               </a>
