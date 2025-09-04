@@ -1,3 +1,4 @@
+
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
@@ -6,6 +7,12 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { blogPosts } from '@/lib/blog-data';
 import BlogIdeationSection from '@/components/sections/blog-ideation-section';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'The Journal | Abolaji Rasaq',
+  description: 'A collection of thoughts, stories, and insights on creativity, design, filmmaking, and culture by Abolaji Rasaq.',
+};
 
 export default function BlogListPage() {
   return (

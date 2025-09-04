@@ -16,6 +16,7 @@ import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { cn } from '@/lib/utils';
 import Markdown from 'react-markdown';
+import Head from 'next/head';
 
 const categories = ['All', 'Film', 'Commercial', 'Design', 'Drone', 'Photography'];
 
@@ -224,6 +225,11 @@ export default function PortfolioPage() {
     }, [activeTab]);
 
   return (
+    <>
+    <Head>
+        <title>Portfolio | Abolaji Rasaq</title>
+        <meta name="description" content="A collection of my work in film, commercial, design, drone videography, and photography. Explore my projects and creative endeavors." />
+    </Head>
     <div className="flex flex-col min-h-screen bg-background text-foreground">
       <Header />
       <main className="flex-grow pt-32 pb-20">
@@ -255,5 +261,6 @@ export default function PortfolioPage() {
       </main>
       <Footer />
     </div>
+    </>
   );
 }

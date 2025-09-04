@@ -11,6 +11,13 @@ import Footer from '@/components/footer';
 import PhilosophySection from '@/components/sections/philosophy-section';
 import FilmographySection from '@/components/sections/filmography-section';
 import ShutterstockCta from '@/components/sections/shutterstock-cta';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Abolaji Rasaq | Creative Generalist, Director, Designer",
+  description: "The portfolio of Abolaji Rasaq, a Creative Generalist: Storyteller, Designer, Director, and Dream Builder. Explore my work in film, design, and digital experiences.",
+};
+
 
 export default function Home() {
   return (

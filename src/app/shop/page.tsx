@@ -7,6 +7,12 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { products } from '@/lib/shop-data';
 import { Badge } from '@/components/ui/badge';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'The Shop | Abolaji Rasaq',
+  description: 'A curated collection of goods for creatives, storytellers, and art lovers. Find prints, books, apparel, and more.',
+};
 
 export default function ShopPage() {
   return (
