@@ -7,6 +7,7 @@ export type ProjectMedia = {
 
 export type Project = {
   title: string;
+  slug: string;
   category: 'Film' | 'Commercial' | 'Design' | 'Drone' | 'Photography' | 'Showreel';
   tags: string[];
   description: string;
@@ -28,6 +29,7 @@ export const projects: Project[] = [
   // Showreel
   {
     title: 'Showreel 2024',
+    slug: 'showreel-2024',
     category: 'Showreel',
     tags: ['Directing', 'Design', 'Editing'],
     description: 'A collection of my best work in film, design, and storytelling.',
@@ -45,6 +47,7 @@ export const projects: Project[] = [
   // Commercials
   {
     title: 'Trophy Extra Special Stout',
+    slug: 'trophy-extra-special-stout',
     client: 'Trophy Beer (Spec)',
     category: 'Commercial',
     tags: ['Directing', 'Commercial'],
@@ -61,6 +64,7 @@ export const projects: Project[] = [
   },
    {
     title: 'Peak Chocolate, 3-In-1 Family Nourishment',
+    slug: 'peak-chocolate-3-in-1-family-nourishment',
     client: 'Peak Nigeria',
     category: 'Commercial',
     tags: ['Directing', 'Commercial'],
@@ -73,6 +77,7 @@ export const projects: Project[] = [
   },
   {
     title: 'Indomie Half Time',
+    slug: 'indomie-half-time',
     client: 'Dufil Prima Food Ltd.',
     category: 'Commercial',
     tags: ['Directing', 'Commercial'],
@@ -85,6 +90,7 @@ export const projects: Project[] = [
   },
   {
     title: 'ATUNIDA',
+    slug: 'atunida',
     category: 'Film',
     tags: ['Web Series', 'DOP'],
     role: 'Director of Photography',
@@ -97,6 +103,7 @@ export const projects: Project[] = [
   // Films
   {
     title: 'SAKOPE (COMPLETE DOSAGE)',
+    slug: 'sakope-complete-dosage',
     client: 'Personal Project',
     category: 'Film',
     tags: ['Narrative', 'Directing', 'Producing', 'DOP'],
@@ -115,6 +122,7 @@ export const projects: Project[] = [
   },
   {
     title: 'AKITI (MONKEY)',
+    slug: 'akiti-monkey',
     client: 'Personal Project',
     category: 'Film',
     tags: ['Narrative', 'Directing', 'DOP'],
@@ -132,6 +140,7 @@ export const projects: Project[] = [
   },
   {
     title: 'BEFORE SEVEN',
+    slug: 'before-seven',
     client: 'Personal Project',
     category: 'Film',
     tags: ['Narrative', 'Directing', 'DOP'],
@@ -148,6 +157,7 @@ export const projects: Project[] = [
   },
   {
     title: 'BADAGRY HERITAGE',
+    slug: 'badagry-heritage',
     category: 'Film',
     tags: ['Documentary', 'Directing', 'History'],
     description: 'A documentary exploring the rich history and cultural heritage of Badagry.',
@@ -159,6 +169,7 @@ export const projects: Project[] = [
   },
   {
     title: 'The Samaritan',
+    slug: 'the-samaritan',
     category: 'Film',
     tags: ['Narrative', 'Directing'],
     description: 'A short film about an act of kindness.',
@@ -170,6 +181,7 @@ export const projects: Project[] = [
   },
   {
     title: 'CBN Revolution',
+    slug: 'cbn-revolution',
     client: 'Documentary',
     category: 'Film',
     tags: ['Documentary', 'Directing'],
@@ -186,6 +198,7 @@ export const projects: Project[] = [
   },
   {
     title: 'Solitude',
+    slug: 'solitude',
     year: 2023,
     category: 'Film',
     tags: ['Narrative', 'Directing', 'Writing', 'Editing'],
@@ -200,6 +213,7 @@ export const projects: Project[] = [
   // Design
   {
     title: 'Zoropay Explainer animation Video',
+    slug: 'zoropay-explainer-animation-video',
     category: 'Design',
     tags: ['Animation', 'Explainer Video'],
     description: 'An explainer animation video created for Zoropay.',
@@ -212,6 +226,7 @@ export const projects: Project[] = [
   },
   {
     title: 'ATIKO film OPENING TITLE SEQUENCE',
+    slug: 'atiko-film-opening-title-sequence',
     category: 'Design',
     tags: ['Motion Graphics', 'Title Sequence'],
     description: 'An opening title sequence for the film "ATIKO".',
@@ -223,6 +238,7 @@ export const projects: Project[] = [
   },
   {
     title: 'Project Phoenix',
+    slug: 'project-phoenix',
     category: 'Design',
     tags: ['Brand Identity'],
     description: 'A complete brand identity system for a tech startup, focusing on a modern, scalable logo and visual language.',
@@ -234,6 +250,7 @@ export const projects: Project[] = [
   },
   {
     title: 'Quantum Leap',
+    slug: 'quantum-leap',
     category: 'Design',
     tags: ['Motion Graphics'],
     description: 'An abstract title sequence using dynamic motion graphics to visualize complex scientific concepts in an engaging way.',
@@ -246,6 +263,7 @@ export const projects: Project[] = [
   },
   {
     title: 'Neo-Genesis',
+    slug: 'neo-genesis',
     category: 'Design',
     tags: ['3D Illustration'],
     description: 'A series of futuristic 3D illustrations for an editorial piece on artificial intelligence and its impact on society.',
@@ -258,6 +276,7 @@ export const projects: Project[] = [
   // Drone
   {
     title: 'Coastal Serenity',
+    slug: 'coastal-serenity',
     category: 'Drone',
     tags: ['Videography', 'California'],
     description: 'A breathtaking flight over the cliffs of Big Sur, capturing the raw power and beauty of the Pacific coastline.',
@@ -270,6 +289,7 @@ export const projects: Project[] = [
   // Photography
   {
     title: 'Urban Geometry',
+    slug: 'urban-geometry',
     category: 'Photography',
     tags: ['Architecture', 'Chicago'],
     description: 'A collection of architectural photographs of Chicago, highlighting the geometric patterns of the city.',
