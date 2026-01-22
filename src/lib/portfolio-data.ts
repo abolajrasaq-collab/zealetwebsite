@@ -8,7 +8,7 @@ export type ProjectMedia = {
 export type Project = {
   title: string;
   slug: string;
-  category: 'Film' | 'Commercial' | 'Design' | 'Drone' | 'Photography' | 'Showreel';
+  category: 'Video Production' | 'Design' | 'Digital Marketing' | 'Showreel';
   tags: string[];
   description: string;
   year?: number;
@@ -32,24 +32,19 @@ export const projects: Project[] = [
     slug: 'showreel-2024',
     category: 'Showreel',
     tags: ['Directing', 'Design', 'Editing'],
-    description: 'A collection of my best work in film, design, and storytelling.',
+    description: 'A collection of our best work in video production, design, and storytelling.',
     role: 'Director, Designer, Editor',
-    story: 'This is a fast-paced look at some of my favorite projects, showcasing a range of skills from directing and cinematography to motion graphics and 3D design.',
+    story: 'This is a fast-paced look at some of our favorite projects, showcasing a range of skills from directing and cinematography to motion graphics and 3D design.',
     thumbnail: 'https://i.ytimg.com/vi/N8hRH3nGn1E/hqdefault.jpg',
     media: [{ url: 'https://i.ytimg.com/vi/N8hRH3nGn1E/hqdefault.jpg', aiHint: 'showreel film' }],
     youtubeUrl: 'https://www.youtube.com/embed/N8hRH3nGn1E?autoplay=1',
-    btsMedia: [
-      { url: 'https://picsum.photos/seed/bts1-1/600/400', aiHint: 'film set camera', type: 'image' },
-      { url: 'https://picsum.photos/seed/bts1-2/600/400', aiHint: 'director chair', type: 'image' },
-      { url: 'https://picsum.photos/seed/bts1-3/600/400', aiHint: 'lighting setup', type: 'image' },
-    ],
   },
-  // Commercials
+  // Video Production
   {
     title: 'Trophy Extra Special Stout',
     slug: 'trophy-extra-special-stout',
     client: 'Trophy Beer (Spec)',
-    category: 'Commercial',
+    category: 'Video Production',
     tags: ['Directing', 'Commercial'],
     description: 'A spec commercial for Trophy Extra Special Stout, capturing the spirit of celebration and camaraderie.',
     role: 'Director',
@@ -57,16 +52,12 @@ export const projects: Project[] = [
     thumbnail: 'https://i.ytimg.com/vi/j9VXRaAILR8/hqdefault.jpg',
     media: [{ url: 'https://i.ytimg.com/vi/j9VXRaAILR8/hqdefault.jpg', aiHint: 'beer commercial' }],
     youtubeUrl: 'https://www.youtube.com/embed/j9VXRaAILR8?autoplay=1',
-    btsMedia: [
-      { url: 'https://picsum.photos/seed/bts2-1/600/400', aiHint: 'beer product shot', type: 'image' },
-      { url: 'https://picsum.photos/seed/bts2-2/600/400', aiHint: 'behind the scenes commercial', type: 'image' },
-    ],
   },
    {
     title: 'Peak Chocolate, 3-In-1 Family Nourishment',
     slug: 'peak-chocolate-3-in-1-family-nourishment',
     client: 'Peak Nigeria',
-    category: 'Commercial',
+    category: 'Video Production',
     tags: ['Directing', 'Commercial'],
     description: 'Hot or Cold, At Work or at School, Enjoy your favourite beverage today and delight your taste buds.',
     role: 'Director',
@@ -79,7 +70,7 @@ export const projects: Project[] = [
     title: 'Indomie Half Time',
     slug: 'indomie-half-time',
     client: 'Dufil Prima Food Ltd.',
-    category: 'Commercial',
+    category: 'Video Production',
     tags: ['Directing', 'Commercial'],
     description: 'A commercial for Indomie, perfect for a half-time break.',
     role: 'Director',
@@ -91,7 +82,7 @@ export const projects: Project[] = [
   {
     title: 'ATUNIDA',
     slug: 'atunida',
-    category: 'Film',
+    category: 'Video Production',
     tags: ['Web Series', 'DOP'],
     role: 'Director of Photography',
     description: 'A Nollywood web series about a young man who will go to any length to win the heart of his neighbor.',
@@ -100,12 +91,11 @@ export const projects: Project[] = [
     media: [{ url: 'https://imgur.com/N7L6dm6.jpeg', aiHint: 'nollywood web series' }],
     youtubeUrl: 'https://www.youtube.com/embed/KkKJJ6hfWGc?autoplay=1',
   },
-  // Films
   {
     title: 'SAKOPE (COMPLETE DOSAGE)',
     slug: 'sakope-complete-dosage',
     client: 'Personal Project',
-    category: 'Film',
+    category: 'Video Production',
     tags: ['Narrative', 'Directing', 'Producing', 'DOP'],
     description: 'An illiterate girl hawking drugs as a professional nurse soon finds her customers falling apart.',
     role: 'Director, Producer, DOP',
@@ -113,18 +103,13 @@ export const projects: Project[] = [
     thumbnail: 'https://imgur.com/iEpNS7H.jpeg',
     media: [{ url: 'https://imgur.com/iEpNS7H.jpeg', aiHint: 'girl hawking drugs' }],
     youtubeUrl: 'https://www.youtube.com/embed/ralH8-n4QKk?autoplay=1',
-    btsMedia: [
-      { url: 'https://picsum.photos/seed/bts3-1/600/400', aiHint: 'short film set', type: 'image' },
-      { url: 'https://picsum.photos/seed/bts3-2/600/400', aiHint: 'actress portrait', type: 'image' },
-      { url: 'https://picsum.photos/seed/bts3-3/600/400', aiHint: 'camera on tripod', type: 'image' },
-    ],
     filmUrl: 'https://www.youtube.com/watch?v=ralH8-n4QKk'
   },
   {
     title: 'AKITI (MONKEY)',
     slug: 'akiti-monkey',
     client: 'Personal Project',
-    category: 'Film',
+    category: 'Video Production',
     tags: ['Narrative', 'Directing', 'DOP'],
     description: 'Two delinquent teenagers skip school to watch fight scenes at an abandoned warehouse. They are forced to confront each other in a deadly match that they will forever regret.',
     role: 'Director, DOP',
@@ -132,17 +117,13 @@ export const projects: Project[] = [
     thumbnail: 'https://imgur.com/u48VF7z.jpeg',
     media: [{ url: 'https://imgur.com/u48VF7z.jpeg', aiHint: 'teenagers fighting' }],
     youtubeUrl: 'https://www.youtube.com/embed/8D3iVPDmasI?autoplay=1',
-    btsMedia: [
-      { url: 'https://picsum.photos/seed/bts-akiti1/600/400', aiHint: 'warehouse location', type: 'image' },
-      { url: 'https://picsum.photos/seed/bts-akiti2/600/400', aiHint: 'fight choreography', type: 'image' },
-    ],
     filmUrl: 'https://www.youtube.com/watch?v=8D3iVPDmasI'
   },
   {
     title: 'BEFORE SEVEN',
     slug: 'before-seven',
     client: 'Personal Project',
-    category: 'Film',
+    category: 'Video Production',
     tags: ['Narrative', 'Directing', 'DOP'],
     description: 'A teenage girl made a mistake that made her family rejects her. She\'s racing against time before she makes a decision she would forever regret.',
     role: 'Director, DOP',
@@ -150,15 +131,12 @@ export const projects: Project[] = [
     thumbnail: 'https://imgur.com/USxAmQq.jpeg',
     media: [{ url: 'https://imgur.com/USxAmQq.jpeg', aiHint: 'teenage girl emotional' }],
     youtubeUrl: 'https://www.youtube.com/embed/qnwRZOHADsw?autoplay=1',
-    btsMedia: [
-      { url: 'https://picsum.photos/seed/bts-beforeseven1/600/400', aiHint: 'dramatic lighting setup', type: 'image' },
-    ],
     filmUrl: 'https://www.youtube.com/watch?v=qnwRZOHADsw'
   },
   {
-    title: 'BADAGRY HERITAGE',
+    title: 'Badagry Heritage',
     slug: 'badagry-heritage',
-    category: 'Film',
+    category: 'Video Production',
     tags: ['Documentary', 'Directing', 'History'],
     description: 'A documentary exploring the rich history and cultural heritage of Badagry.',
     role: 'Director',
@@ -170,7 +148,7 @@ export const projects: Project[] = [
   {
     title: 'The Samaritan',
     slug: 'the-samaritan',
-    category: 'Film',
+    category: 'Video Production',
     tags: ['Narrative', 'Directing'],
     description: 'A short film about an act of kindness.',
     role: 'Director',
@@ -183,7 +161,7 @@ export const projects: Project[] = [
     title: 'CBN Revolution',
     slug: 'cbn-revolution',
     client: 'Documentary',
-    category: 'Film',
+    category: 'Video Production',
     tags: ['Documentary', 'Directing'],
     description: 'A documentary about wheat production in Nigeria.',
     role: 'Director',
@@ -191,24 +169,6 @@ export const projects: Project[] = [
     thumbnail: 'https://i.ytimg.com/vi/-2UfFpUNPnE/hqdefault.jpg',
     media: [{ url: 'https://i.ytimg.com/vi/-2UfFpUNPnE/hqdefault.jpg', aiHint: 'wheat farm documentary' }],
     youtubeUrl: 'https://www.youtube.com/embed/-2UfFpUNPnE?autoplay=1',
-    btsMedia: [
-      { url: 'https://picsum.photos/seed/bts-cbn1/600/400', aiHint: 'interview setup', type: 'image' },
-      { url: 'https://picsum.photos/seed/bts-cbn2/600/400', aiHint: 'drone shot wheat field', type: 'image' },
-    ]
-  },
-  {
-    title: 'Solitude',
-    slug: 'solitude',
-    year: 2023,
-    category: 'Film',
-    tags: ['Narrative', 'Directing', 'Writing', 'Editing'],
-    role: 'Writer, Director, Editor',
-    description: 'In a world silenced by a mysterious event, a lone survivor discovers he may not be truly alone.',
-    story: 'In a world silenced by a mysterious event, a lone survivor discovers he may not be truly alone. A story about connection in the face of absolute isolation.',
-    thumbnail: 'https://i.imgur.com/1g9YgqV.jpeg',
-    media: [{ url: 'https://i.imgur.com/1g9YgqV.jpeg', aiHint: 'dramatic movie poster' }],
-    vimeoId: '902839943',
-    filmUrl: '#',
   },
   // Design
   {
@@ -236,70 +196,29 @@ export const projects: Project[] = [
     role: 'Motion Graphics Designer',
     story: 'This project involved creating a dynamic and atmospheric opening title sequence for the film "ATIKO", setting the tone for the story to come.'
   },
+    // Digital Marketing
   {
-    title: 'Project Phoenix',
-    slug: 'project-phoenix',
-    category: 'Design',
-    tags: ['Brand Identity'],
-    description: 'A complete brand identity system for a tech startup, focusing on a modern, scalable logo and visual language.',
-    thumbnail: 'https://picsum.photos/seed/design1/800/600',
-    media: [{ url: 'https://picsum.photos/seed/design1/1920/1080', aiHint: 'modern logo design', type: 'image' }],
-    story: 'This project involved creating a full brand identity from the ground up for a new tech startup. The focus was on a clean, memorable logo that could scale across various digital and print applications, supported by a modern color palette and typography system.',
-    role: 'Lead Designer',
-    client: 'Phoenix Systems'
+    title: 'Social Media Campaign: TechForward',
+    slug: 'social-media-campaign-techforward',
+    category: 'Digital Marketing',
+    tags: ['Social Media', 'Content Creation'],
+    description: 'A comprehensive social media campaign for a new tech product launch, resulting in a 300% increase in engagement.',
+    thumbnail: 'https://picsum.photos/seed/marketing1/800/600',
+    media: [{ url: 'https://picsum.photos/seed/marketing1/1920/1080', aiHint: 'social media analytics', type: 'image' }],
+    story: 'We developed and executed a multi-platform social media strategy for the launch of TechForward\'s new app. The campaign involved creating engaging video and image content, running targeted ad campaigns, and managing community engagement, leading to a significant increase in brand awareness and app downloads.',
+    role: 'Digital Marketing Strategist',
+    client: 'TechForward Inc.'
   },
   {
-    title: 'Quantum Leap',
-    slug: 'quantum-leap',
-    category: 'Design',
-    tags: ['Motion Graphics'],
-    description: 'An abstract title sequence using dynamic motion graphics to visualize complex scientific concepts in an engaging way.',
-    thumbnail: 'https://picsum.photos/seed/design2/800/600',
-    media: [{ url: 'https://picsum.photos/seed/design2/800/600', aiHint: 'abstract motion graphics', type: 'video' }],
-    vimeoId: '902839943',
-    story: 'For this title sequence, the challenge was to make abstract scientific concepts visually compelling. Using a combination of 2D and 3D motion graphics, I created a dynamic and engaging sequence that sets the tone for the series.',
-    role: 'Motion Designer',
-    client: 'Axis Mundi Productions'
-  },
-  {
-    title: 'Neo-Genesis',
-    slug: 'neo-genesis',
-    category: 'Design',
-    tags: ['3D Illustration'],
-    description: 'A series of futuristic 3D illustrations for an editorial piece on artificial intelligence and its impact on society.',
-    thumbnail: 'https://picsum.photos/seed/design3/800/600',
-    media: [{ url: 'https://picsum.photos/seed/design3/1920/1080', aiHint: 'futuristic 3d render', type: 'image' }],
-    story: 'These 3D illustrations were commissioned for a feature article in a tech magazine. The goal was to create surreal, thought-provoking images that explored the relationship between humanity and artificial intelligence.',
-    role: '3D Artist',
-    client: 'FutureForward Magazine'
-  },
-  // Drone
-  {
-    title: 'Coastal Serenity',
-    slug: 'coastal-serenity',
-    category: 'Drone',
-    tags: ['Videography', 'California'],
-    description: 'A breathtaking flight over the cliffs of Big Sur, capturing the raw power and beauty of the Pacific coastline.',
-    thumbnail: 'https://picsum.photos/seed/drone1/800/600',
-    media: [{ url: 'https://picsum.photos/seed/drone1/800/600', aiHint: 'drone coastline video', type: 'video' }],
-    vimeoId: '902839943',
-    story: 'This personal project was an exercise in capturing the epic scale of nature. Using a drone, I aimed to create a sense of awe and tranquility by showcasing the dramatic landscapes of the Big Sur coastline from a unique perspective.',
-    role: 'Drone Pilot, Editor'
-  },
-  // Photography
-  {
-    title: 'Urban Geometry',
-    slug: 'urban-geometry',
-    category: 'Photography',
-    tags: ['Architecture', 'Chicago'],
-    description: 'A collection of architectural photographs of Chicago, highlighting the geometric patterns of the city.',
-    thumbnail: 'https://picsum.photos/seed/drone2/800/600',
-    media: [
-      { url: 'https://picsum.photos/seed/photo1/1080/1920', aiHint: 'abstract architecture', type: 'image' },
-      { url: 'https://picsum.photos/seed/photo2/1920/1080', aiHint: 'skyscraper facade', type: 'image' },
-      { url: 'https://picsum.photos/seed/photo3/1920/1080', aiHint: 'city reflections', type: 'image' }
-    ],
-    story: 'This photo series explores the intersection of light, shadow, and form in the urban environment. By focusing on the details of Chicago\'s iconic architecture, I aimed to reveal the hidden geometry and abstract beauty of the cityscape.',
-    role: 'Photographer'
+    title: 'SEO Strategy for E-commerce Store',
+    slug: 'seo-strategy-ecommerce',
+    category: 'Digital Marketing',
+    tags: ['SEO', 'Content Strategy'],
+    description: 'An SEO overhaul for an online retailer, leading to a 50% increase in organic traffic and a 20% increase in sales.',
+    thumbnail: 'https://picsum.photos/seed/marketing2/800/600',
+    media: [{ url: 'https://picsum.photos/seed/marketing2/1920/1080', aiHint: 'search engine results page', type: 'image' }],
+    story: 'Our team conducted a thorough SEO audit and implemented a content-driven strategy to improve the organic search ranking of a major e-commerce store. This involved keyword research, on-page optimization, technical SEO improvements, and creating high-quality blog content to attract and convert customers.',
+    role: 'SEO Specialist',
+    client: 'Fashionista Finds'
   },
 ];

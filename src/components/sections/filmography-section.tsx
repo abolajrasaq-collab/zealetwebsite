@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { PlayCircle } from 'lucide-react';
 import { projects } from '@/lib/portfolio-data';
 
-const filmProjects = projects.filter(p => p.category === 'Film');
+const filmProjects = projects.filter(p => p.category === 'Video Production');
 
 function generateSlug(title: string) {
     return title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
@@ -16,9 +16,9 @@ export default function FilmographySection() {
     <section id="filmography" className="py-20 md:py-32 bg-card">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Filmography</h2>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Featured Videos</h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-foreground/80">
-            A selection of my narrative films, commercials, and music videos.
+            A selection of our narrative films, commercials, and music videos.
           </p>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6">

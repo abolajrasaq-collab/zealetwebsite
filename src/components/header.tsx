@@ -9,13 +9,11 @@ import { cn } from '@/lib/utils';
 import Logo from '@/components/logo';
 
 const navLinks = [
-  { href: '/#about', label: 'Manifesto' },
-  { href: '/#capabilities', label: 'Capabilities' },
+  { href: '/#about', label: 'About' },
+  { href: '/#philosophy', label: 'Philosophy' },
+  { href: '/#services', label: 'Services' },
   { href: '/portfolio', label: 'Work' },
-  { href: '/#filmography', label: 'Filmography' },
-  { href: '/shop', label: 'Shop' },
-  { href: '/#testimonials', label: 'Collaborators' },
-  { href: '/blog', label: 'Journal' },
+  { href: '/#filmography', label: 'Videos' },
   { href: '/#contact', label: 'Contact' },
 ];
 

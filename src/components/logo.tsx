@@ -1,18 +1,10 @@
-import { cn } from "@/lib/utils";
 
 export default function Logo({ className }: { className?: string }) {
   return (
-    <svg
-      id="Layer_1"
-      data-name="Layer 1"
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 316 290.28"
-      className={cn("text-white", className)}
-      fill="currentColor"
-    >
-      <path
-        d="M147.5,29.28l-1.01-1.98L162.67.44c36.88-.52,71.77-3.59,103.64,18.03,64.67,43.86,57.61,142.45-12.33,176.33l62.02,95.48h-31.5c-.53,0-2.06-1.17-2.54-1.75l-55.67-84.3-49.31,1.54-23.49,41.51h-31.5l38.99-69.51c32.54-2.7,62.61,6.47,90.9-14.1,41.64-30.27,41.44-92.36-.98-121.8-6.34-4.4-24.07-12.59-31.41-12.59h-72ZM192,290.28l-16.5-29H47l100.5-178,49.7,76.78c1.47.86,30.67-1.67,31.8-2.8l-74.2-113.78-16.8.29L0,290.28h192Z"
-      />
-    </svg>
+    <img
+      src="https://i.imgur.com/tyuxVCj.png"
+      alt="Zealet Multimedia Logo"
+      className={className}
+    />
   );
 }

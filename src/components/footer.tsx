@@ -5,12 +5,12 @@ import { usePathname } from 'next/navigation';
 import { Camera, Instagram, Twitter, Linkedin } from 'lucide-react';
 
 const navLinks = [
-  { href: '/#about', label: 'Manifesto' },
-  { href: '/#capabilities', label: 'Capabilities' },
+  { href: '/#about', label: 'About Us' },
+  { href: '/#services', label: 'Services' },
   { href: '/portfolio', label: 'Work' },
   { href: '/#filmography', label: 'Filmography' },
   { href: '/shop', label: 'Shop' },
-  { href: '/#testimonials', label: 'Collaborators' },
+  { href: '/#testimonials', label: 'Testimonials' },
   { href: '/blog', label: 'Journal' },
   { href: '/#contact', label: 'Contact' },
 ];
@@ -35,7 +35,7 @@ export default function Footer() {
     <footer className="py-12 bg-card border-t border-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-foreground/70">
         <div className="flex flex-col items-center gap-4">
-           <p className="text-lg font-semibold text-foreground">Abolaji Rasaq — Creative Generalist, Director, Designer.</p>
+           <p className="text-lg font-semibold text-foreground">Zealet Multimedia — Creative Studio.</p>
         </div>
 
         <nav className="my-8 flex flex-wrap justify-center gap-x-6 gap-y-2">
@@ -67,7 +67,7 @@ export default function Footer() {
         </div>
 
         <p className="text-sm">
-          &copy; {currentYear} Abolaji Rasaq. All Rights Reserved.
+          &copy; {currentYear} Zealet Multimedia. All Rights Reserved.
         </p>
       </div>
     </footer>

@@ -10,29 +10,29 @@ import Autoplay from "embla-carousel-autoplay";
 
 const heroImages = [
     {
-        src: "https://i.imgur.com/orThoms.jpeg",
-        alt: "Filmmaker with a camera",
-        aiHint: "filmmaker camera"
+        src: "https://i.imgur.com/inJJdq2.jpeg",
+        alt: "Man filming with a camera",
+        aiHint: "man filming"
     },
     {
-        src: "https://i.imgur.com/d8q3MAJ.jpeg",
-        alt: "Creative design process",
-        aiHint: "design process"
+        src: "https://i.imgur.com/rpBo4zK.jpeg",
+        alt: "Man editing a video on a computer",
+        aiHint: "man editing video"
     },
     {
-        src: "https://i.imgur.com/Z6XMnlk.jpeg",
-        alt: "Man directing on set",
-        aiHint: "film set"
+        src: "https://i.imgur.com/SRo1NHb.jpeg",
+        alt: "Woman taking a photo with a camera",
+        aiHint: "woman taking photo"
     },
      {
-        src: "https://i.imgur.com/jS6T0Zu.jpeg",
-        alt: "Person writing in a journal",
-        aiHint: "storytelling journal"
+        src: "https://i.imgur.com/E412ExU.jpeg",
+        alt: "Close up of a camera lens",
+        aiHint: "camera lens"
     },
     {
-        src: "https://i.imgur.com/4sIbtJh.jpeg",
-        alt: "Abstract creative background",
-        aiHint: "creative abstract"
+        src: "https://i.imgur.com/Gf2OFpS.jpeg",
+        alt: "Film set with a director's chair",
+        aiHint: "film set"
     }
 ];
 
@@ -74,20 +74,18 @@ export default function HeroSection() {
       <div className="relative z-10 flex flex-col items-center gap-6 px-4">
         <div className="animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight">
-            Abolaji Rasaq — Creative Generalist.
-            <br />
-            Storyteller. Designer. Director. Dream Builder.
+            Create. Captivate. Connect.
           </h1>
           <p className="mt-4 max-w-3xl mx-auto text-lg md:text-xl text-foreground/80">
-            From films to pixels, stories to screens—I’m Abolaji Rasaq, a creative director and studio head blending art, design, and technology to shape culture.
+           Zealet Multimedia is a full-service creative agency specializing in video production, motion graphics, branding, and digital marketing. We bring your vision to life with stories that resonate and results that matter.
           </p>
         </div>
         <div className="animate-fade-in-up flex flex-col sm:flex-row gap-4" style={{ animationDelay: '0.6s' }}>
           <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-            <Link href="#portfolio">See My Work</Link>
+            <Link href="#portfolio">Our Work</Link>
           </Button>
            <Button asChild size="lg" variant="outline" className="bg-transparent hover:bg-accent hover:text-accent-foreground border-white text-white">
-            <Link href="#contact">Let’s Collaborate</Link>
+            <Link href="#contact">Get in Touch</Link>
           </Button>
         </div>
       </div>
