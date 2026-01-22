@@ -13,7 +13,8 @@ const navLinks = [
   { href: '/#philosophy', label: 'Philosophy' },
   { href: '/#services', label: 'Services' },
   { href: '/portfolio', label: 'Work' },
-  { href: '/#filmography', label: 'Videos' },
+  { href: '/#filmography', label: 'Filmography' },
+  { href: '/shop', label: 'Shop' },
   { href: '/#contact', label: 'Contact' },
 ];
 

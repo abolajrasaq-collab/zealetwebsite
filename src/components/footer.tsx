@@ -10,8 +10,6 @@ const navLinks = [
   { href: '/portfolio', label: 'Work' },
   { href: '/#filmography', label: 'Filmography' },
   { href: '/shop', label: 'Shop' },
-  { href: '/#testimonials', label: 'Testimonials' },
-  { href: '/blog', label: 'Journal' },
   { href: '/#contact', label: 'Contact' },
 ];
 
